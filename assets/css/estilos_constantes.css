@@ -1,0 +1,15 @@
+body{
+    background-image: url("../img/Patron-Fondo.png");
+}
+
+#cabecera {
+    background-color: #0B2023;
+}
+
+#nombre_sistema{
+    display: inline;
+    padding-left: 30px;
+    color: white;
+    font-size: 250%;
+    font-family:'Petit Formal Script', cursive;
+}
