@@ -1,4 +1,20 @@
 #log_in{
-    padding-top: 200px;
+    margin-top: 40px;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
     background-color: #D4F9FF;
+    border-radius: 100px;
+    box-shadow: 5px 5px rgba(185, 215, 236, 0.8);
+}
+
+a {
+    text-decoration: none;
+}
+
+#titulo{
+    text-align: center;
+    font-family: 'PT Serif', serif;
+    font-size: 300%;
 }
