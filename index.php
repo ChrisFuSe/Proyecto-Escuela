@@ -18,7 +18,7 @@
 
         <div class="container" id="log_in">
             <p id="titulo">BIENVENIDO AL SISTEMA DE GESTION DE PRESTIGE</p>
-            <form>
+            <form action="assets/html/home-directora.html">
                 <div class="mb-3">
                     <label for="usuario" class="form-label">Usuario</label>
                     <input type="textbox" class="form-control" id="usuario">
