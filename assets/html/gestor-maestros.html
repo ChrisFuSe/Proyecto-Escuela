@@ -23,30 +23,8 @@
             <p id="nombre_sistema">Prestige Management System</p>
         </div>
 
-        <!--    Contenedor con las opciones que tenemos en el gestor de maestros     -->
-        <div class="container-fluid" style="margin-top: 160px;">
-            <div class="row justify-content-center">
-                <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Agregar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Maestros</p>
-                </div>
-                <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Modificar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Pagos</p>
-                </div>
-                <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Consultar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Alumnos</p>
-                </div>
-                <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Eliminar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Alumnos</p>
-                </div>
-            </div>
-        </div>
-
         <!--    Navbar que utilizaremos para navegar entre las opciones más rápidamente-->
-        <div class="pos-f-t" style="margin-top: 14.1%;">
+        <div class="pos-f-t">
             <div class="collapse" id="navbar">
               <div class="bg-dark p-4">
                 <h4 class="text-white">Collapsed content</h4>
@@ -59,5 +37,33 @@
               </button>
             </nav>
           </div>
+        
+        <div id="gestor-maestros-inicio">
+        <!--    Contenedor con las opciones que tenemos en el gestor de maestros     -->
+            <div class="container-fluid" style="margin-top: 120px;">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <input id="agregar_maestro" type="image" src="../img/Iconos Gestor Maestros/Maestro-Agregar.png" alt="Responsive image" width="280" height="280" onclick="Agregar_Maestro()">
+                        <p>Gestor de Maestros</p>
+                    </div>
+                    <div class="col">
+                        <input id="modificar_maestro" type="image" src="../img/Iconos Gestor Maestros/Maestro-Modificar.png" alt="Responsive image" width="280" height="280" onclick="">
+                        <p>Gestor de Pagos</p>
+                    </div>
+                    <div class="col">
+                        <input id="consultar_maestro" type="image" src="../img/Iconos Gestor Maestros/Maestro-Consultar.png" alt="Responsive image" width="280" height="280" onclick="">
+                        <p>Gestor de Alumnos</p>
+                    </div>
+                    <div class="col">
+                        <input id="eliminar_maestro" type="image" src="../img/Iconos Gestor Maestros/Maestro-Eliminar.png" alt="Responsive image" width="280" height="280" onclick="">
+                        <p>Gestor de Alumnos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="../js/control_gestor_maestros.js"></script>
     </body>
 </html>
