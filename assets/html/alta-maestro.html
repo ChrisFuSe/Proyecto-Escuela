@@ -16,34 +16,32 @@
         <!--    Importacion del css (estilos propios)   -->
         <link rel="stylesheet" type="text/css" href="../css/estilos_constantes.css">
         <link rel="stylesheet" type="text/css" href="../css/estilos_home.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos_imagen_opcion.css">
     </head>
     <body>
+        <img id="imagen-opcion" src="../img/Gestor_Maestros.png">
         <!--    Cabecera con el logo y el nombre de nuestro sistema     -->
         <div class="container-fluid" id="cabecera">
             <img src="../img/Logo_Prestige.png" class="img-fluid" alt="Logo" width="140">
             <p id="nombre_sistema">Prestige Management System</p>
         </div>
 
-        <!--    Navbar que utilizaremos para navegar entre las opciones más rápidamente     -->
-        <div class="pos-f-t">
-            <div class="collapse" id="navbar">
-              <div class="bg-dark p-4">
-                <h4 class="text-white">Collapsed content</h4>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-              </div>
-            </div>
-            <nav class="navbar navbar-dark bg-dark">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </nav>
-        </div>
+        <input type="checkbox" id="btm-menu">
+        <label for="btm-menu" id="titulo" class="h1"><img id="icomenu" src="../img/icono-menu.png" alt="Menu">Ingresar nuevo maestro</label>
+        <nav class="menu">
+            <ul>
+            <li><a href="#">Maestros</a></li>
+            <li><a href="#">Pagos</a></li>
+            <li><a href="#">Grupos</a></li>
+            <li><a href="#">Alumnos</a></li>
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Calificaciones</a></li>
+            </ul>
+        </nav>
 
         <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
-        <div class="container-fluid">
-            <div class="row">
-                <h1>Ingresar nuevo maestro</h1>
-            </div>
+        <div class="container" style="margin-top: 2%;">
             <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                         así conseguimos dividir en 2 columnas a los inputs del formulario               -->
             <div class="row row-cols-2">
@@ -103,8 +101,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <button type="button" class="btn btn-dark">Guardar</button>
+
+            <div class="col" style="margin-top: 3%;">
+                <div class="btn-real" style="display: inline; padding-right: 5%;">
+                    <a href="#"><img width="5%" src="../img/icono-regresar.png"></a>
+                    <a href="#"><img width="5%" src="../img/icono-home.png"></a>
+                </div>   
+                <button type="button" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
             </div>
         </div>
     </body>
