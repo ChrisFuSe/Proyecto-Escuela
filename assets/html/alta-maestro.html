@@ -29,7 +29,7 @@
 
         <input type="checkbox" id="btm-menu">
         <label for="btm-menu" id="titulo" class="h1"><img id="icomenu" src="../img/icono-menu.png" alt="Menu">Ingresar nuevo maestro</label>
-        <nav class="menu">
+        <nav class="menu" style="z-index:1;">
             <ul>
             <li><a href="#">Maestros</a></li>
             <li><a href="#">Pagos</a></li>
@@ -55,7 +55,7 @@
                     <div class="input-group input-group-lg mb-4">
                         <span class="input-group-text">Calle y numero</span>
                         <input type="text" placeholder="Calle" aria-label="Calle" class="form-control">
-                        <input type="text" placeholder="#Numero" aria-label="Numero de calle" class="form-control">
+                        <input type="text" placeholder="#Numero" aria-label="Numero" class="form-control">
                       </div>
                 </div>
                 <div class="col">
@@ -79,7 +79,7 @@
                 <div class="col">
                     <div class="input-group input-group-lg mb-4">
                         <span class="input-group-text">C.P</span>
-                        <input type="text" class="form-control" placeholder="#C.P" aria-label="C.P">
+                        <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero">
                     </div>
                 </div>
                 <div class="col">
@@ -91,7 +91,7 @@
                 <div class="col">
                     <div class="input-group input-group-lg mb-4">
                         <span class="input-group-text">Numero Telefónico</span>
-                        <input type="text" class="form-control" placeholder="#Tel" aria-label="Numero Telefónico">
+                        <input type="text" class="form-control" placeholder="#Tel" aria-label="Numero">
                     </div>
                 </div>
                 <div class="col">
@@ -104,11 +104,15 @@
 
             <div class="col" style="margin-top: 3%;">
                 <div class="btn-real" style="display: inline; padding-right: 5%;">
-                    <a href="#"><img width="5%" src="../img/icono-regresar.png"></a>
-                    <a href="#"><img width="5%" src="../img/icono-home.png"></a>
+                    <a href="#"><img width="5%" src="../img/icono-regresar.png" class="botones-navegacion"></a>
+                    <a href="#"><img width="5%" src="../img/icono-home.png" class="botones-navegacion"></a>
                 </div>   
-                <button type="button" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
+                <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">GUARDAR</button>
             </div>
         </div>
+
+        <!--   Importaciones Javascript     -->
+        <script src="../js/validacion.js"></script>
+        <script src="../js/animaciones-boton.js"></script>
     </body>
 </html>
