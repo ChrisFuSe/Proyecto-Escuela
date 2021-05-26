@@ -52,162 +52,93 @@
         </nav>
 
        
-        <!-- Formulario -->
-        <form name =registraral>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <label>Nombre(s):</label>
-                   </div>
-                   <div class="col">
-                     <div class="input-group mb-3">
-                       <input type="text" name="nombres" class="form-control">
-                     </div>
-                   </div>
-                </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Apellido paterno:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" name="ape_pat" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Apellido materno:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>CURP:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Fecha de nacimiento:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Correo:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="email" class="form-control">
-                       </div>
-                     </div>
+         <!--    Contenedor con todos los inputs del formulario para registrar un nuevo aluno  -->
+         <div class="container" style="margin-top: 2%;">
+          <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
+                      así conseguimos dividir en 2 columnas a los inputs del formulario               -->
+          <div class="row row-cols-2">
+              <div class="col">
+                  <div class="input-group input-group-lg mb-4">
+                      <span class="input-group-text">Nombres</span>
+                      <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres">
                   </div>
               </div>
-
-
-            </div>
-            <div class="col">
-              <div class="row">
-                  <div class="col">
-                    <label>Calle:</label>
-                   </div>
-                   <div class="col">
-                     <div class="input-group mb-3">
-                       <input type="text" class="form-control">
-                     </div>
-                   </div>
-                </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Número:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Colonia:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>C.P.:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Telefóno:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col">
-                      <label>Descuento:</label>
-                     </div>
-                     <div class="col">
-                       <div class="input-group mb-3">
-                         <input type="text" class="form-control">
-                       </div>
-                     </div>
+              <div class="col">
+                  <div class="input-group input-group-lg mb-4">
+                      <span class="input-group-text">Calle</span>
+                      <input type="text" placeholder="Calle" aria-label="Calle" class="form-control">
+                    </div>
+              </div>
+              <div class="col">
+                  <div class="input-group input-group-lg mb-4">
+                      <span class="input-group-text">Apellido Paterno</span>
+                      <input type="text" class="form-control" placeholder="Primer Apellido..." aria-label="Apellido Paterno">
                   </div>
               </div>
-
-            </div>
-          </div>
-      </form>
-
-        <!-- Botones -->
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="btn-inferior">
-
-                <div class="btn-real">
-                    <a href="#"><img src="../img/icono-regresar.png"></a>
-                    <a href="#"><img src="../img/icono-home.png"></a>
-                </div>  
-    
-            </div>
+              <div class="col">
+                <div class="input-group input-group-lg mb-4">
+                    <span class="input-group-text">Número</span>
+                    <input type="text" placeholder="#Número" aria-label="Número" class="form-control">
+                  </div>
             </div>
             <div class="col">
-              <button type="button" id="btn_alumno" class="btn btn-dark" onclick="valida_envia()">GUARDAR</button>
+              <div class="input-group input-group-lg mb-4">
+                  <span class="input-group-text">Apellido Materno</span>
+                  <input type="text" class="form-control" placeholder="Segundo Apellido..." aria-label="Apellido Materno">
+              </div>
+          </div>
+              <div class="col">
+                  <div class="input-group input-group-lg mb-4">
+                      <span class="input-group-text">Colonia</span>
+                      <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia">
+                  </div>
+              </div>
+              <div class="col">
+                <div class="input-group input-group-lg mb-4">
+                    <span class="input-group-text">CURP</span>
+                    <input type="text" class="form-control" aria-label="RFC">
+                </div>
+            </div>
+              <div class="col">
+                  <div class="input-group input-group-lg mb-4">
+                      <span class="input-group-text">C.P</span>
+                      <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero">
+                  </div>
+              </div>
+              <div class="col">
+                <div class="input-group input-group-lg mb-4">
+                    <span class="input-group-text">Fecha de nacimiento</span>
+                    <input type="date" class="form-control" aria-label="RFC">
+                </div>
+              </div>
+              <div class="col">
+                  <div class="input-group input-group-lg mb-4">
+                      <span class="input-group-text">Numero Telefónico</span>
+                      <input type="tel" class="form-control" placeholder="#Tel" aria-label="Numero">
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="input-group input-group-lg mb-4">
+                      <span class="input-group-text">Correo electrónico</span>
+                      <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico">
+                  </div>
+              </div>
+              <div class="col">
+                <div class="input-group input-group-lg mb-4">
+                    <span class="input-group-text">Descuento</span>
+                    <input type="number" min="0" max="100" class="form-control" placeholder="%" aria-label="Descuento">
+                </div>
             </div>
           </div>
-        </div>
 
+          <div class="col" style="margin-top: 3%;">
+              <div class="btn-real" style="display: inline; padding-right: 5%;">
+                  <a href="#"><img width="5%" src="../img/icono-regresar.png" class="botones-navegacion"></a>
+                  <a href="#"><img width="5%" src="../img/icono-home.png" class="botones-navegacion"></a>
+              </div>   
+              <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">GUARDAR</button>
+          </div>
+      </div>
         <!-- Se importa javascript-->
         <script src="../js/validaciones.js"></script>
 
