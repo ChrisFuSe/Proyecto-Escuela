@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Prestige Management System</title>
         <!--    Icono de pestaña    -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/Prestige.ico"/>

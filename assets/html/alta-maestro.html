@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Prestige Management System</title>
+        <!--    Icono de pestaña    -->
+        <link rel="shortcut icon" type="image/x-icon" href="../img/Prestige.ico"/>
+
+        <!--    Importacion de fuentes (Encontradas en GoogleFonts)     -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+        <!--    Importacion del css de boostrap     -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+        <!--    Importacion del css (estilos propios)   -->
+        <link rel="stylesheet" type="text/css" href="../css/estilos_constantes.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos_home.css">
+    </head>
+    <body>
+        <!--    Cabecera con el logo y el nombre de nuestro sistema     -->
+        <div class="container-fluid" id="cabecera">
+            <img src="../img/Logo_Prestige.png" class="img-fluid" alt="Logo" width="140">
+            <p id="nombre_sistema">Prestige Management System</p>
+        </div>
+
+        <!--    Navbar que utilizaremos para navegar entre las opciones más rápidamente     -->
+        <div class="pos-f-t">
+            <div class="collapse" id="navbar">
+              <div class="bg-dark p-4">
+                <h4 class="text-white">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+              </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </nav>
+        </div>
+
+        <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
+        <div class="container-fluid" style="margin-top: 30px;">
+            <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
+                        así conseguimos dividir en 2 columnas a los inputs del formulario               -->
+            <div class="row row-cols-2">
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">Nombres</span>
+                        <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">Calle y numero</span>
+                        <input type="text" placeholder="Calle" aria-label="Calle" class="form-control">
+                        <input type="text" placeholder="#Numero" aria-label="Numero de calle" class="form-control">
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">Apellido Paterno</span>
+                        <input type="text" class="form-control" placeholder="Primer Apellido..." aria-label="Apellido Paterno">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">Colonia</span>
+                        <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">Apellido Materno</span>
+                        <input type="text" class="form-control" placeholder="Segundo Apellido..." aria-label="Apellido Materno">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">C.P</span>
+                        <input type="text" class="form-control" placeholder="#C.P" aria-label="C.P">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">RFC</span>
+                        <input type="text" class="form-control" placeholder="Registro federal de contribuyente..." aria-label="RFC">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">Numero Telefónico</span>
+                        <input type="text" class="form-control" placeholder="#Tel" aria-label="Numero Telefónico">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-lg mb-4">
+                        <span class="input-group-text">Correo electrónico</span>
+                        <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico">
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-dark">Guardar</button>
+            </div>
+        </div>
+    </body>
+</html>
