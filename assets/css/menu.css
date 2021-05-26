@@ -11,8 +11,13 @@
 
 #icomenu{
 	height:auto;
-	width: 15%;
+	width: 5%;
 	margin: 10px;
+}
+
+#icomenu:hover{
+	transition: 0.15s linear;
+    transform: scale(1.05);
 }
 
 header img{
