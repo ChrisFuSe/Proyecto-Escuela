@@ -1,0 +1,36 @@
+.grid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    margin: 5%;
+}
+
+.column{
+    padding: 1%;
+}
+
+form textarea{
+    margin-left:30%;
+    width: 30%; 
+    height: 10em;
+    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+form label{
+    width: auto;
+    margin: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    font-size: x-large;
+    font-family: 'Poppins', sans-serif;
+    text-align: right;
+}
+
+form input{
+    font-size: medium;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.5%;
+    width: 30%;
+}

@@ -1,0 +1,158 @@
+/*Cuerpo y Cabecera*/
+body{
+    background-image: url("../img/Patron-Fondo-Hotel.png");
+}
+
+#cabecera {
+    background-color: #0B2023;
+}
+
+#nombre_sistema{
+    display: inline;
+    padding-left: 30px;
+    color: white;
+    font-size: 250%;
+    font-family:'Petit Formal Script', cursive;
+}
+
+#imagen-opcion{
+    margin-top: 1%;
+    margin-left: 88%;
+    position: absolute;
+    width: 10%;
+}
+
+p{
+    font-size: xx-large;
+}
+
+/*Menu desplegable*/
+#btm-menu {
+	display: none;
+}
+
+#icomenu{
+	height:auto;
+	width: 5%;
+	margin: 10px;
+}
+
+#icomenu:hover{
+	transition: 0.15s linear;
+    transform: scale(1.05);
+}
+
+header img{
+	display: block;
+	width: 30px;	
+	height: 30px;
+	padding: 10px;
+	border-right: 1px solid #fff;
+}
+
+header img:hover{
+	cursor: pointer;
+	background: rgba(0,0,0,0.3);
+}
+
+header img img{
+	width: 30px;
+	height: 30px;
+}
+
+.menu {
+	position: absolute;
+	background: #4E94AB;
+	width: 15%;
+	margin-left: -70%;
+	transition: all 0.5s;
+}
+
+.menu ul{
+	margin: 3px;
+	margin-top: 0px;
+	list-style: none;
+	padding: 3px;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu li {
+	border-top: 1px solid #fff;
+}
+
+.menu li:hover{
+	background: rgb(0,0,0,0.3);
+}
+
+.menu li a{
+	display: inline;
+	padding: 15px 20px;
+	color: #fff;
+	text-decoration: none;
+	font-size:x-large;
+}
+
+#btm-menu:checked ~ .menu{
+	margin-left: 0%;
+	text-align: left;
+}
+
+/*Boton Inferior*/
+
+.btn-inferior{
+    display: flex;
+    justify-content: center;
+}
+
+.btn-inferior .btn-real{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    border: solid #000 1px;
+    margin-bottom:  5%;
+    padding: 1%;
+    border-radius: 28%;
+}
+
+.btn-inferior .btn-real:hover{
+    transition: 0.15s linear;
+    transform: scale(1.02);
+}
+
+.btn-inferior img{
+    width: 50px;
+    height: 50px;
+}
+
+.btn-inferior img:hover{
+    transition: 0.15s linear;
+    transform: scale(1.1);
+}
+
+/*Estilo Adicional*/
+.contenido-central{
+	display: flex;
+    justify-content: center;
+	padding: 1%;
+}
+
+#titulo{
+    font-size: 300%;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 10%;
+    letter-spacing: 3px;
+    display: inline;
+    text-align: left;   
+}
+
+#icongroup{
+    float: right;
+    margin: 5%;
+    margin-bottom: 3% ;
+    width: 25%;
+    height: 25%;
+    border-radius: 5%;
+}

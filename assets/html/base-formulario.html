@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Prestige Management System</title>
+        <!--    Icono de pestaña    -->
+        <link rel="shortcut icon" type="image/x-icon" href="../img/Prestige.ico"/>
+
+        <!--    Importacion de fuentes (Encontradas en GoogleFonts)     -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+        <!--    Importacion del css de boostrap     -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+        <!--    Importacion del css (estilos propios)   -->
+        <link rel="stylesheet" type="text/css" href="../css/estilos_base_pagina.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos_forms_2col.css">
+
+    </head>
+    <body>
+
+        <!--ICONO FLOTANTE EN AL ESQUINA SUPERIOR DERECHA-->
+        <img id="imagen-opcion" src="../img/Gestor_Maestros.png">
+
+
+        <!--    Cabecera con el logo y el nombre de nuestro sistema     -->
+        <div class="container-fluid" id="cabecera">
+            <img src="../img/Logo_Prestige.png" class="img-fluid" alt="Logo" width="140">
+            <p id="nombre_sistema">Prestige Management System</p>
+        </div>
+
+        <!--MENU DESPLEGABLE-->
+        <input type="checkbox" id="btm-menu">
+        <label for="btm-menu" id="titulo" class="h1"><img id="icomenu" src="../img/icono-menu.png" alt="Menu">Ingresar nuevo maestro</label>
+        <nav class="menu" style="z-index:1;">
+            <ul>
+            <li><a href="#">Maestros</a></li>
+            <li><a href="#">Pagos</a></li>
+            <li><a href="#">Grupos</a></li>
+            <li><a href="#">Alumnos</a></li>
+            <li><a href="#">Usuarios</a></li>
+            <li><a href="#">Calificaciones</a></li>
+            </ul>
+        </nav>
+
+        <img id="icongroup" src="../img/Iconos Gestor Grupos/Grupo.png">
+
+        <!--CONTENIDO O FORMULARIO-->
+    
+        <form class="grid">
+            <div class="column">
+                <label>Nombre:</label>
+                <input name="nombre" placeholder="Blabla nombre..."><br>
+                <label>Nombre:</label>
+                <input name="nombre" placeholder="Blabla nombre..."><br>
+                <label>Nombre:</label>
+                <input name="nombre" placeholder="Blabla nombre..."><br>
+            </div>
+            
+            <div class="column">
+                <label>Apellido:</label>
+                <input name="Apellido" placeholder="Blabla apellido..."><br>
+                
+            </div>
+        </form>
+
+        <!--Boton inferior-->
+        <div class="btn-inferior">
+            <div class="btn-real">
+                <a href="#"><img src="../img/icono-regresar.png"></a>
+                <a href="#"><img src="../img/icono-home.png"></a>
+            </div>  
+        </div>
+
+
+    </body>
+</html>
