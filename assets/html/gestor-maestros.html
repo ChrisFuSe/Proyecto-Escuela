@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Prestige Management System</title>
         <!--    Icono de pestaña    -->
         <link rel="shortcut icon" type="image/x-icon" href="../img/Prestige.ico"/>
@@ -15,49 +16,35 @@
         <!--    Importacion del css (estilos propios)   -->
         <link rel="stylesheet" type="text/css" href="../css/estilos_constantes.css">
         <link rel="stylesheet" type="text/css" href="../css/estilos_home.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos_imagen_opcion.css">
     </head>
     <body>
+        <img id="imagen-opcion" src="../img/Gestor_Maestros.png">
         <!--    Cabecera con el logo y el nombre de nuestro sistema     -->
         <div class="container-fluid" id="cabecera">
             <img src="../img/Logo_Prestige.png" class="img-fluid" alt="Logo" width="140">
             <p id="nombre_sistema">Prestige Management System</p>
         </div>
-
+        
         <!--    Contenedor con las opciones que tenemos en el gestor de maestros     -->
-        <div class="container-fluid" style="margin-top: 160px;">
+        <div class="container-fluid" style="margin-top: 120px;">
             <div class="row justify-content-center">
                 <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Agregar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Maestros</p>
+                    <a href="alta-maestro.html"><img src="../img/Iconos Gestor Maestros/Maestro-Agregar.png" class="boton-opc" alt="Responsive image" width="50%"></a>
+                    <p>Dar de alta a maestro</p>
                 </div>
                 <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Modificar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Pagos</p>
+                    <a><img src="../img/Iconos Gestor Maestros/Maestro-Modificar.png" class="boton-opc" alt="Responsive image" width="50%"></a>
+                    <p>Editar información</p>
                 </div>
                 <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Consultar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Alumnos</p>
-                </div>
-                <div class="col">
-                    <img src="../img/Iconos Gestor Maestros/Maestro-Eliminar.png" alt="Responsive image" width="280" height="280">
-                    <p>Gestor de Alumnos</p>
+                    <a><img src="../img/Iconos Gestor Maestros/Maestro-Consultar.png" class="boton-opc" alt="Responsive image" width="50%"></a>
+                    <p>Consultar y eliminar maestros</p>
                 </div>
             </div>
         </div>
 
-        <!--    Navbar que utilizaremos para navegar entre las opciones más rápidamente-->
-        <div class="pos-f-t" style="margin-top: 14.1%;">
-            <div class="collapse" id="navbar">
-              <div class="bg-dark p-4">
-                <h4 class="text-white">Collapsed content</h4>
-                <span class="text-muted">Toggleable via the navbar brand.</span>
-              </div>
-            </div>
-            <nav class="navbar navbar-dark bg-dark">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-            </nav>
-          </div>
+        <!--   Importaciones Javascript     -->
+        <script src="../js/animaciones-boton.js"></script>
     </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Prestige Management System</title>
         <!--    Icono de pestaña    -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/Prestige.ico"/>
@@ -42,6 +43,8 @@
             </form>
         </div>
 
-        <!--Reconocimiento a los autores de los iconos en oculto--><div hidden>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+        <!--Reconocimiento a los autores de los iconos en oculto-->
+        <div hidden>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+        <div hidden>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </body>
 </html>
