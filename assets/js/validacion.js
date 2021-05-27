@@ -3,7 +3,7 @@ function validar(){
     let validacion = true;
     let expReg= /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
 
-    for (let indice in cajas_texto){
+    for (let indice=0; indice<cajas_texto.length; indice++){
         if(cajas_texto[indice].ariaLabel != "Busqueda"){
             if(cajas_texto[indice].value == ""){
                 validacion = false;
@@ -28,5 +28,8 @@ function validar(){
                 }
             }
         }
+    }
+    if(validacion == false){
+        alert("Datos inválidos");
     }
 }
