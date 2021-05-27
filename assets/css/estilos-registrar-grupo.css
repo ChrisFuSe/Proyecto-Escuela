@@ -1,92 +1,10 @@
-#titulo{
-    font-size: 300%;
-    font-family: 'Poppins', sans-serif;
-    margin-top: 10%;
-    letter-spacing: 3px;
-    display: inline;
-    text-align: left;   
-}
-
-#icongroup{
-    float: right;
+.contenido{
     margin: 5%;
-    margin-bottom: 3% ;
-    width: 25%;
-    height: 25%;
-    border-radius: 5%;
+    margin-bottom: 0%;
 }
 
-form label{
-    width: 20%;
-    margin: 1.5%;
-    margin-bottom: 1%;
-    margin-left: 8%;
-    font-size: x-large;
-    font-family: 'Poppins', sans-serif;
-    text-align: right;
+#btn-guardar{
+    padding: 10% 35%;
 }
 
-form input{
-    font-size: medium;
-    font-family: 'Poppins', sans-serif;
-    padding: 0.5%;
-    width: 20%;
-}
-
-form textarea{
-    margin-left:30%;
-    width: 30%; 
-    height: 10em;
-    font-size: medium;
-    font-family: 'Poppins', sans-serif;
-
-}
-
-form button{
-    background-color: rgb(20, 20, 15);
-    color: white;
-    padding: 0.5% 3%;
-    margin-right: 10%;
-    float: right;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
-}
-
-form button:hover{
-    transition: 0.15s linear;
-    transform: scale(1.02);
-    background-color: black;
-}
-
-.btn-inferior{
-    display: flex;
-    justify-content: center;
-}
-
-.btn-inferior .btn-real{
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5%;
-    border: solid #000 1px;
-    margin-bottom:  5%;
-    padding: 1%;
-    border-radius: 28%;
-}
-
-.btn-inferior .btn-real:hover{
-    transition: 0.15s linear;
-    transform: scale(1.02);
-}
-
-.btn-inferior img{
-    width: 50px;
-    height: 50px;
-}
-
-.btn-inferior img:hover{
-    transition: 0.15s linear;
-    transform: scale(1.1);
-}
 
