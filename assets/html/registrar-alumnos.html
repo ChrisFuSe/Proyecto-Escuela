@@ -23,7 +23,6 @@
         <link rel="stylesheet" type="text/css" href="../css/estilos_constantes.css">
         <link rel="stylesheet" type="text/css" href="../css/estilos_home.css">
         <link rel="stylesheet" type="text/css" href="../css/estilos_registrar_alumnos.css">
-        <link rel="stylesheet" type="text/css" href="../css/estilos_base_pagina.css">
 
         <!-- Slider -->
         <link rel="stylesheet" type="text/css" href="../css/menu.css">
@@ -40,8 +39,8 @@
 
         <!--    Navbar que utilizaremos para navegar entre las opciones más rápidamente-->
         <input type="checkbox" id="btm-menu">
-        <label for="btm-menu"><img id="icomenu" src="../img/menu.png" alt="Menu">Ingresar nuevo alumno</label>
-        <nav class="menu">
+        <label for="btm-menu" id="titulo" class="h1"><img id="icomenu" src="../img/icono-menu.png" alt="Menu">Ingresar nuevo alumno</label>
+        <nav class="menu" style="z-index:1;">
             <ul>
                 <li><a href="../html/gestor-maestros.html">Maestros</a></li>
                 <li><a href="../html/gestor-pago.html">Pagos</a></li>
@@ -133,11 +132,15 @@
           </div>
           <div class="row">
             <div class="col">
-              <div class="input-group input-group-lg mb-4">
-                  <span class="input-group-text">Oyente clase</span>
-                  <input type="text" class="form-control" aria-label="Oyente clase">
+                <div class="input-group input-group-lg mb-4">
+                    <label class="input-group-text" for="inputGroupSelect01">Oyente clase</label>
+                    <select class="form-select" id="inputGroupSelect01">
+                      <option selected>Seleccione...</option>
+                      <option value="1">Si</option>
+                      <option value="2">No</option>
+                    </select>
+                  </div>
               </div>
-          </div>
           </div>
 
           <div class="col" style="margin-top: 3%;">
