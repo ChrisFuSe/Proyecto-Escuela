@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Prestige Management System</title>
+        <!--    Icono de pestaña    -->
+        <link rel="shortcut icon" type="image/x-icon" href="../img/Prestige.ico"/>
+
+        <!--    Importacion de fuentes (Encontradas en GoogleFonts)     -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+        <!--    Importacion del css de boostrap     -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+        <!--    Importacion del css (estilos propios)   -->
+        <link rel="stylesheet" type="text/css" href="../css/estilos_constantes.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos_home.css">
+        <link rel="stylesheet" type="text/css" href="../css/menu.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos_imagen_opcion.css">
+    </head>
+    <body>
+        <img id="imagen-opcion" src="../img/Gestor_Maestros.png">
+        <!--    Cabecera con el logo y el nombre de nuestro sistema     -->
+        <div class="container-fluid" id="cabecera">
+            <img src="../img/Logo_Prestige.png" class="img-fluid" alt="Logo" width="140">
+            <p id="nombre_sistema">Prestige Management System</p>
+        </div>
+
+        <input type="checkbox" id="btm-menu">
+        <label for="btm-menu" id="titulo" class="h1"><img id="icomenu" src="../img/icono-menu.png" alt="Menu">Consultar Maestro</label>
+        <nav class="menu" style="z-index:1;">
+            <ul>
+                <li><a>Maestros</a></li>
+                <li><a href="gestor-pago.html">Pagos</a></li>
+                <li><a href="gestor-grupos.html">Grupos</a></li>
+                <li><a href="gestor-alumnos.html">Alumnos</a></li>
+                <li><a href="gestor-usuarios.html">Usuarios</a></li>
+                <li><a href="gestor-calificaciones-asistencia.html">Calificaciones</a></li>
+            </ul>
+        </nav>
+
+        <!--    Buscador de los profesores  -->
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group input-group-md mb-4" style="margin-left: 26%;">
+                    <span class="input-group-text">Búsqueda por ID:</span>
+                    <input type="text" class="form-control" placeholder="Id maestro..." aria-label="Busqueda">
+                    <img class="botones-navegacion" src="../img/lupa.png" width="10%" style="margin-left: 2%;">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group input-group-md mb-4" style="margin-left: 30%;">
+                    <span class="input-group-text" style="margin-left: 8%;">Búsqueda por Nombre:</span>
+                    <input type="text" list="opciones-maestro" class="form-control" placeholder="Nombre completo del maestro..." aria-label="Busqueda">
+                    <img class="botones-navegacion" src="../img/lupa.png" width="5%" style="margin-left: 2%;">
+                </div>
+            </div>
+        </div>
+
+        <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
+        <div class="container-fluid">
+            <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
+                        así conseguimos dividir en 2 columnas a los inputs del formulario               -->
+            <div class="col-2" style="margin-left: 14%; margin-top: 2%;">
+                <div class="input-group input-groups mb-4" style="margin-left: 12%;">
+                    <span class="input-group-text">ID Maestro:</span>
+                    <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
+                </div>
+            </div>
+            <div class="row" style="margin-left: 10%;">
+                <div class="col-9" style="margin-left: 5.8%;">
+                    <div class="input-group input-group mb-4">
+                        <span class="input-group-text">Nombre Completo:</span>
+                        <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
+                    </div>
+                </div>
+                <div class="col-9" style="margin-left: 2.2%;">
+                    <div class="input-group input-group mb-4" style="margin-left: 5%;">
+                        <span class="input-group-text">Domicilio</span>
+                        <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
+                    </div>  
+                </div>
+                <div class="col-7" style="margin-left: 6%;">
+                    <div class="input-group input-group mb-4">
+                        <span class="input-group-text">Correo:</span>
+                        <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example" >
+                    </div> 
+                </div>
+                <div class="col-6" style="margin-left: 6%;">
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group input-group mb-4">
+                                <span class="input-group-text">RFC:</span>
+                                <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group input-group mb-4">
+                                <span class="input-group-text" >Teléfono:</span>
+                                <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+            <div class="col" style="margin-top: 1%;">
+                <div class="btn-real" style="display: inline; padding-right: 5%;">
+                    <img width="5%" src="../img/icono-regresar.png" class="botones-navegacion" onclick="window.history.back();">
+                    <img width="5%" src="../img/icono-home.png" class="botones-navegacion" onclick="window.location.href = 'home-directora.html'">
+                </div>   
+            </div>
+        </div>
+
+        <!--   Importaciones Javascript     -->
+        <script src="../js/validacion.js"></script>
+        <script src="../js/animaciones-boton.js"></script>
+    </body>
+</html>
