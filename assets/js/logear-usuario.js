@@ -14,12 +14,15 @@ function log_in(){
                         acceso = true;
                         switch(parseInt(usuarios[indice][2])){
                             case 1:
+                                guardar_sesion("usuario="+usuarios[indice][0],"&tipo="+usuarios[indice][2]);
                                 window.location.href = 'assets/html/home-directora.html';
                             break;
                             case 2:
+                                guardar_sesion("usuario="+usuarios[indice][0],"&tipo="+usuarios[indice][2]);
                                 window.location.href = 'assets/html/home-secretaria.html';
                             break;
                             case 3:
+                                guardar_sesion("usuario="+usuarios[indice][0],"&tipo="+usuarios[indice][2]);
                                 window.location.href = 'assets/html/home-maestro.html';
                             break;
                         }
@@ -31,4 +34,16 @@ function log_in(){
             }
         }
     };
+}
+
+function guardar_sesion(usuario, tipo){
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST","assets/php/guardar-sesion.php", true);
+    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xmlhttp.send(usuario+tipo);
+    xmlhttp.onreadystatechange = function (){
+        if(this.readyState == 4 && this.status == 200){
+            console.log(this.responseText);
+        }
+    }
 }
