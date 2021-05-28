@@ -14,3 +14,6 @@ body{
     font-family:'Petit Formal Script', cursive;
 }
 
+#floatingTextarea{
+    resize: none;
+}
