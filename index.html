@@ -29,7 +29,7 @@
     <!--    Formulario para ingresar con usuario y contraseña     -->
         <div class="container" id="log_in">
             <p id="titulo">BIENVENIDO AL SISTEMA DE GESTION DE PRESTIGE</p>
-            <form action="assets/html/home-directora.html">
+            <form>
                 <div class="mb-3">
                     <label for="usuario" class="form-label">Usuario</label>
                     <input type="textbox" class="form-control" id="usuario">
@@ -38,12 +38,15 @@
                     <label for="contraseña" class="form-label">Contraseña</label>
                     <input type="password" class="form-control" id="contraseña" aria-describedby="ayuda_contraseña">
                 </div>
-                <div id="ayuda_contraseña" class="form-text"><a href="https://www.google.com.mx/" >¿Olvidaste tu contraseña?</a></div>
-                <button type="submit" class="btn btn-primary" id="ingresar">Ingresar</button>
+                <div style="margin-left: 43%;" id="ayuda_contraseña" class="form-text"><a>¿Olvidaste tu contraseña?</a></div>
             </form>
+            <button style="margin-top:2%; margin-left: 46%;" class="btn btn-primary" id="ingresar" onclick="log_in();">Ingresar</button>
         </div>
 
-        <!--Reconocimiento a los autores de los iconos en oculto-->
+        <!--    Importaciones de Javascript     -->
+        <script src="assets/js/logear-usuario.js"></script>
+
+        <!--    Reconocimiento a los autores de los iconos en oculto    -->
         <div hidden>Iconos diseñados por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
         <div hidden>Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </body>
