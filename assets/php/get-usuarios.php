@@ -5,6 +5,7 @@
     if(isset($data)){
         $usuarios = $data->fetch_all();
         echo $usuariosjson = json_encode($usuarios);
+        mysqli_close($link);
     }else{
         echo "Error al obtener usuarios";
     }
