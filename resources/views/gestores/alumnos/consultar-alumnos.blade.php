@@ -13,7 +13,7 @@
 {{ asset('img/Gestor_Alumnos.png') }}
 @endsection
 
-@section('operacion', 'Consultar y eliminar alumno')
+@section('operacion', 'Consultar Alumno')
 
 @section('cuerpo')
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo aluno  -->

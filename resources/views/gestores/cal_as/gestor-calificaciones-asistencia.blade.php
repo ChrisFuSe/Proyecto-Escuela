@@ -13,7 +13,7 @@
             <p>Gestionar calificaciones</p>
         </div>
         <div class="col">
-            <a href="../gestores/alumnos/consultar"><img src="../img/Iconos Gestor Calificaciones Asistencias/Consultar_Estudiante.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <a href="alumnos/consultar"><img src="../img/Iconos Gestor Calificaciones Asistencias/Consultar_Estudiante.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
             <p>Consultar información de alumnos</p>
         </div>
         <div class="col">
