@@ -9,4 +9,12 @@ class Tipo_Usuario extends Model
 {
     use HasFactory;
     protected $table = "tipos";
+
+    protected $primaryKey = 'tipo';
+
+    public $timestamps = false;
+
+    protected $fillable = [
+        'descripcion'
+    ];
 }

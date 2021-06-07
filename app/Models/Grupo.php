@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Grupo extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'id_grupo';
+
+    public $timestamps = false;
+
+    protected $fillable = [
+        'nombre',
+        'descripcion',
+        'id_nivel',
+        'id_horario',
+        'id_profesor'
+    ];
 }
