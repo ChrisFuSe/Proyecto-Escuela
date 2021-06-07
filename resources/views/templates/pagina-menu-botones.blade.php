@@ -63,7 +63,7 @@
                         break;
                     case '3':
                     ?>
-                    <li><a href="..\gestores\cal-as">Calificaciones-asistencia</a></li>
+                    <li><a href="\gestores\cal-as">Calificaciones-asistencia</a></li>
                     <?php
                         break;
                 }
