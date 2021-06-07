@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     public function __invoke()
     {
-        return view('login');
+        if(Auth::guest()){
+            return view('login');
+        }else{
+            return redirect('home');
+        }
+        
     }
 
     public function dirigirHome()
