@@ -25,6 +25,7 @@
     <div class="container-fluid" id="cabecera">
         <img src="{{ asset('img\Logo_Prestige.png') }}" class="img-fluid" alt="Logo" width="140">
         <p id="nombre_sistema">Prestige Management System</p>
+        @yield('logout')
     </div>
 
     @yield('cuerpo')

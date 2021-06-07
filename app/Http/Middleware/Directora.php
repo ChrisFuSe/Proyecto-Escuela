@@ -15,7 +15,11 @@ class Directora
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {
-        return $next($request);
+    {  
+        if(auth()->user()->tipo == '1'){
+            return $next($request);
+        }else{
+            return redirect('login');
+        }
     }
 }

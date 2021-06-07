@@ -41,6 +41,7 @@
         <label for="btm-menu" id="titulo" class="h1"><img id="icomenu" src="{{ asset('img/icono-menu.png') }}" alt="Menu">@yield('operacion')</label>
         <nav class="menu" style="z-index:1;">
             <ul>
+                <a style="margin-left: 10%" href="{{route('login.salir')}}">Cerrar Sesion</a>
             </ul>
         </nav>
 
@@ -50,7 +51,7 @@
         <div class="col" style="margin-top: 3%;">
             <div class="btn-real" style="display: inline; padding-right: 5%;">
                 <img width="5%" src="{{ asset('img/icono-regresar.png') }}" class="botones-navegacion" onclick="window.history.back();">
-                <img width="5%" src="{{ asset('img/icono-home.png') }}" class="botones-navegacion">
+                <img width="5%" src="{{ asset('img/icono-home.png') }}" class="botones-navegacion" onclick="window.location.href = '{{route('home')}}'">
             </div> 
         </div>
         

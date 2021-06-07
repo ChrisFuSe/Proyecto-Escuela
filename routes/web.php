@@ -3,6 +3,7 @@
 use App\Http\Controllers\Gestores;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Operaciones;
 
 /*
@@ -16,13 +17,15 @@ use App\Http\Controllers\Operaciones;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('login');
 
-Route::get('login', HomeController::class);
+Route::post('login', [LoginController::class, 'authenticate'])->name('login.autenticar');
 
-Route::get('home/{tipo}', [HomeController::class, 'cargarHome']);
+Route::get('login', [LoginController::class, 'logout'])->name('login.salir');
 
-Route::get('gestores/{gestor}', [HomeController::class, 'cargarGestor']);
+Route::get('home', [HomeController::class, 'dirigirHome'])->middleware('auth')->name('home');
+
+Route::get('gestores/{gestor}', [HomeController::class, 'cargarGestor'])->middleware('auth');
 
 Route::get('gestores/maestros/{operacion}', [Operaciones::class, 'opMaestro']);
 

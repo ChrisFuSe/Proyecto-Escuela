@@ -4,11 +4,15 @@
 <link rel="stylesheet" type="text/css" href="../css/estilos_home.css">
 @endsection
 
+@section('logout')
+<a style="margin-left: 90%; display: inline;" href="{{route('login.salir')}}">Cerrar Sesion</a>
+@endsection
+
 @section('cuerpo')
 <!--    Contenedor con las opciones que tenemos en el home (Gestor alumnos, Gestor Pagos, etc)      -->
 <div class="container-fluid">
     <div class="row align-items-start">
-        <p id="bienvenida">Te damos la bienvenida </p>
+        <p id="bienvenida">Te damos la bienvenida {{auth()->user()->username}}</p>
     </div>
     <div class="row row-cols-3 justify-content-center">
         <div class="col">

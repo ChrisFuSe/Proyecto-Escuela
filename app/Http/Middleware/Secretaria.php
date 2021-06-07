@@ -16,6 +16,10 @@ class Secretaria
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(auth()->user()->tipo == '2'){
+            return $next($request);
+        }else{
+            return redirect('login');
+        }
     }
 }

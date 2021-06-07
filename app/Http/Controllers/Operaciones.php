@@ -17,13 +17,15 @@ class Operaciones extends Controller
             case 'consultar-eliminar':
                 return view('gestores/maestros/consultar-eliminar-maestro');
             break;
-            case 'consultar':
-                return view('gestores/maestros/consultar-maestro');
-            break;
             default:
             abort(404);
         }
     }
+
+    public function opConsultarMaestro(){
+        return view('gestores/maestros/consultar-maestro');
+    }
+
     public function opAlumno($operacion){
         switch($operacion){
             case 'alta': 

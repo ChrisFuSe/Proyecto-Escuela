@@ -16,6 +16,10 @@ class Maestra
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if(auth()->user()->tipo == '3'){
+            return $next($request);
+        }else{
+            return redirect('login');
+        }
     }
 }
