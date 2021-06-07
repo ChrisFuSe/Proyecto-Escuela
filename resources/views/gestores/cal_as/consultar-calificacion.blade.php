@@ -1,23 +1,13 @@
 @extends('templates.pagina-menu-botones')
 
-@section('estilos')
-<style> 
-    table { border: 1px solid black; 
-            border-collapse: collapse; 
-            width: 5000x;} 
-    td { border: 1px solid black;} 
-</style> 
-@endsection
-
-@section('operacion', 'Registrar Calificación')
-
-
 @section('imagen-opc')
 {{ asset('img/Gestor_Calificaciones_Asistencia.png') }}
 @endsection
 
+@section('operacion', 'Consultar Calificación')
+
 @section('cuerpo')
- <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
+<!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
 <div class="container" style="margin-top: 2%;">
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->

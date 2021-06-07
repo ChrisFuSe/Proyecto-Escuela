@@ -13,12 +13,6 @@
               así conseguimos dividir en 2 columnas a los inputs del formulario               -->
   <div class="row row-cols-2">
       <div class="col">
-          <div class="input-group input-group-lg mb-4">
-              <span class="input-group-text">ID adeudo</span>
-              <input type="text" class="form-control" placeholder="Id..." aria-label="Id adeudo">
-          </div>
-      </div>
-      <div class="col">
         <div class="input-group input-group-lg mb-4">
             <label class="input-group-text" for="inputGroupSelect01">Concepto</label>
             <select class="form-select" id="inputGroupSelect01">
@@ -52,11 +46,11 @@
       </div>
     </div>
     <div class="col">
-        <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">Número de control</span>
-            <input type="text" class="form-control" aria-label="Número de control">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Número de control</span>
+                <input type="text" class="form-control" placeholder="Número de control..." aria-label="Nombre">
+            </div>
         </div>
-     </div>
   </div>
 
   <div class="col" style="margin-top: 3%;">  

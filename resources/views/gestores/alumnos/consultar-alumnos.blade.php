@@ -105,6 +105,13 @@
               <label type="text" class="form-control">
           </div>
         </div>
+        <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Estado actual</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
+ 
    </div>  
   </div>
 @endsection

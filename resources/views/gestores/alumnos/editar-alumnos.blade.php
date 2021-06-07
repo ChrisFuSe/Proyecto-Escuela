@@ -127,9 +127,17 @@
             <input type="text" placeholder="ID grupo..." class="form-control" aria-label="Id grupo">
         </div>
       </div>
-</div>
-<div class="row">
-    <div class="col">
+      <div class="col">
+        <div class="input-group input-group-lg mb-4">
+            <label class="input-group-text" for="inputGroupSelect01">Estado Actual</label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>Seleccione...</option>
+              <option value="1">Alta</option>
+              <option value="2">Baja</option>
+            </select>
+        </div>
+      </div>
+      <div class="col">
         <div class="input-group input-group-lg mb-4">
             <label class="input-group-text" for="inputGroupSelect01">Oyente clase</label>
             <select class="form-select" id="inputGroupSelect01">
@@ -137,9 +145,50 @@
               <option value="1">Si</option>
               <option value="2">No</option>
             </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">¿Desea factura?</span>
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Seleccione...</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+              </select>
           </div>
+        </div>
+      <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Nombre completo</span>
+                <input type="text" class="form-control" placeholder="Nombre..." aria-label="Nombre completo">
+            </div>
+      </div>
+      <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">RFC</span>
+                <input type="text" class="form-control" placeholder="RFC..." aria-label="RFC">
+            </div>
+      </div>
+      <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Domicilio</span>
+                <input type="text" class="form-control" placeholder="Domicilio..." aria-label="Domicilio">
+            </div>
+      </div>
+      <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Telefóno</span>
+                <input type="tel" class="form-control" placeholder="#Tel" aria-label="Numero">
+            </div>
+      </div>
+      <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Correo electrónico</span>
+                <input type="email" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico">
+            </div>
       </div>
 </div>
+
  </div>
 
   <div class="col" style="margin-top: 3%;"> 

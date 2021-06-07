@@ -104,7 +104,49 @@
               <span class="input-group-text">Id grupo</span>
               <label type="text" class="form-control">
           </div>
-        </div>
+       </div>
+       <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Estado actual</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
+       <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">¿Factura?</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
+       <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Nombre completo</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
+       <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">RFC</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
+       <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Domicilio</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
+       <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Teléfono</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
+       <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Correo electrónico</span>
+              <label type="text" class="form-control">
+          </div>
+       </div>
    </div>  
   </div>
 

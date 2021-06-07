@@ -12,6 +12,15 @@
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
     <div class="row">
+    <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Busqueda</span>
+                <input type="text" class="form-control" placeholder="Buscar maestro..." aria-label="Nombre">
+                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image" width="50%"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">ID Maestro</span>

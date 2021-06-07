@@ -4,7 +4,7 @@
 {{ asset('img/Gestor_Pagos.png') }}
 @endsection
 
-@section('operacion','Reporte de Atrasos')
+@section('operacion','Reporte de deudas')
 
 @section('cuerpo')
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
