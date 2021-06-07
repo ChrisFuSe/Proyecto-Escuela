@@ -9,4 +9,12 @@ class Nivel extends Model
 {
     use HasFactory;
     protected $table = "niveles";
+
+    protected $primaryKey = 'id_nivel';
+
+    public $timestamps = false;
+
+    protected $fillable = [
+        'descripcion'
+    ];
 }
