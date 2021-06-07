@@ -11,11 +11,66 @@
 <div class="container">
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
+    <div class="row">
+    <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Busqueda</span>
+                <input type="text" class="form-control" placeholder="Buscar maestro..." aria-label="Nombre">
+                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image" width="50%"></a>
+            </div>
+        </div>
+    </div>
     <div class="row row-cols-2">
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombres</span>
                 <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres">
+            </div>
+        </div>
+        <div class="col">
+                <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Estado</span>
+                <select type="select" class="form-control">
+                    <option>--Elije un estado--</option>
+                    <option>Aguascalientes</option>
+                    <option>Baja California</option>
+                    <option>Baja California Sur</option>
+                    <option>Campeche</option>
+                    <option>Chiapas</option>
+                    <option>Chihuahua</option>
+                    <option>Ciudad de México</option>
+                    <option>Coahuila</option>
+                    <option>Colima</option>
+                    <option>Durango</option>
+                    <option>Estado de México</option>
+                    <option>Guanajuato</option>
+                    <option>Guerrero</option>
+                    <option>Hidalgo</option>
+                    <option>Jalisco</option>
+                    <option>Michoacán</option>
+                    <option>Morelos</option>
+                    <option>Nayarit</option>
+                    <option>Nuevo León</option>
+                    <option>Oaxaca</option>
+                    <option>Puebla</option>
+                    <option>Querétaro</option>
+                    <option>Quintana Roo</option>
+                    <option>San Luis Potosí</option>
+                    <option>Sinaloa</option>
+                    <option>Sonora</option>
+                    <option>Tabasco</option>
+                    <option>Tamaulipas</option>
+                    <option>Tlaxcala</option>
+                    <option>Veracruz</option>
+                    <option>Yucatán</option>
+                    <option>Zacatecas</option>
+                </select>
+              </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Ciudad</span>
+                <input type="text" class="form-control" placeholder="Ciudad..." aria-label="Ciudad">
             </div>
         </div>
         <div class="col">

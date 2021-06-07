@@ -4,7 +4,7 @@
 "{{ asset('img/Gestor_Usuarios.png') }}"
 @endsection
 
-@section('operacion', 'Editar Usuario')
+@section('operacion', 'Bitácora')
 
 @section('cuerpo')
 <!--    Tabla -->
@@ -72,7 +72,5 @@
 </div>
 
 
-<div class="col" style="margin-top: 3%;">  
-  <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">GUARDAR</button>
-</div>
+
 @endsection

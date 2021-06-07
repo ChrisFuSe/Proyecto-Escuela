@@ -56,11 +56,16 @@
             </div>
         </div>
         <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Tipo de usuario</span>
-                <input type="text" class="form-control" placeholder="Tipo de usuario..." aria-label="Tipo de usuario">
-            </div>
+        <div class="input-group input-group-lg mb-4">
+            <label class="input-group-text" for="inputGroupSelect01">Tipo de usuario</label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>Seleccione...</option>
+              <option value="1">Directora</option>
+              <option value="2">Secretaria</option>
+              <option value="3">Maestro</option>
+            </select>
         </div>
+      </div>
     </div>
 
     <div class="col" style="margin-top: 3%;">

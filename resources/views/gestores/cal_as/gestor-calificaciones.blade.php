@@ -16,6 +16,10 @@
             <a href="calificaciones/modificar"><img src="{{ asset('img/Iconos Gestor Calificaciones Asistencias/Modificar calificacion.png') }}" class="botones-navegacion" alt="Responsive image" width="50%"></a>
             <p>Modificar calificación</p>
         </div>
+        <div class="col">
+            <a href="calificaciones/modificar"><img src="{{ asset('img/Iconos Gestor Calificaciones Asistencias/consultar_calificaciones.png') }}" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <p>Consultar calificación</p>
+        </div>
     </div>
 </div>
 @endsection
