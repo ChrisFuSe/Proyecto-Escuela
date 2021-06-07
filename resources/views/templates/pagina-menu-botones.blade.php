@@ -41,7 +41,34 @@
         <label for="btm-menu" id="titulo" class="h1"><img id="icomenu" src="{{ asset('img/icono-menu.png') }}" alt="Menu">@yield('operacion')</label>
         <nav class="menu" style="z-index:1;">
             <ul>
-                <a style="margin-left: 10%" href="{{route('login.salir')}}">Cerrar Sesion</a>
+                <?php
+                switch(auth()->user()->tipo){
+                    case '1':
+                    ?>
+                    <li><a href="\gestores\maestros">Maestros</a></li>
+                    <li><a href="\gestores\pagos">Pagos</a></li>
+                    <li><a href="\gestores\grupos">Grupos</a></li>
+                    <li><a href="\gestores\alumnos">Alumnos</a></li>
+                    <li><a href="\gestores\usuarios">Usuarios</a></li>
+                    <li><a href="\gestores\cal-as">Calificaciones-asistencia</a></li>
+                    <?php
+                        break;
+                    case '2':
+                    ?>
+                    <li><a href="\gestores\maestros">Maestros</a></li>
+                    <li><a href="\gestores\pagos">Pagos</a></li>
+                    <li><a href="\gestores\alumnos">Alumnos</a></li>
+                    <li><a href="\gestores\cal-as">Calificaciones-asistencia</a></li>
+                    <?php
+                        break;
+                    case '3':
+                    ?>
+                    <li><a href="..\gestores\cal-as">Calificaciones-asistencia</a></li>
+                    <?php
+                        break;
+                }
+                ?>
+                <li><a style="margin-left: 10%" href="{{route('login.salir')}}">Cerrar Sesion</a></li>
             </ul>
         </nav>
 

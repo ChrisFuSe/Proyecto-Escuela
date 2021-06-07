@@ -50,3 +50,5 @@ Route::get('gestores/cal_as/calificaciones/{operacion}', [Operaciones::class, 'o
 Route::get('gestores/cal_as/asistencia/{operacion}', [Operaciones::class, 'opAsistencia'])->middleware('auth');
 
 Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios'])->middleware('auth');
+
+Route::post('registrar', [registrar::class, 'registrar'])->middleware('auth')->name('registrar.profesor');
