@@ -71,6 +71,9 @@ class Operaciones extends Controller
             case 'modificar':
                 return view('gestores/cal_as/modificar-calificacion');
             break;
+            case 'consultar':
+                return view('gestores/cal_as/consultar-calificacion');
+            break;
             default:
             abort(404);
         }
@@ -82,6 +85,9 @@ class Operaciones extends Controller
             break;
             case 'modificar':
                 return view('gestores/cal_as/modificar-asistencia');
+            break;
+            case 'consultar':
+                return view('gestores/cal_as/consultar-asistencia');
             break;
             default:
             abort(404);

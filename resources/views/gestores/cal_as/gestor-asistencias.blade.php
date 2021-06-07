@@ -17,7 +17,7 @@
             <p>Modificar Asistencias</p>
         </div>
         <div class="col">
-            <a href="asistencia/modificar"><img src="{{ asset('img/Iconos Gestor Calificaciones Asistencias/consultar_asistencias.png') }}" class="botones-navegacion" alt="Responsive image" width="40%"></a>
+            <a href="asistencia/consultar"><img src="{{ asset('img/Iconos Gestor Calificaciones Asistencias/consultar_asistencias.png') }}" class="botones-navegacion" alt="Responsive image" width="40%"></a>
             <p>Consultar Asistencias</p>
         </div>
     </div>
