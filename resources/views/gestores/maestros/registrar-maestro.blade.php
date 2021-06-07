@@ -116,7 +116,11 @@
     </div>
 
     <div class="col" style="margin-top: 3%;"> 
-        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">GUARDAR</button>
+        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="enviar();">GUARDAR</button>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('js/enviar-formulario.js')}}"></script>
 @endsection

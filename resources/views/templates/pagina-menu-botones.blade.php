@@ -84,7 +84,6 @@
         
         <!--    Scripts      -->
         <script src="{{ asset('js/animaciones-boton.js') }}"></script>
-        <script src="{{ asset('js/validacion.js')}}"></script>
         @yield('scripts')
 
         <!--    Reconocimiento a los autores de los iconos en oculto    -->
