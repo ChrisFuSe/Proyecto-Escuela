@@ -27,24 +27,26 @@ Route::get('home', [HomeController::class, 'dirigirHome'])->middleware('auth')->
 
 Route::get('gestores/{gestor}', [HomeController::class, 'cargarGestor'])->middleware('auth');
 
-Route::get('gestores/maestros/{operacion}', [Operaciones::class, 'opMaestro']);
+Route::get('gestores/maestros/consultar', [Operaciones::class, 'opConsultarMaestro'])->middleware('auth')->name('maestro.consultar');
 
-Route::get('gestores/pagos/{gestor}', [Gestores::class, 'gesPago']);
+Route::get('gestores/maestros/{operacion}', [Operaciones::class, 'opMaestro'])->middleware('auth');
 
-Route::get('gestores/pagos/transaccion/{operacion}', [Operaciones::class, 'opTransaccion']);
+Route::get('gestores/pagos/{gestor}', [Gestores::class, 'gesPago'])->middleware('auth');
 
-Route::get('gestores/pagos/gestion-pagos/{operacion}', [Operaciones::class, 'opGestion_Pago']);
+Route::get('gestores/pagos/transaccion/{operacion}', [Operaciones::class, 'opTransaccion'])->middleware('auth');
 
-Route::get('gestores/pagos/reportes/{operacion}', [Operaciones::class, 'opReportes']);
+Route::get('gestores/pagos/gestion-pagos/{operacion}', [Operaciones::class, 'opGestion_Pago'])->middleware('auth');
 
-Route::get('gestores/alumnos/{operacion}', [Operaciones::class, 'opAlumno']);
+Route::get('gestores/pagos/reportes/{operacion}', [Operaciones::class, 'opReportes'])->middleware('auth');
 
-Route::get('gestores/grupos/{operacion}', [Operaciones::class, 'opGrupo']);
+Route::get('gestores/alumnos/{operacion}', [Operaciones::class, 'opAlumno'])->middleware('auth');
 
-Route::get('gestores/cal_as/{gestor}', [Gestores::class, 'gesCal_As']);
+Route::get('gestores/grupos/{operacion}', [Operaciones::class, 'opGrupo'])->middleware('auth');
 
-Route::get('gestores/cal_as/calificaciones/{operacion}', [Operaciones::class, 'opCalificacion']);
+Route::get('gestores/cal_as/{gestor}', [Gestores::class, 'gesCal_As'])->middleware('auth');
 
-Route::get('gestores/cal_as/asistencia/{operacion}', [Operaciones::class, 'opAsistencia']);
+Route::get('gestores/cal_as/calificaciones/{operacion}', [Operaciones::class, 'opCalificacion'])->middleware('auth');
 
-Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios']);
+Route::get('gestores/cal_as/asistencia/{operacion}', [Operaciones::class, 'opAsistencia'])->middleware('auth');
+
+Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios'])->middleware('auth');
