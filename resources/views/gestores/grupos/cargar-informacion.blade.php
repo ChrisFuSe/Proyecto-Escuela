@@ -36,14 +36,45 @@
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Horario:</span>
-                <select type="select" class="form-control">
-                    <option>--Elije un Horario--</option>
-                    <option>Jueves 10:00 - 12:00</option>
-                    <option>Viernes 14:00 - 16:00</option>
-                    <option>Sabado 14:00 - 16:00</option>
-                </select>
+                <span class="input-group-text">Hora de inicio:</span>
+                <input type="time" class="form-control" aria-label="Horario Inicio">
             </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Hora de cierre:</span>
+                <input type="time" class="form-control" aria-label="Horario Cierre">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Día de inicio:</span>
+                <select type="select" class="form-control">
+                    <option>--Seleccione un día--</option>
+                    <option>Lunes</option>
+                    <option>Martes</option>
+                    <option>Miercoles</option>
+                    <option>Jueves</option>
+                    <option>Viernes</option>
+                    <option>Sabado</option>
+                    <option>Domingo</option>
+                </select>
+              </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Día final:</span>
+                <select type="select" class="form-control">
+                    <option>--Seleccione un día--</option>
+                    <option>Lunes</option>
+                    <option>Martes</option>
+                    <option>Miercoles</option>
+                    <option>Jueves</option>
+                    <option>Viernes</option>
+                    <option>Sabado</option>
+                    <option>Domingo</option>
+                </select>
+              </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
