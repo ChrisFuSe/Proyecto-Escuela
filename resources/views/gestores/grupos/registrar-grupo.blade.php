@@ -16,7 +16,12 @@
             </div>
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nivel:</span>
-                <input type="text" placeholder="Nivel" aria-label="Calle" class="form-control">
+                <select type="select" class="form-control" name="nivel">
+                    <option value="NULL" disabled>Nivel</option>
+                    @foreach ($niveles as $nivel)
+                        <option value="{{$nivel->id_nivel}}">{{$nivel->descripcion}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Descripcion:</span>
