@@ -5,7 +5,7 @@
 @endsection
 
 @section('logout')
-<a style="margin-left: 90%; display: inline;" href="{{route('login.salir')}}">Cerrar Sesion</a>
+<a style="margin-left: 90%; display: inline;" href="{{route('login.salir')}}"><img class="botones-navegacion" src="{{asset(img/cerrar-session)}}"></a>
 @endsection
 
 @section('cuerpo')
