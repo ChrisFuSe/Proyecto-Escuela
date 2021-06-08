@@ -50,11 +50,45 @@
         </div>
       </div>
       <div class="col">
-        <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">Calle</span>
-            <input type="text" placeholder="Calle..." aria-label="Calle" class="form-control">
-          </div>
-    </div>
+                <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Estado</span>
+                <select type="select" class="form-control">
+                    <option>--Elije un estado--</option>
+                    <option>Aguascalientes</option>
+                    <option>Baja California</option>
+                    <option>Baja California Sur</option>
+                    <option>Campeche</option>
+                    <option>Chiapas</option>
+                    <option>Chihuahua</option>
+                    <option>Ciudad de México</option>
+                    <option>Coahuila</option>
+                    <option>Colima</option>
+                    <option>Durango</option>
+                    <option>Estado de México</option>
+                    <option>Guanajuato</option>
+                    <option>Guerrero</option>
+                    <option>Hidalgo</option>
+                    <option>Jalisco</option>
+                    <option>Michoacán</option>
+                    <option>Morelos</option>
+                    <option>Nayarit</option>
+                    <option>Nuevo León</option>
+                    <option>Oaxaca</option>
+                    <option>Puebla</option>
+                    <option>Querétaro</option>
+                    <option>Quintana Roo</option>
+                    <option>San Luis Potosí</option>
+                    <option>Sinaloa</option>
+                    <option>Sonora</option>
+                    <option>Tabasco</option>
+                    <option>Tamaulipas</option>
+                    <option>Tlaxcala</option>
+                    <option>Veracruz</option>
+                    <option>Yucatán</option>
+                    <option>Zacatecas</option>
+                </select>
+              </div>
+        </div>
       <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Nombres</span>
@@ -68,11 +102,11 @@
         </div>
       </div>
       <div class="col">
-        <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">Número</span>
-            <input type="text" placeholder="#Número..." aria-label="Número" class="form-control">
-          </div>
-      </div>
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text">Ciudad</span>
+                <input type="text" class="form-control" placeholder="Ciudad..." aria-label="Ciudad">
+            </div>
+        </div>
       <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Apellido Paterno</span>
@@ -87,9 +121,9 @@
     </div>
     <div class="col">
         <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">Colonia</span>
-            <input type="text" placeholder="Colonia..." class="form-control"  aria-label="Colonia">
-        </div>
+            <span class="input-group-text">Calle</span>
+            <input type="text" placeholder="Calle..." aria-label="Calle" class="form-control">
+          </div>
     </div>
       <div class="col">
         <div class="input-group input-group-lg mb-4">
@@ -105,9 +139,9 @@
       </div>
       <div class="col">
         <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">C.P</span>
-            <input type="text" placeholder="#C.P...." class="form-control" aria-label="Numero">
-        </div>
+            <span class="input-group-text">Número</span>
+            <input type="text" placeholder="#Número..." aria-label="Número" class="form-control">
+          </div>
       </div>
       <div class="col">
         <div class="input-group input-group-lg mb-4">
@@ -123,11 +157,11 @@
       </div>
       <div class="col">
         <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">Id grupo</span>
-            <input type="text" placeholder="ID grupo..." class="form-control" aria-label="Id grupo">
+            <span class="input-group-text">Colonia</span>
+            <input type="text" placeholder="Colonia..." class="form-control"  aria-label="Colonia">
         </div>
-      </div>
-      <div class="col">
+    </div>
+    <div class="col">
         <div class="input-group input-group-lg mb-4">
             <label class="input-group-text" for="inputGroupSelect01">Estado Actual</label>
             <select class="form-select" id="inputGroupSelect01">
@@ -135,6 +169,18 @@
               <option value="1">Alta</option>
               <option value="2">Baja</option>
             </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group input-group-lg mb-4">
+            <span class="input-group-text">Id grupo</span>
+            <input type="text" placeholder="ID grupo..." class="form-control" aria-label="Id grupo">
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group input-group-lg mb-4">
+            <span class="input-group-text">C.P</span>
+            <input type="text" placeholder="#C.P...." class="form-control" aria-label="Numero">
         </div>
       </div>
       <div class="col">
