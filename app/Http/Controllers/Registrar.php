@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Profesor;
+use App\Models\Grupo;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -44,4 +45,16 @@ class Registrar extends Controller
 
         return redirect('gestores\usuarios\alta');
     }
+
+    public function registrarGrupo(Request $request){
+        $grupo = new Grupo();
+
+        $grupo->nombre = $request->nombre;
+        $grupo->id_nivel = $request->id_nivel;
+        $grupo->descripcion = $request->descripcion;
+
+        $grupo->save();
+        return redirect('gestores\grupos\crear');
+    }
+
 }

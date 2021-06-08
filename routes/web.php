@@ -55,3 +55,5 @@ Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios'])-
 Route::post('registrar', [Registrar::class, 'registrarProfesor'])->middleware('auth')->name('registrar.profesor');
 
 Route::post('registrar', [Registrar::class, 'registrarUsuario'])->middleware('auth')->name('registrar.usuarios');
+
+Route::post('registrar', [Registrar::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
