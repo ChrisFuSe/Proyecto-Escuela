@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Operaciones;
+use App\Http\Controllers\Registrar;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,4 +52,4 @@ Route::get('gestores/cal_as/asistencia/{operacion}', [Operaciones::class, 'opAsi
 
 Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios'])->middleware('auth');
 
-Route::post('registrar', [registrar::class, 'registrar'])->middleware('auth')->name('registrar.profesor');
+Route::post('registrar', [Registrar::class, 'registrarProfesor'])->middleware('auth')->name('registrar.profesor');
