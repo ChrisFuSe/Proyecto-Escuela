@@ -27,7 +27,7 @@
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">ID Grupo:</span>
                 <label type="text" class="form-control">
-              </div>
+            </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
@@ -53,50 +53,50 @@
                 <label type="text" class="form-control">
             </div>
         </div>
-        
+
     </div>
     <div class="col" id="save-alumno">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Descripcion:</span>
-                <textarea class="form-control"  id="floatingTextarea"></textarea>
-            </div>
+        <div class="input-group input-group-lg mb-4">
+            <span class="input-group-text">Descripcion:</span>
+            <textarea class="form-control" id="floatingTextarea"></textarea>
         </div>
+    </div>
     <div>
         <!--    Tabla -->
-<div class="container" style="margin-top: 3%;">
-    <table class="table table-striped " style="margin-top: 5%;" width="80%">
-        <thead>
-            <tr >
-            <th class="table-primary" scope="col">Número de control</th>
-            <th class="table-primary" scope="col">Alumno</th>
-            <th class="table-primary" scope="col">¿Es Oyente?</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td class="table-info" scope="row">1</td>
-            <td class="table-info"></td>
-            <td class="table-info"></td>
-            
-            </tr>
-            <tr>
-            <td class="table-light" class="table-info" scope="row">2</td>
-            <td class="table-light"></td>
-            <td class="table-light"></td>
-            </tr>
-            <tr>
-            <td class="table-info" class="table-info" scope="row">3</td>
-                <td class="table-info"></td>
-                <td class="table-info"></td>
-            </tr>
-            <tr>
-            <td class="table-light" class="table-info" scope="row">4</td>
-            <td class="table-light"></td>
-            <td class="table-light"></td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="container" style="margin-top: 3%;">
+            <table class="table table-striped " style="margin-top: 5%;" width="80%">
+                <thead>
+                    <tr>
+                        <th class="table-primary" scope="col">Número de control</th>
+                        <th class="table-primary" scope="col">Alumno</th>
+                        <th class="table-primary" scope="col">¿Es Oyente?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-info" scope="row">1</td>
+                        <td class="table-info"></td>
+                        <td class="table-info"></td>
 
-</div>
+                    </tr>
+                    <tr>
+                        <td class="table-light" class="table-info" scope="row">2</td>
+                        <td class="table-light"></td>
+                        <td class="table-light"></td>
+                    </tr>
+                    <tr>
+                        <td class="table-info" class="table-info" scope="row">3</td>
+                        <td class="table-info"></td>
+                        <td class="table-info"></td>
+                    </tr>
+                    <tr>
+                        <td class="table-light" class="table-info" scope="row">4</td>
+                        <td class="table-light"></td>
+                        <td class="table-light"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
     </div>
-@endsection
+    @endsection

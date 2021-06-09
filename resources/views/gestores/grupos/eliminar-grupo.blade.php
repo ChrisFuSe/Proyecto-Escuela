@@ -45,43 +45,43 @@
     <div class="col" style="margin-top: 3%;">
         <table class="table table-striped " style="margin-top: 5%;" width="80%">
             <thead>
-                <tr >
-                <th class="table-primary" scope="col">Número de control</th>
-                <th class="table-primary" scope="col">Alumno</th>
-                <th class="table-primary" scope="col">Eliminación</th>
+                <tr>
+                    <th class="table-primary" scope="col">Número de control</th>
+                    <th class="table-primary" scope="col">Alumno</th>
+                    <th class="table-primary" scope="col">Eliminación</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                <td class="table-info" scope="row">1</td>
-                <td class="table-info"></td>
-                <td class="table-info">
-                    <button type="button" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
-                </td>
-                
+                    <td class="table-info" scope="row">1</td>
+                    <td class="table-info"></td>
+                    <td class="table-info">
+                        <button type="button" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
+                    </td>
+
                 </tr>
                 <tr>
-                <td class="table-light" class="table-info" scope="row">2</td>
-                <td class="table-light"></td>
-                <td class="table-light">
-                    <button type="button" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
-                </td>
+                    <td class="table-light" class="table-info" scope="row">2</td>
+                    <td class="table-light"></td>
+                    <td class="table-light">
+                        <button type="button" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
+                    </td>
                 </tr>
                 <tr>
-                <td class="table-info" class="table-info" scope="row">3</td>
+                    <td class="table-info" class="table-info" scope="row">3</td>
                     <td class="table-info"></td>
                     <td class="table-info">
                         <button type="button" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
                     </td>
                 </tr>
                 <tr>
-                <td class="table-light" class="table-info" scope="row">4</td>
-                <td class="table-light"></td>
-                <td class="table-light">
-                    <button type="button" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
-                </td>
+                    <td class="table-light" class="table-info" scope="row">4</td>
+                    <td class="table-light"></td>
+                    <td class="table-light">
+                        <button type="button" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
-@endsection
+    @endsection

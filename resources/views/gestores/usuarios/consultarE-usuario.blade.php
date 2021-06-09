@@ -13,17 +13,19 @@
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre de usuario</span>
                 <input type="text" class="form-control" placeholder="Nombre usuario..." aria-label="Nombre de usuario">
-                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image" width="50%"></a>
+                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
+                        width="50%"></a>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre completo</span>
-                <input type="text" class="form-control" placeholder="Nombre completo..." aria-label="Nombre completo" >
-                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image" width="50%"></a>
-              </div>
+                <input type="text" class="form-control" placeholder="Nombre completo..." aria-label="Nombre completo">
+                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
+                        width="50%"></a>
+            </div>
         </div>
-    </div>  
+    </div>
 </div>
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
 <div class="container" style="margin-top: 1%;">
@@ -45,8 +47,8 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre(s)</span>
-                <label type="text" class="form-control" placeholder="Nombres" aria-label="Nombres" >
-              </div>
+                <label type="text" class="form-control" placeholder="Nombres" aria-label="Nombres">
+            </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
@@ -67,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div class="col" style="margin-top: 3%;">  
+    <div class="col" style="margin-top: 3%;">
         <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">GUARDAR</button>
     </div>
 </div>

@@ -25,7 +25,7 @@
         </div>
 
         <div class="col">
-            
+
         </div>
 
         <div class="col">
@@ -52,7 +52,7 @@
                 <label type="text" class="form-control">
             </div>
         </div>
-        
+
     </div>
     <div>
         <div class="col" id="save-alumno">
@@ -64,6 +64,7 @@
     </div>
 
     <div class="col">
-        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">Guardar Cambios</button>
+        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">Guardar
+            Cambios</button>
     </div>
-@endsection
+    @endsection

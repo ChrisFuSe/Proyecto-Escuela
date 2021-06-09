@@ -12,11 +12,12 @@
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
     <div class="row">
-    <div class="col">
+        <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Busqueda</span>
                 <input type="text" class="form-control" placeholder="Buscar maestro..." aria-label="Nombre">
-                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image" width="50%"></a>
+                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
+                        width="50%"></a>
             </div>
         </div>
     </div>
@@ -28,7 +29,7 @@
             </div>
         </div>
         <div class="col">
-                <div class="input-group input-group-lg mb-4">
+            <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Estado</span>
                 <select type="select" class="form-control">
                     <option>--Elije un estado--</option>
@@ -65,7 +66,7 @@
                     <option>Yucatán</option>
                     <option>Zacatecas</option>
                 </select>
-              </div>
+            </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
@@ -78,7 +79,7 @@
                 <span class="input-group-text">Calle y numero</span>
                 <input type="text" placeholder="Calle" aria-label="Calle" class="form-control">
                 <input type="text" placeholder="#Numero" aria-label="Numero" class="form-control">
-              </div>
+            </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
@@ -107,7 +108,8 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
-                <input type="text" class="form-control" placeholder="Registro federal de contribuyente..." aria-label="RFC">
+                <input type="text" class="form-control" placeholder="Registro federal de contribuyente..."
+                    aria-label="RFC">
             </div>
         </div>
         <div class="col">
@@ -124,8 +126,8 @@
         </div>
     </div>
 
-    <div class="col" style="margin-top: 3%;">    
+    <div class="col" style="margin-top: 3%;">
         <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">ACTUALIZAR</button>
     </div>
-</div> 
+</div>
 @endsection

@@ -19,7 +19,8 @@
     <div class="col-6">
         <div class="input-group input-group-md mb-4" style="margin-left: 30%;">
             <span class="input-group-text" style="margin-left: 8%;">Búsqueda por Nombre:</span>
-            <input type="text" list="opciones-maestro" class="form-control" placeholder="Nombre completo del maestro..." aria-label="Busqueda">
+            <input type="text" list="opciones-maestro" class="form-control" placeholder="Nombre completo del maestro..."
+                aria-label="Busqueda">
             <img class="botones-navegacion" src="{{ asset('img/lupa.png') }}" width="5%" style="margin-left: 2%;">
         </div>
     </div>
@@ -46,13 +47,13 @@
             <div class="input-group input-group mb-4" style="margin-left: 5%;">
                 <span class="input-group-text">Domicilio</span>
                 <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
-            </div>  
+            </div>
         </div>
         <div class="col-7" style="margin-left: 6%;">
             <div class="input-group input-group mb-4">
                 <span class="input-group-text">Correo:</span>
-                <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example" >
-            </div> 
+                <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
+            </div>
         </div>
         <div class="col-6" style="margin-left: 6%;">
             <div class="row">
@@ -64,12 +65,12 @@
                 </div>
                 <div class="col">
                     <div class="input-group input-group mb-4">
-                        <span class="input-group-text" >Teléfono:</span>
+                        <span class="input-group-text">Teléfono:</span>
                         <label class="form-control" type="text" placeholder="..." aria-label="Disabled input example">
                     </div>
                 </div>
             </div>
         </div>
-    </div>           
+    </div>
 </div>
 @endsection

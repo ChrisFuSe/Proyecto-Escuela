@@ -18,23 +18,26 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nombres</span>
-                    <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres" name="nombres">
+                    <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres"
+                        name="nombres">
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Paterno</span>
-                    <input type="text" class="form-control" placeholder="Primer Apellido..." aria-label="Apellido Paterno" name="ap_paterno">
+                    <input type="text" class="form-control" placeholder="Primer Apellido..."
+                        aria-label="Apellido Paterno" name="ap_paterno">
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Materno</span>
-                    <input type="text" class="form-control" placeholder="Segundo Apellido..." aria-label="Apellido Materno" name="ap_materno">
+                    <input type="text" class="form-control" placeholder="Segundo Apellido..."
+                        aria-label="Apellido Materno" name="ap_materno">
                 </div>
             </div>
             <div class="col">
-                    <div class="input-group input-group-lg mb-4">
+                <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Estado</span>
                     <select type="select" class="form-control" name="estado">
                         <option>--Elije un estado--</option>
@@ -89,7 +92,8 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Colonia</span>
-                    <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia" name="colonia">
+                    <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia"
+                        name="colonia">
                 </div>
             </div>
             <div class="col">
@@ -101,7 +105,8 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">RFC</span>
-                    <input type="text" class="form-control" placeholder="Registro federal de contribuyente..." aria-label="RFC" name="rfc">
+                    <input type="text" class="form-control" placeholder="Registro federal de contribuyente..."
+                        aria-label="RFC" name="rfc">
                 </div>
             </div>
             <div class="col">
@@ -113,11 +118,12 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Correo electrónico</span>
-                    <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico" name="correo">
+                    <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico"
+                        name="correo">
                 </div>
             </div>
         </div>
-        <div class="col" style="margin-top: 3%;"> 
+        <div class="col" style="margin-top: 3%;">
             <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
         </div>
     </div>
