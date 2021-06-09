@@ -58,6 +58,8 @@ Route::post('registrar/usuario', [Registrar::class, 'registrarUsuario'])->middle
 
 Route::post('registrar/grupo', [Registrar::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
 
+Route::post('registrar', [Registrar::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
+
 Route::get('prueba', function () {
     return view('gestores\grupos\cargar-informacion2');
 });

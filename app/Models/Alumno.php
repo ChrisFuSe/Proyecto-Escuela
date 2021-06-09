@@ -15,17 +15,21 @@ class Alumno extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'numero_control',
         'deuda_total',
         'curp',
         'nombres',
         'ap_paterno',
         'ap_materno',
+        'estado',
+        'ciudad',
         'calle',
         'numero',
         'colonia',
         'codigo_postal',
         'telefono',
         'correo',
+        'estado_actual',
         'oyente_clase',
         'descuento',
         'fecha_nac',
