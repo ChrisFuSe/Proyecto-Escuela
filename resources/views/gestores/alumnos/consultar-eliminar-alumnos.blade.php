@@ -9,6 +9,12 @@
   </style> 
 @endsection
 
+<script>
+function validar(){
+    alert("Datos eliminados de manera correcta");
+}
+</script>
+
 @section('imagen-opc')
 {{ asset('img/Gestor_Alumnos.png') }}
 @endsection
@@ -161,7 +167,7 @@
     <fomr action="{{route('eliminar.alumno',$alumno->numero_control)}}" method="GET" accept-charset="utf-8">
         @csrf
         <div class="col" style="margin-top: 3%;">
-            <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
+            <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" onclick=validar();>ELIMINAR</button>
         </div>
     </form>
 @endif

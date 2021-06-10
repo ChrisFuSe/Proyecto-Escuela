@@ -15,7 +15,7 @@ class Consultar extends Controller
     }
 
     public function consultarAlumno(Request $request){
-        $alumno = Alumno::find($request->id_alumno);
+        $alumno = Alumno::find($request->numero_control);
         return view('gestores/alumnos/consultar-eliminar-alumnos', compact('alumno'));
     }
 
