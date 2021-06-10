@@ -68,7 +68,7 @@ Route::post('consultar/profesor', [Consultar::class, 'consultarProfesor'])->midd
 
 Route::get('elimnar/profesor/{id}', [Eliminar::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
 
-Route::post('editar/profesor', [Modificar::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
+Route::get('editar/profesor/{id}', [Modificar::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
 
 Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
 

@@ -4,6 +4,12 @@
 "{{ asset('img/Gestor_Maestros.png') }}"
 @endsection
 
+<script>
+function validar(){
+    alert("Datos eliminados de manera correcta");
+}
+</script>
+
 @section('operacion', 'Consultar y Eliminar Maestro')
 
 @section('cuerpo')
@@ -75,7 +81,7 @@
 <form action="{{route('eliminar.profesor',$profesor->id_profesor)}}" method="GET" accept-charset="utf-8">
     @csrf
     <div class="col" style="margin-top: 1%; margin-bottom: 2%;">
-        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">ELIMINAR</button>
+        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" onclick=validar();>ELIMINAR</button>
     </div>
 </form>
 @endif
