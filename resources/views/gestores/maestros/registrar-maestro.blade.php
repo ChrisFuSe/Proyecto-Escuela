@@ -4,6 +4,12 @@
 "{{ asset('img/Gestor_Maestros.png') }}"
 @endsection
 
+<script>
+function validar(){
+    alert("Datos registrados de manera correcta");
+}
+</script>
+
 @section('operacion', 'Registrar Maestro')
 
 @section('cuerpo')
@@ -124,7 +130,7 @@
             </div>
         </div>
         <div class="col" style="margin-top: 3%;">
-            <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
+            <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" onclick=validar();>GUARDAR</button>
         </div>
     </div>
 </form>

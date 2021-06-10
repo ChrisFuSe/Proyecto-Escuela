@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profesor;
-use App\Models\Grupo;
+use App\Models\Alumno;
+use App\Models\User;
 
 class Consultar extends Controller
 {
@@ -13,8 +14,14 @@ class Consultar extends Controller
         return view('gestores/maestros/consultar-eliminar-maestro', compact('profesor'));
     }
 
-    public function consultarGrupo(Request $request){
-        //$grupo = Grupo::where('nombre', $request->grupo);
-        return $request;
+    public function consultarAlumno(Request $request){
+        $alumno = Alumno::find($request->id_alumno);
+        return view('gestores/alumnos/consultar-eliminar-alumnos', compact('alumno'));
     }
+
+    public function consultarUsuario(Request $request){
+        $usuario = User::find($request->id);
+        return view('gestores/usuarios/consultarE-usuario', compact('usuario'));
+    }
+
 }

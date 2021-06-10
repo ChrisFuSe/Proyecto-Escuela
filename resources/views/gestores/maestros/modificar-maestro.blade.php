@@ -131,10 +131,9 @@
     </div>
 </div>
 </form>
-<form action="{{route('editar.profesor',$profesor->id_profesor)}}" method="POST" accept-charset="utf-8">
-@csrf
+<form method =" post "action =" editar.php ">
 <div class="col" style="margin-top: 3%;">
-        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" >ACTUALIZAR</button>
+        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick=modificar(nombres,id_profesor);>ACTUALIZAR</button>
     </div>
 </form>
 @endif

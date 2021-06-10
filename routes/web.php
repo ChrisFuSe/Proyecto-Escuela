@@ -59,15 +59,26 @@ Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios'])-
 Route::post('registrar/profesor', [Registrar::class, 'registrarProfesor'])->middleware('auth')->name('registrar.profesor');
 
 Route::post('registrar/usuario', [Registrar::class, 'registrarUsuario'])->middleware('auth')->name('registrar.usuarios');
+Route::post('consultar/usuario', [Consultar::class, 'consultarUsuario'])->middleware('auth')->name('consultar.usuario');
+Route::get('elimnar/usuario/{id}', [Eliminar::class, 'eliminarUsuario'])->middleware('auth')->name('eliminar.usuario');
 
 Route::post('registrar/grupo', [Registrar::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
 
 Route::post('registrar/alumno', [Registrar::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
+Route::post('consultar/alumno', [Consultar::class, 'consultarAlumno'])->middleware('auth')->name('consultar.alumno');
+Route::get('elimnar/alumno/{id}', [Eliminar::class, 'eliminarAlumno'])->middleware('auth')->name('eliminar.alumno');
 
 Route::post('consultar/profesor', [Consultar::class, 'consultarProfesor'])->middleware('auth')->name('consultar.profesor');
 
 Route::get('elimnar/profesor/{id}', [Eliminar::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
 
-Route::post('editar/profesor', [Modificar::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
+Route::get('editar/profesor/{id}', [Modificar::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
 
+Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
+
+
+
+Route::get('prueba', function () {
+    return view('gestores\grupos\cargar-informacion2');
+});
 Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
