@@ -27,7 +27,7 @@ class Registrar extends Controller
         $profesor->telefono = $request->telefono;
 
         $profesor->save();
-        return redirect('gestores\maestros\alta');
+        return view('gestores\maestros\registrar-maestro');
     }
 
     public function registrarUsuario(Request $request){
@@ -43,7 +43,7 @@ class Registrar extends Controller
 
         $usuario->save();
 
-        return redirect('gestores\usuarios\alta');
+        return view('gestores\usuarios\registrar-usuario');
     }
 
     public function registrarGrupo(Request $request){
@@ -54,7 +54,7 @@ class Registrar extends Controller
         $grupo->descripcion = $request->descripcion;
 
         $grupo->save();
-        return redirect('gestores\grupos\crear');
+        return view('gestores\grupos\registrar-grupo');
     }
 
 }

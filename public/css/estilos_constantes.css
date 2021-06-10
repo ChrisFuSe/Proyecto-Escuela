@@ -18,3 +18,7 @@ body{
 #floatingTextarea{
     resize: none;
 }
+
+select{
+    border-color: grey;
+}

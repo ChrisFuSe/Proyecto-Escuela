@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Grupo;
 
 class Alumno extends Model
 {
@@ -26,6 +27,7 @@ class Alumno extends Model
         'codigo_postal',
         'telefono',
         'correo',
+        'estado_actual',
         'oyente_clase',
         'descuento',
         'fecha_nac',
@@ -37,4 +39,9 @@ class Alumno extends Model
         'ftelefono',
         'factura',
     ];
+
+    //Relacion uno a uno
+    protected function grupo(){
+        return $this->hasOne(Grupo::class, 'id_grupo', 'numero_control');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Alumno;
 
 class Grupo extends Model
 {
@@ -20,4 +21,8 @@ class Grupo extends Model
         'id_horario',
         'id_profesor'
     ];
+
+    protected function alumno(){
+        return $this->belongsTo(Alumno::class, 'numero_control', 'id_grupo');
+    }
 }

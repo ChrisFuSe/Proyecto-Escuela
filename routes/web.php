@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Operaciones;
 use App\Http\Controllers\Registrar;
+use App\Http\Livewire\CargarInformacion;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,3 @@ Route::post('registrar/profesor', [Registrar::class, 'registrarProfesor'])->midd
 Route::post('registrar/usuario', [Registrar::class, 'registrarUsuario'])->middleware('auth')->name('registrar.usuarios');
 
 Route::post('registrar/grupo', [Registrar::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
-
-Route::get('prueba', function () {
-    return view('gestores\grupos\cargar-informacion2');
-});
