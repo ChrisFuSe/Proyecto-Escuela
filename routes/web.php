@@ -74,6 +74,7 @@ Route::get('elimnar/profesor/{id}', [Eliminar::class, 'eliminarProfesor'])->midd
 
 Route::post('editar/profesor', [Modificar::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
 
+<<<<<<< HEAD
 Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
 
 
@@ -81,3 +82,6 @@ Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware(
 Route::get('prueba', function () {
     return view('gestores\grupos\cargar-informacion2');
 });
+=======
+Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
+>>>>>>> c1365fb2ad12fcf420f46d6794b4031189c54707
