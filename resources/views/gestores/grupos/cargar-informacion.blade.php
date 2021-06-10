@@ -5,6 +5,7 @@
 @endsection
 
 @section('estilos')
+<meta name="_token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{asset('css/bootstrap-select.css')}}">
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 @endsection

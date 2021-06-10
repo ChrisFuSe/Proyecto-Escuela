@@ -1,13 +1,28 @@
 var grupo = document.getElementById('grupo');
 grupo.addEventListener('change',() =>{
-    let xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","{{route('grupo.actual')}}", true);
-    xmlhttp.send();
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
+    $.ajax({
+        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+        type: 'GET',
+        dataType: 'json',
+        url: '/consultar/grupo',
+        data: {
+            '_token': $('input[name=_token]').val(),
+            'grupo': $('#grupo').val(),
+        },
+        beforeSend: function () {
+            console.log('bloqueo botones');
+        },
+        complete: function () {
+            console.log('desbloqueo botones');
+        },
+        success: function (response) {
+           console.log('ok!');
+           console.log(response);
+        },
+        error: function (jqXHR) {
+            console.log('boo!');
         }
-    }
+    });
 });
 
 
