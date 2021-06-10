@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Nivel;
+use App\Models\Profesor;
+use App\Models\Grupo;
 
 class Operaciones extends Controller
 {
@@ -46,13 +48,15 @@ class Operaciones extends Controller
         }
     }
     public function opGrupo($operacion){
-        switch($operacion){
+        switch ($operacion) {
             case 'crear':
                 $niveles = Nivel::all();
                 return view('gestores/grupos/registrar-grupo', compact('niveles'));
             break;
             case 'cargar':
-                return view('gestores/grupos/cargar-informacion');
+                $grupos = Grupo::all();
+                $profesores = Profesor::all();
+                return view('gestores/grupos/cargar-informacion', compact('grupos', 'profesores'));
             break;
             case 'consultar':
                 return view('gestores/grupos/consultar-grupo');

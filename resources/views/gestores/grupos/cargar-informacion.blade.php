@@ -59,16 +59,16 @@
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
-                    <span class="input-group-text">Días:</span>
-                    <select class="selectpicker form-control" multiple data-live-search="true">
-                        <option value="Lunes">Lunes</option>
-                        <option value="Martes">Martes</option>
-                        <option value="Miercoles">Miercoles</option>
-                        <option value="Jueves">Jueves</option>
-                        <option value="Viernes">Viernes</option>
-                        <option value="Sabado">Sabado</option>
-                        <option value="Domingo">Domingo</option>
-                    </select>
+                <span class="input-group-text">Días:</span>
+                <select class="selectpicker form-control" multiple data-live-search="true">
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miercoles">Miercoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="Sabado">Sabado</option>
+                    <option value="Domingo">Domingo</option>
+                </select>
             </div>
         </div>
         <div class="col">
@@ -95,7 +95,36 @@
             </div>
         </div>
     </div>
-    @livewire('cargar-informacion')
+    <!--    Tabla -->
+    <div class="container" style="margin-top: 3%;">
+        <table class="table table-striped " style="margin-top: 5%;" width="80%">
+            <thead>
+                <tr>
+                    <th class="table-primary" scope="col">Número de Control</th>
+                    <th class="table-primary" scope="col">Alumno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-info" scope="row">1</td>
+                    <td class="table-info"></td>
+
+                </tr>
+                <tr>
+                    <td class="table-light" class="table-info" scope="row">2</td>
+                    <td class="table-light"></td>
+                </tr>
+                <tr>
+                    <td class="table-info" class="table-info" scope="row">3</td>
+                    <td class="table-info"></td>
+                </tr>
+                <tr>
+                    <td class="table-light" class="table-info" scope="row">4</td>
+                    <td class="table-light"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <div class="col" style="margin-top: 3%;">
@@ -105,5 +134,7 @@
 @endsection
 
 @section('scripts')
-<script>$('select').selectpicker();</script>
+<script>
+    $('select').selectpicker();
+</script>
 @endsection

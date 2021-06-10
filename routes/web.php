@@ -9,6 +9,7 @@ use App\Http\Controllers\Registrar;
 use App\Http\Controllers\Consultar;
 use App\Http\Controllers\Eliminar;
 use App\Http\Controllers\Modificar;
+use App\Http\Livewire\CargarInformacion;
 
 /*
 |--------------------------------------------------------------------------
