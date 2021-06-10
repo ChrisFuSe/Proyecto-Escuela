@@ -16,11 +16,14 @@ class Alumno extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'numero_control',
         'deuda_total',
         'curp',
         'nombres',
         'ap_paterno',
         'ap_materno',
+        'estado',
+        'ciudad',
         'calle',
         'numero',
         'colonia',
@@ -39,9 +42,4 @@ class Alumno extends Model
         'ftelefono',
         'factura',
     ];
-
-    //Relacion uno a uno
-    protected function grupo(){
-        return $this->hasOne(Grupo::class, 'id_grupo', 'numero_control');
-    }
 }

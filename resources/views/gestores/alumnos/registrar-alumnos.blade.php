@@ -16,6 +16,8 @@
 @section('operacion', 'Ingresar nuevo alumno')
 
 @section('cuerpo')
+<form action="{{route('registrar.alumnos')}}" method="POST" accept-charset="utf-8">
+@csrf
  <!--    Contenedor con todos los inputs del formulario para registrar un nuevo alumno  -->
  <div class="container" style="margin-top: 2%;">
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
@@ -24,13 +26,13 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombres</span>
-                <input id="nombres" type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres">
+                <input id="nombres" type="text" class="form-control" placeholder="Nombres..." name="nombres">
             </div>
         </div>
         <div class="col">
                 <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Estado</span>
-                <select type="select" class="form-control">
+                <select type="select" class="form-control" name="estado">
                     <option>--Elije un estado--</option>
                     <option>Aguascalientes</option>
                     <option>Baja California</option>
@@ -70,130 +72,145 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Apellido Paterno</span>
-                <input type="text" class="form-control" placeholder="Primer Apellido..." aria-label="Apellido Paterno">
+                <input type="text" class="form-control" placeholder="Primer Apellido..." name="ap_paterno">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Ciudad</span>
-                <input type="text" placeholder="Ciudad..." aria-label="Ciudad" class="form-control">
+                <input type="text" placeholder="Ciudad..." aria-label="Ciudad" class="form-control" name="ciudad">
               </div>
         </div>
         <div class="col">
         <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Apellido Materno</span>
-            <input type="text" class="form-control" placeholder="Segundo Apellido..." aria-label="Apellido Materno">
+            <input type="text" class="form-control" placeholder="Segundo Apellido..." name="ap_materno">
         </div>
       </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Calle</span>
-                <input type="text" placeholder="Calle" aria-label="Calle" class="form-control">
+                <input type="text" placeholder="Calle" aria-label="Calle" class="form-control" name="calle">
               </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">CURP</span>
-              <input type="text" class="form-control" placeholder="CURP..." aria-label="RFC">
+              <input type="text" class="form-control" placeholder="CURP..." aria-label="RFC" name="curp">
           </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Número</span>
-              <input type="text" placeholder="#Número" aria-label="Número" class="form-control">
+              <input type="text" placeholder="#Número" aria-label="Número" class="form-control" name="numero">
             </div>
        </div>
        <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Fecha de nacimiento</span>
-              <input type="date" class="form-control" aria-label="RFC">
+              <input type="date" class="form-control" aria-label="RFC" name="fecha_nac">
           </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Colonia</span>
-                <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia">
+                <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia" name="colonia">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
-                <input type="tel" class="form-control" placeholder="#Tel" aria-label="Numero">
+                <input type="tel" class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">C.P</span>
-                <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero">
+                <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="email" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico">
+                <input type="email" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico" name="correo">
             </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Descuento</span>
-              <input type="number" min="0" max="100" class="form-control" placeholder="%" aria-label="Numero">
+              <input type="number" min="0" max="100" class="form-control" placeholder="%" aria-label="Numero" name="descuento">
           </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Estado Actual:</span>
+              <input class="form-control" value="Alta" name="estado_actual" readonly type="text" >
+          </div>
+      </div>
+      <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <span class="input-group-text">Deuda total:</span>
+              <input class="form-control" value="0" name="deuda_total" readonly type="number" >
+          </div>
+      </div>
+        <div class="col">
+          <div class="input-group input-group-lg mb-4">
               <label class="input-group-text" for="inputGroupSelect01">Oyente clase</label>
-              <select class="form-select" id="inputGroupSelect01">
+              <select class="form-select" id="inputGroupSelect01" name="oyente_clase">
                 <option selected>Seleccione...</option>
-                <option value="1">Si</option>
-                <option value="2">No</option>
+                <option>Si</option>
+                <option>No</option>
               </select>
             </div>
         </div>
         <div class="col">
         <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">¿Desea factura?</span>
-              <select class="form-select" id="inputGroupSelect01">
+              <select class="form-select" id="inputGroupSelect01" name="factura">
                 <option selected>Seleccione...</option>
-                <option value="1">Si</option>
-                <option value="2">No</option>
+                <option>Si</option>
+                <option>No</option>
               </select>
           </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre completo</span>
-                <input type="text" class="form-control" placeholder="Nombre..." aria-label="Nombre completo">
+                <input type="text" class="form-control" placeholder="Nombre..." name="fnombres">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
-                <input type="text" class="form-control" placeholder="RFC..." aria-label="RFC">
+                <input type="text" class="form-control" placeholder="RFC..." name="frfc">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Domicilio</span>
-                <input type="text" class="form-control" placeholder="Domicilio..." aria-label="Domicilio">
+                <input type="text" class="form-control" placeholder="Domicilio..." name="fdomicilio">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
-                <input type="tel" class="form-control" placeholder="#Tel" aria-label="Numero">
+                <input type="tel" class="form-control" placeholder="#Tel" name="ftelefono">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="email" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico">
+                <input type="email" class="form-control" placeholder="@ejemplo.com" name="fcorreo">
             </div>
         </div>
     </div> 
     
 
     <div class="col" style="margin-top: 3%;">   
-        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">GUARDAR</button>
+        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
     </div>
+
+
 </div>
+</form>
 @endsection
