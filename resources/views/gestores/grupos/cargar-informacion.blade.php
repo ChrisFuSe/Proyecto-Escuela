@@ -26,11 +26,11 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Grupo:</span>
-                <select type="select" class="form-control">
+                <select type="select" class="form-control" id="grupo">
                     <option disabled>Elije un grupo...</option>
-                    <option>op 1</option>
-                    <option>op 2</option>
-                    <option>op 3</option>
+                    @foreach ($grupos as $grupo)
+                        <option value="{{$grupo->nombre}}">{{$grupo->nombre}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -60,7 +60,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Días:</span>
-                <select class="selectpicker form-control" multiple data-live-search="true">
+                <select class="selectpicker form-control" multiple data-live-search="true" id="horario">
                     <option value="Lunes">Lunes</option>
                     <option value="Martes">Martes</option>
                     <option value="Miercoles">Miercoles</option>
@@ -75,7 +75,6 @@
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Alumno:</span>
                 <input id="opciones" type="text" class="form-control" placeholder="Numero Control...">
-                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Lupa" width="50%"></a>
             </div>
         </div>
         <div class="col">
@@ -90,7 +89,7 @@
         </div>
         <div class="col" id="save-alumno">
             <div class="input-group input-group-lg mb-4">
-                <button type="button" class="btn btn-dark" style="padding-inline: 2%;">Guardar
+                <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="verdias()">Guardar
                     alumno</button>
             </div>
         </div>
@@ -137,4 +136,5 @@
 <script>
     $('select').selectpicker();
 </script>
+<script src="{{asset('js/consultar-grupo.js')}}"></script>
 @endsection
