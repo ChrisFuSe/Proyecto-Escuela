@@ -6,6 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Operaciones;
 use App\Http\Controllers\Registrar;
+use App\Http\Controllers\Consultar;
+use App\Http\Controllers\Eliminar;
+use App\Http\Controllers\Modificar;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +61,15 @@ Route::post('registrar/usuario', [Registrar::class, 'registrarUsuario'])->middle
 
 Route::post('registrar/grupo', [Registrar::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
 
-Route::post('registrar', [Registrar::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
+Route::post('registrar/alumno', [Registrar::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
+
+Route::post('consultar/profesor', [Consultar::class, 'consultarProfesor'])->middleware('auth')->name('consultar.profesor');
+
+Route::get('elimnar/profesor/{id}', [Eliminar::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
+
+Route::post('editar/profesor', [Modificar::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
+
+Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
 
 Route::get('prueba', function () {
     return view('gestores\grupos\cargar-informacion2');

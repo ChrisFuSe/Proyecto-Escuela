@@ -8,6 +8,8 @@
 
 @section('cuerpo')
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
+<form action="{{route('llenar.profesor')}}" method="GET" accept-charset="utf-8">
+    @csrf
 <div class="container">
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
@@ -15,24 +17,27 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Busqueda</span>
-                <input type="text" class="form-control" placeholder="Buscar maestro..." aria-label="Nombre">
-                <a class="botones-navegacion"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
-                        width="50%"></a>
+                <input type="text" class="form-control" name="id_profesor" placeholder="Buscar maestro...">
+                <button type="submit" style="padding-inline: 2%;"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
+                        width="50%" class="botones-navegacion"></button>
             </div>
         </div>
     </div>
+    @if(empty($profesor))
+    <p></p>
+    @else
     <div class="row row-cols-2">
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombres</span>
-                <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres">
+                <input type="text" class="form-control" aria-label="Nombres" name="nombres" value='{{$profesor->nombres}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Estado</span>
-                <select type="select" class="form-control">
-                    <option>--Elije un estado--</option>
+                <select type="select" class="form-control" name="estado">
+                    <option>{{$profesor->estado}}</option>
                     <option>Aguascalientes</option>
                     <option>Baja California</option>
                     <option>Baja California Sur</option>
@@ -71,63 +76,66 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Ciudad</span>
-                <input type="text" class="form-control" placeholder="Ciudad..." aria-label="Ciudad">
+                <input type="text" class="form-control" aria-label="Ciudad" name="ciudad" value='{{$profesor->ciudad}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Calle y numero</span>
-                <input type="text" placeholder="Calle" aria-label="Calle" class="form-control">
-                <input type="text" placeholder="#Numero" aria-label="Numero" class="form-control">
+                <input type="text" aria-label="Calle" class="form-control" name="calle" value='{{$profesor->calle}}'>
+                <input type="text" aria-label="Numero" class="form-control" name="numero" value='{{$profesor->numero}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Apellido Paterno</span>
-                <input type="text" class="form-control" placeholder="Primer Apellido..." aria-label="Apellido Paterno">
+                <input type="text" class="form-control" aria-label="Apellido Paterno" name="ap_paterno" value='{{$profesor->ap_paterno}}'>
             </div>
-        </div>
+         </div>   
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Colonia</span>
-                <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia">
+                <input type="text" class="form-control" aria-label="Colonia" name="colonia" value='{{$profesor->colonia}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Apellido Materno</span>
-                <input type="text" class="form-control" placeholder="Segundo Apellido..." aria-label="Apellido Materno">
+                <input type="text" class="form-control" aria-label="Apellido Materno" name="ap_materno" value='{{$profesor->ap_materno}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">C.P</span>
-                <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero">
+                <input type="text" class="form-control" aria-label="c.p." name="codigo_postal" value='{{$profesor->codigo_postal}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
-                <input type="text" class="form-control" placeholder="Registro federal de contribuyente..."
-                    aria-label="RFC">
+                <input type="text" class="form-control" aria-label="rfc" name="rfc" value='{{$profesor->rfc}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Numero Telefónico</span>
-                <input type="text" class="form-control" placeholder="#Tel" aria-label="Numero">
+                <input type="text" class="form-control" aria-label="Numero" name="numero" value='{{$profesor->telefono}}'>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico">
+                <input type="text" class="form-control" aria-label="Correo electronico" name="correo" value='{{$profesor->correo}}'>
             </div>
         </div>
     </div>
-
-    <div class="col" style="margin-top: 3%;">
-        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">ACTUALIZAR</button>
-    </div>
 </div>
+</form>
+<form action="{{route('editar.profesor',$profesor->id_profesor)}}" method="POST" accept-charset="utf-8">
+@csrf
+<div class="col" style="margin-top: 3%;">
+        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" >ACTUALIZAR</button>
+    </div>
+</form>
+@endif
 @endsection
