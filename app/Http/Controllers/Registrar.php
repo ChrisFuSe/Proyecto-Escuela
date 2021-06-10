@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profesor;
 use App\Models\Grupo;
 use App\Models\User;
+use App\Models\Alumno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
