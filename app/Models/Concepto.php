@@ -9,6 +9,8 @@ class Concepto extends Model
 {
     use HasFactory;
 
+    protected $keyType = 'String';
+    
     protected $primaryKey = 'id_concepto';
 
     public $timestamps = false;

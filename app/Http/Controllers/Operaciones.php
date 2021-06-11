@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Concepto;
 use Illuminate\Http\Request;
 use App\Models\Nivel;
 use App\Models\Profesor;
@@ -121,7 +122,8 @@ class Operaciones extends Controller
     }
     public function opTransaccion()
     {
-        return view('gestores/pagos/realizar-pagos');
+        $conceptos = Concepto::all();
+        return view('gestores/pagos/realizar-pagos', compact('conceptos'));
     }
     public function opGestion_Pago()
     {
