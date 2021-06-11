@@ -3,7 +3,7 @@ concepto.addEventListener('change',() =>{
         headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
         type: 'GET',
         dataType: 'json',
-        url: '',
+        url: '/precio/concepto',
         data: {
             '_token': $('input[name=_token]').val(),
             'concepto': $('#concepto').val(),

@@ -87,17 +87,18 @@
           </div>
         </div>
       </div>
+
+      <div class="col">
+        <div class="input-group input-group-lg mb-4" id="adeudo_precio" hidden="true">
+          <span class="input-group-text">Precio del adeudo</span>
+          <input type="number" placeholder="$" aria-label="Adeudo total" class="form-control" disabled>
+        </div>
+      </div>
+      
       <div class="row">
         <div class="form-floating">
           <span class="input-group-text">Descripción</span>
           <textarea class="form-control" placeholder="Ingrese descripción..." id="floatingTextarea"></textarea>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="input-group input-group-lg mb-4">
-          <span class="input-group-text">Precio del adeudo</span>
-          <input type="number" placeholder="$" aria-label="Adeudo total" class="form-control">
         </div>
       </div>
 
