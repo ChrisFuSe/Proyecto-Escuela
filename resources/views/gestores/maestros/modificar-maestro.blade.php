@@ -7,10 +7,14 @@
 @section('operacion', 'Modificar Maestro')
 
 @section('cuerpo')
+<div class="container">
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
 <form action="{{route('llenar.profesor')}}" method="GET" accept-charset="utf-8">
+@csrf
+
+<form action="editar.php?table=profesores" method="POST" accept-charset="utf-8">
     @csrf
-<div class="container">
+
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
     <div class="row">
@@ -119,7 +123,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Numero Telefónico</span>
-                <input type="text" class="form-control" aria-label="Numero" name="numero" value='{{$profesor->telefono}}'>
+                <input type="text" class="form-control" aria-label="Numero" name="telefono" value='{{$profesor->telefono}}'>
             </div>
         </div>
         <div class="col">
@@ -129,14 +133,15 @@
             </div>
         </div>
     </div>
-</div>
-</form>
-<form action="{{route('editar.profesor')}}" method="POST" accept-charset="utf-8">
-    @csrf
-    <input type="hidden" name="id_profesor" value="{{$profesor->id_profesor}}">
-    <div class="col" style="margin-top: 3%;">
-        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">ACTUALIZAR</button>
+
+<div class="col" style="margin-top: 3%;">
+        <input type="submit" class="btn btn-dark" style="padding-inline: 2%;" value="ACTUALIZAR">
     </div>
 </form>
+
+
+</form>
+    
+</div>
 @endif
 @endsection

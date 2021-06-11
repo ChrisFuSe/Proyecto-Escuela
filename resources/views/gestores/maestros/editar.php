@@ -1,57 +1,45 @@
 <?php
+session_start();
+ $servername = "localhost";
+ $database = "pes";
+ $username = "root";
+ $password = "";
+ $conn = mysqli_connect($servername, $username, $password, $database, 33065);
 
-class ManejadorBD {
+    echo "<br>";
 
-	private $db;
-	private $host;
-	private $user;
-	private $pass;
-	private $result;
+    $keys = array_keys($_POST);
+    $columnas = "";
+    $values = "";
+    $sql = "UPDATE ".$_GET['table']." SET ";
 
-	function __construct() {
-		$this->db = 'pes';
-		$this->host = 'localhost';
-		$this->user = 'root';
-		$this->pass = '';
-
-		$this->result = new \stdClass();
-		$this->result->code = 200;
-		$this->result->msg = 'Success';
-		$this->result->output = array();
-	}
-
-	private function open() {
-		$link = mysqli_connect($this->host, $this->user, $this->pass, $this->db) or die('Error connecting to DB');
-		return $link;
-	}
-
-	private function close($link) {
-		return mysqli_close($link);
-	}
-
-    public function modificar($name,$id) {
-        try {
-            $link = $this->open();
-
-            $qry = "UPDATE profesores SET nombres = '$name' WHERE id_profesor ='$id'";
-
-            $r = mysqli_query($link, $qry);
-
-            while( $result[] = mysqli_fetch_array( $r, MYSQLI_ASSOC ) );
-
-            foreach ($result as $value) {
-                if($value) {
-                    array_push($this->result->output, $value);
-                }
+    $first = false;
+    foreach ($keys as $key){
+        if ($first){
+            if ($_POST[$key]!=""){
+                $sql .= $key."='".$_POST[$key]."',";
             }
-
-            $this->close($link);
-        } catch (Exception $e) {
-            $this->result->code = 500;
-            $this->result->msg = 'Failed: '.$e;
         }
-
-        return $this->result;
+        else{
+            $first = true;
+            $id_name = $key;
+            $id = $_POST[$key];
+        }
     }
+    $sql = substr($sql, 0, -1);
+    $sql .= " WHERE $id_name=$id;";
+    echo $sql;
 
+   /* $result = $conn->query($sql);
+    switch ($_GET['table']) {
+        case "curso":
+            header('location: ../paginas/Formulario Modificar Cursos.php?ok='.$result);
+            break;
+        case "producto":
+            header('location: ../paginas/Formulario Modificar Productos.php?ok='.$result);
+            break;
+        case "usuario":
+            header('location: ../paginas/Formulario Modificar Usuarios.php?ok='.$result);
+            break;
+    }*/
 ?>

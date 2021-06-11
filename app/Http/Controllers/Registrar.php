@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profesor;
 use App\Models\Grupo;
 use App\Models\User;
+use App\Models\Pago;
 use App\Models\Alumno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -89,6 +90,17 @@ class Registrar extends Controller
 
         $alumno->save();
         return redirect('gestores\alumnos\alta');
+    }
+
+    public function registrarPago(Request $request){
+        $pago = new Pago();
+
+        $pago->nombre = $request->nombre;
+        $pago->id_nivel = $request->id_nivel;
+        $pago->descripcion = $request->descripcion;
+
+        $pago->save();
+        return view('gestores\grupos\registrar-grupo');
     }
 
 }
