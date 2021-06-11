@@ -8,12 +8,11 @@
 
 @section('cuerpo')
 <div class="container">
-<!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
-<form action="{{route('llenar.profesor')}}" method="GET" accept-charset="utf-8">
+<!--    "{{route('llenar.profesor')}}" Contenedor con todos los inputs del formulario para registrar un nuevo maestro  action="editar.php?table=profesores"-->
+<form action="" accept-charset="utf-8" name="formulario">
 @csrf
 
-<form action="editar.php?table=profesores" method="POST" accept-charset="utf-8">
-    @csrf
+
 
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
@@ -22,7 +21,7 @@
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Busqueda</span>
                 <input type="text" class="form-control" name="id_profesor" placeholder="Buscar maestro...">
-                <button type="submit" style="padding-inline: 2%;"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
+                <button onclick="elegir1()" style="padding-inline: 2%;"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
                         width="50%" class="botones-navegacion"></button>
             </div>
         </div>
@@ -135,13 +134,27 @@
     </div>
 
 <div class="col" style="margin-top: 3%;">
-        <input type="submit" class="btn btn-dark" style="padding-inline: 2%;" value="ACTUALIZAR">
+        <button onclick="elegir2()" class="btn btn-dark" style="padding-inline: 2%;" >ACTUALIZAR</button>
     </div>
-</form>
-
 
 </form>
     
 </div>
+
+
 @endif
 @endsection
+
+<script>
+function elegir1(){
+    document.formulario.method="GET";
+    document.formulario.action="{{route('llenar.profesor')}}";
+    document.formulario.submit();
+}
+
+function elegir2(){
+    document.formulario.method="POST";
+    document.formulario.action="../maestros/editar.php?table=profesores";
+    document.formulario.submit();
+}
+</script>

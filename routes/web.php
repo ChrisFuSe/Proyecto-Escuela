@@ -82,6 +82,7 @@ Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware(
 
 Route::post('registrar/pago', [Registrar::class, 'registrarPago'])->middleware('auth')->name('registrar.pago');
 
+Route::post('precio/concepto', [Consultar::class, 'conceptoPrecio'])->middleware('auth');
 
 
 Route::get('prueba', function () {
