@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">ID usuario:</span>
-                    <input type="text" class="form-control" placeholder="Nombre usuario..." aria-label="Nombre de usuario" name="id">
+                    <input type="text" class="form-control" placeholder="ID usuario..." aria-label="Nombre de usuario" name="id">
                     <button type="submit" style="padding-inline: 2%;"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
                         width="50%" class="botones-navegacion"></button>
                 </div>
