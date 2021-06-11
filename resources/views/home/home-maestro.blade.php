@@ -5,7 +5,7 @@
 @endsection
 
 @section('logout')
-<a style="margin-left: 90%; display: inline;" href="{{route('login.salir')}}"><img class="botones-navegacion" src="{{asset(img/cerrar-session)}}"></a>
+<a style="margin-left: 90%; display: inline;" href="{{route('login.salir')}}"><img style="position: absolute; margin-top:-3%;" width="4%" class="botones-navegacion" src="{{asset('img/cerrar-sesion.png')}}"></a>
 @endsection
 
 @section('cuerpo')
