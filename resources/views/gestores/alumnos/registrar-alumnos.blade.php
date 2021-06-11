@@ -9,6 +9,12 @@
   </style> 
 @endsection
 
+<script>
+ function validar(){
+     alert('Se ha registrado exitosamente');
+ }
+</script>
+
 @section('imagen-opc')
 {{ asset('img/Gestor_Alumnos.png') }}
 @endsection
@@ -143,18 +149,6 @@
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
-              <span class="input-group-text">Estado Actual:</span>
-              <input class="form-control" value="Alta" name="estado_actual" readonly type="text" >
-          </div>
-      </div>
-      <div class="col">
-          <div class="input-group input-group-lg mb-4">
-              <span class="input-group-text">Deuda total:</span>
-              <input class="form-control" value="0" name="deuda_total" readonly type="number" >
-          </div>
-      </div>
-        <div class="col">
-          <div class="input-group input-group-lg mb-4">
               <label class="input-group-text" for="inputGroupSelect01">Oyente clase</label>
               <select class="form-select" id="inputGroupSelect01" name="oyente_clase">
                 <option selected>Seleccione...</option>
@@ -203,11 +197,21 @@
                 <input type="email" class="form-control" placeholder="@ejemplo.com" name="fcorreo">
             </div>
         </div>
+        <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <input class="form-control" value="Alta" name="estado_actual" type="hidden" >
+          </div>
+      </div>
+      <div class="col">
+          <div class="input-group input-group-lg mb-4">
+              <input class="form-control" value="0" name="deuda_total" type="hidden" >
+          </div>
+      </div>
     </div> 
     
 
     <div class="col" style="margin-top: 3%;">   
-        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
+        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;"  onclick=validar();>GUARDAR</button>
     </div>
 
 

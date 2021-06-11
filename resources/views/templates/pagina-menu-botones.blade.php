@@ -26,9 +26,6 @@
     
     <!--    Header scripts      -->
     @yield('header-scripts')
-
-    <!--    Estilos para livewire       -->
-    @livewireStyles
 </head>
 
 <body>
@@ -94,7 +91,6 @@
     </div>
 
     <!--    Scripts      -->
-    @livewireScripts
     <script src="{{ asset('js/animaciones-boton.js') }}"></script>
     @yield('scripts')
 

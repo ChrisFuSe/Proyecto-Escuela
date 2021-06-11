@@ -119,31 +119,13 @@ class Operaciones extends Controller
             abort(404);
         }
     }
-    public function opTransaccion($operacion)
+    public function opTransaccion()
     {
-        switch($operacion){
-            case 'realizar-pago':
-                return view('gestores/pagos/realizar-pagos');
-            break;
-            case 'generar-adeudo':
-                return view('gestores/pagos/generar-adeudo');
-            break;
-            default:
-            abort(404);
-        }
+        return view('gestores/pagos/realizar-pagos');
     }
-    public function opGestion_Pago($operacion)
+    public function opGestion_Pago()
     {
-        switch($operacion){
-            case 'consultar-eliminar':
-                return view('gestores/pagos/consultar-pagos');
-            break;
-            case 'editar':
-                return view('gestores/pagos/modificar-pagos');
-            break;
-            default:
-            abort(404);
-        }
+        return view('gestores/pagos/consultar-pagos');
     }
     public function opReportes($operacion)
     {

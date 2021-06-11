@@ -9,12 +9,6 @@ class Gestores extends Controller
     public function gesPago($gestor)
     {
         switch($gestor){
-            case'transaccion':
-                return view('gestores/pagos/transacciones');
-            break;
-            case'gestion-pagos':
-                return view('gestores/pagos/gestion-pagos');
-            break;
             case'reportes':
                 return view('gestores/pagos/reportes');
             break;

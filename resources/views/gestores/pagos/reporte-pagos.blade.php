@@ -39,7 +39,7 @@
          
          <div class="col">
              <div class="input-group input-group-lg mb-4">
-                 <span class="input-group-text">Pagos realizados</span>
+                 <span class="input-group-text">Pagos totales</span>
                  <input type="text" class="form-control" placeholder="Pagos realizados..." aria-label="Pagos realizados">
              </div>
          </div>
@@ -100,6 +100,6 @@
            </table>       
  </div> 
        <div class="col" style="margin-top: 1%;">
-         <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">GUARDAR</button>
+         <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">IMPRIMIR</button>
      </div>
 @endsection

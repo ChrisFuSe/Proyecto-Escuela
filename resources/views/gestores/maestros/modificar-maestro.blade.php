@@ -131,9 +131,11 @@
     </div>
 </div>
 </form>
-<form method =" post "action =" editar.php ">
-<div class="col" style="margin-top: 3%;">
-        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick=modificar(nombres,id_profesor);>ACTUALIZAR</button>
+<form action="{{route('editar.profesor')}}" method="POST" accept-charset="utf-8">
+    @csrf
+    <input type="hidden" name="id_profesor" value="{{$profesor->id_profesor}}">
+    <div class="col" style="margin-top: 3%;">
+        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">ACTUALIZAR</button>
     </div>
 </form>
 @endif

@@ -9,12 +9,12 @@
 <div class="container-fluid" style="margin-top: 5%;">
     <div class="row justify-content-center">
         <div class="col">
-            <a href="pagos/transaccion"><img src="../img/Iconos Gestor Pagos/Transaccion.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
-            <p>Transaccion</p>
+            <a href="pagos/realizar_pago"><img src="../img/Iconos Gestor Pagos/Transaccion.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <p>Realizar Pago</p>
         </div>
         <div class="col">
-            <a href="pagos/gestion-pagos"><img src="../img/Iconos Gestor Pagos/Gestionar informacion de pago.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
-            <p>Gestionar informacion de Pago</p>
+            <a href="pagos/consultar"><img src="../img/Iconos Gestor Pagos/ConsultarPyA.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <p>Consultar pago y adeudo</p>
         </div>
         <div class="col">
             <a href="pagos/reportes"><img src="../img/Iconos Gestor Pagos/Generar reporte mensual.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
