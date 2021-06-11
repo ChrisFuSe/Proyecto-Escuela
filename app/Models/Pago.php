@@ -9,8 +9,6 @@ class Pago extends Model
 {
     use HasFactory;
 
-    protected $keyType = 'String';
-
     protected $primaryKey = 'num_referencia';
 
     public $timestamps = false;
@@ -19,6 +17,11 @@ class Pago extends Model
         'monto',
         'fecha_pago',
         'descripcion',
-        'id_adeudo'
+        'id_adeudo',
+        'numero_control'
     ];
+
+    public function adeudo(){
+        return $this->hasMany('App\Models\Adeudo');
+    }
 }

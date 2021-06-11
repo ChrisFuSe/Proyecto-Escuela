@@ -84,6 +84,9 @@ Route::post('registrar/pago', [Registrar::class, 'registrarPago'])->middleware('
 
 Route::post('precio/concepto', [Consultar::class, 'conceptoPrecio'])->middleware('auth');
 
+Route::post('consultar/pagos', [Consultar::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
+
+Route::get('consultar/datos/{id}', [Consultar::class, 'consultarDatos'])->middleware('auth')->name('consultar.datos');
 
 Route::get('prueba', function () {
     return view('gestores\grupos\cargar-informacion2');

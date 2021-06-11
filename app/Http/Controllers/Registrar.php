@@ -7,6 +7,7 @@ use App\Models\Grupo;
 use App\Models\User;
 use App\Models\Pago;
 use App\Models\Alumno;
+use App\Models\Adeudo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -93,14 +94,24 @@ class Registrar extends Controller
     }
 
     public function registrarPago(Request $request){
+        
+        $adeudo = new Adeudo();
+        $adeudo -> concepto = $request->concepto;
+        $adeudo -> fecha_adeudo = $request->fecha;
+        $adeudo -> numero_control = $request->numero_control;
+        $adeudo -> save();
+        $adeudo = Adeudo::select('id_adeudo')
+                        ->where('numero_control', $request->numero_control)
+                        ->where('concepto', $request->concepto)
+                        ->where('fecha_adeudo', $request->fecha)->first();
         $pago = new Pago();
-
-        $pago->nombre = $request->nombre;
-        $pago->id_nivel = $request->id_nivel;
-        $pago->descripcion = $request->descripcion;
-
-        $pago->save();
-        return view('gestores\grupos\registrar-grupo');
+        $pago -> monto = $request -> monto;
+        $pago -> fecha_pago = $request -> fecha;
+        $pago -> descripcion = $request -> descripcion;
+        $pago -> id_adeudo = $adeudo -> id_adeudo;
+        $pago -> numero_control = $request -> numero_control;
+        $pago -> save();
+        return view('gestores\pagos\realizar-pagos');
     }
 
 }

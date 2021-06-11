@@ -22,7 +22,7 @@
     <div class="input-group input-group-lg mb-4">
       <label class="input-group-text" for="inputGroupSelect01">Tipo de pago</label>
       <select class="form-select" id="inputGroupSelect01" name="tipo">
-        <option selected disabled value="0">Seleccione...</option>
+        <option selected disabled>Seleccione...</option>
         <option value=1>Pago por primera vez</option>
         <option value=2>Pago al adeudo</option>
       </select>
@@ -31,8 +31,8 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4" hidden="true" id="concepto">
           <label class="input-group-text">Concepto</label>
-          <select class="form-select">
-            <option selected disabled>Seleccione...</option>
+          <select class="form-select" id="concepto2" name="concepto">
+            <option selected disabled >Seleccione...</option>
               @if(empty($conceptos))
               @else
               @foreach ($conceptos as $concepto)
@@ -46,7 +46,7 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4" hidden="true" id="concepto_precio">
           <span class="input-group-text">Precio del concepto</span>
-          <input type="number" placeholder="$" aria-label="Adeudo total" class="form-control" disabled>
+          <input type="number" placeholder="$" aria-label="Adeudo total" class="form-control" id="concepto_precio2" disabled>
         </div>
       </div>
 
@@ -54,8 +54,7 @@
         <div class="col">
           <div class="input-group input-group-lg mb-4">
             <span class="input-group-text" id="labelNcontrol" disabled>Número de control</span>
-            <input type="text" class="form-control" onKeyUp="habilitar();" placeholder="Número de control..."
-              aria-label="Numero">
+            <input type="text" class="form-control" placeholder="Número de control..." name="numero_control">
           </div>
         </div>
         <div class="col-1">
@@ -76,14 +75,14 @@
         <div class="col">
           <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Fecha de pago</span>
-            <input type="date" class="form-control" aria-label="Fecha de pago">
+            <input type="date" class="form-control" name="fecha">
           </div>
         </div>
 
         <div class="col">
           <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Monto</span>
-            <input type="number" class="form-control" placeholder="$" aria-label="Monto">
+            <input type="number" class="form-control" placeholder="$" name="monto">
           </div>
         </div>
       </div>
@@ -98,18 +97,17 @@
       <div class="row">
         <div class="form-floating">
           <span class="input-group-text">Descripción</span>
-          <textarea class="form-control" placeholder="Ingrese descripción..." id="floatingTextarea"></textarea>
+          <textarea class="form-control" placeholder="Ingrese descripción..." id="floatingTextarea" name="descripcion"></textarea>
         </div>
       </div>
 
       <div class="col" style="margin-top: 3%;">
-        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" onclick="validar();">FINALIZAR</button>
+        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">ENVIAR PAGO</button>
       </div>
     </div>
   </div>
 </form>
 
 <script src={{asset('js\ocultar-inputs-pagos.js')}}></script>
-<script src={{asset('js\obtener-precio-concepto.js')}}></script>
 
 @endsection

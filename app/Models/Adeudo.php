@@ -14,10 +14,12 @@ class Adeudo extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'monto_adeudo',
-        'id_concepto',
-        'pagado',
+        'concepto',
         'fecha_adeudo',
         'numero_control',
     ];
+
+    public function pagos(){
+        return $this->belongsTo('App\Models\Pago');
+    }
 }
