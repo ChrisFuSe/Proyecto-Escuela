@@ -1,20 +1,33 @@
 function hacer_peticion(){
+    var select_adeudos = $("#adeudos");
     $.ajax({
         url: '/consultar/adeudos',
         method: 'POST',
         data:{
             _token: $('input[name="_token"]').val(),
-            numero_control: $('input[name="numero_control"]').val()
-        }
+            numero_control: $('input[name="pago_adeudo_numero_control"]').val()
+        },
+        beforeSend: function () 
+                {
+                    select_adeudos.prop('disabled', true);
+                }
     }).done(function(res){
+        select_adeudos.prop('disabled', false);
         let adeudos = JSON.parse(res);
-        let select_adeudos = document.getElementById('adeudos');
+        select_adeudos.find('option').remove();
+        select_adeudos.append('<option selected disabled>Seleccionar...</option>');
         for (let index = 0; index < adeudos.length; index++) {
             let texto = adeudos[index].concepto+" Fecha: "+adeudos[index].fecha_adeudo;
-            let opcion = document.createElement("option");
-            opcion.text = (texto).charAt(0).toUpperCase() + texto.slice(1);
-            opcion.value = adeudos[index].id_adeudo;
-            select_adeudos.appendChild(opcion);
+            select_adeudos.append('<option value="' + adeudos[index].id_adeudo + '">' + 
+            (texto).charAt(0).toUpperCase() + texto.slice(1) + '</option>');
         }
+        select_adeudos.change(function(){
+            let precio_adeudo = document.getElementById("caja_precios");
+            for (let index = 0; index < adeudos.length; index++) {
+                if(select_adeudos.val() == adeudos[index].id_adeudo){
+                    precio_adeudo.value = adeudos[index].monto_adeudo;
+                }
+            }
+        });
     });
 }

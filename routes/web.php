@@ -65,8 +65,9 @@ Route::get('llenar/profesor', [ProfesorController::class, 'llenarProfesor'])->mi
 //          Rutas para gestor de Pagos          //
 Route::post('precio/concepto', [PagoController::class, 'conceptoPrecio'])->middleware('auth');
 Route::post('registrar/primer_pago', [PagoController::class, 'registrarprimerPago'])->middleware('auth')->name('registrar.pago');
+Route::post('registrar/pago', [PagoController::class, 'registrarpagoAdeudo'])->middleware('auth')->name('registrar.pago.adeudo');
 Route::post('consultar/pagos', [PagoController::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
-Route::post('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.pagos');
+Route::post('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.adeudos');
 Route::get('consultar/datos/{id}', [PagoController::class, 'consultarDatos'])->middleware('auth')->name('consultar.datos');
 
 

@@ -1,33 +1,20 @@
-let cuerpo = document.getElementById('cuerpo');
+let primer_pago = document.getElementById('primer_pago');
+let pago = document.getElementById('pago');
 let concepto = document.getElementById('concepto');
-let concepto2 = document.getElementById('concepto2');
-let precio_concepto = document.getElementById('concepto_precio');
-let lupa = document.getElementById('lupa');
-let adeudo = document.getElementById('adeudo');
-let precio_adeudo = document.getElementById('adeudo_precio');
 let select = document.getElementById('inputGroupSelect01');
-let camp1 = document.getElementById('labelNcontrol');
 select.addEventListener('change',() =>{
   if(select.value == 1){
-      cuerpo.hidden = false;
-      concepto.hidden = false;
-      precio_concepto.hidden = false;
-      lupa.hidden = true;
-      adeudo.hidden = true;
-      precio_adeudo.hidden = true;
+    primer_pago.hidden = false;
+    pago.hidden = true;
   }else{
-      cuerpo.hidden = false;
-      concepto.hidden = true;
-      precio_concepto.hidden = true;
-      lupa.hidden = false;
-      adeudo.hidden = false;
-      precio_adeudo.hidden = false;
+    pago.hidden = false;
+    primer_pago.hidden = true;
   }
 });
 
-concepto2.addEventListener('change',() =>{
-  let precio = document.getElementById('concepto_precio2');
-  switch(concepto2.value){
+concepto.addEventListener('change',() =>{
+  let precio = document.getElementById('concepto_precio');
+  switch(concepto.value){
       case 'constancia':
         precio.value = "100";
       break;

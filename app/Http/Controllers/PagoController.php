@@ -25,7 +25,18 @@ class PagoController extends Controller
         $pago -> id_adeudo = $adeudo -> id_adeudo;
         $pago -> numero_control = $request -> numero_control;
         $pago -> save();
-        return view('gestores\pagos\realizar-pagos');
+        return redirect(route('realizar.pago'));
+    }
+
+    public function registrarpagoAdeudo(Request $request){
+        $pago = new Pago();
+        $pago -> monto = $request -> pago_adeudo_monto;
+        $pago -> fecha_pago = $request -> pago_adeudo_fecha;
+        $pago -> descripcion = $request -> pago_adeudo_descripcion;
+        $pago -> id_adeudo = $request -> adeudos;
+        $pago -> numero_control = $request -> pago_adeudo_numero_control;
+        $pago -> save();
+        return redirect(route('realizar.pago'));
     }
 
     public function consultarAdeudos(Request $request){
