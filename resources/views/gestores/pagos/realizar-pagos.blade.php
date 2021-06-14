@@ -59,14 +59,14 @@
         </div>
         <div class="col-1">
           <div>
-            <img src="{{asset('img/lupa.png')}}" width="60px" class="botones-navegacion" hidden="true" id="lupa">
+            <img src="{{asset('img/lupa.png')}}" width="60px" class="botones-navegacion" hidden="true" id="lupa" onclick="hacer_peticion()">
           </div>
         </div>
 
-        <div class="col" id="adeudo" hidden="true" id="adeudo">
+        <div class="col" id="adeudo" hidden="true">
           <div class="input-group input-group-lg mb-4">
             <label class="input-group-text">Adeudos</label>
-            <select class="form-select">
+            <select class="form-select" id="adeudos">
               <option selected disabled>Seleccione...</option>
             </select>
           </div>
@@ -109,5 +109,6 @@
 </form>
 
 <script src={{asset('js\ocultar-inputs-pagos.js')}}></script>
+<script src={{asset('js\peticion-ajax.js')}}></script>
 
 @endsection
