@@ -47,7 +47,7 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Contraseña</span>
-                    <input type="text" class="form-control" placeholder="Contraseña..." aria-label="Contrasenia"
+                    <input type="password" class="form-control" placeholder="Contraseña..." aria-label="Contrasenia"
                         name="password">
                 </div>
             </div>
@@ -61,7 +61,7 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Repita contraseña</span>
-                    <input type="text" class="form-control" placeholder="Repita contraseña..."
+                    <input type="password" class="form-control" placeholder="Repita contraseña..."
                         aria-label="Repita contraseña" name="password">
                 </div>
             </div>
