@@ -1,15 +1,15 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\Gestores;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Operaciones;
-use App\Http\Controllers\Registrar;
-use App\Http\Controllers\Consultar;
-use App\Http\Controllers\Eliminar;
-use App\Http\Controllers\Modificar;
-use App\Http\Livewire\CargarInformacion;
+use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\PagoController;
+use App\Http\Controllers\ProfesorController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,73 +22,59 @@ use App\Http\Livewire\CargarInformacion;
 |
 */
 
+//          Rutas para Home y Login             //
 Route::get('/', HomeController::class)->name('login');
-
 Route::post('login', [LoginController::class, 'authenticate'])->name('login.autenticar');
-
 Route::get('login', [LoginController::class, 'logout'])->name('login.salir');
-
 Route::get('home', [HomeController::class, 'dirigirHome'])->middleware('auth')->name('home');
 
-Route::get('gestores/{gestor}', [HomeController::class, 'cargarGestor'])->middleware('auth');
 
+//          Rutas para enlazar Operaciones       //
+Route::get('gestores/pagos/realizar_pago', [Operaciones::class, 'opTransaccion'])->middleware('auth')->name('realizar.pago');
+Route::get('gestores/pagos/consultar', [Operaciones::class, 'opGestion_Pago'])->middleware('auth')->name('consultar.pago');
+Route::get('gestores/pagos/reportes/{operacion}', [Operaciones::class, 'opReportes'])->middleware('auth');
+Route::get('gestores/alumnos/{operacion}', [Operaciones::class, 'opAlumno'])->middleware('auth');
+Route::get('gestores/grupos/{operacion}', [Operaciones::class, 'opGrupo'])->middleware('auth');
+Route::get('gestores/cal_as/calificaciones/{operacion}', [Operaciones::class, 'opCalificacion'])->middleware('auth');
+Route::get('gestores/cal_as/asistencia/{operacion}', [Operaciones::class, 'opAsistencia'])->middleware('auth');
+Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios'])->middleware('auth');
 Route::get('gestores/maestros/consultar', [Operaciones::class, 'opConsultarMaestro'])->middleware('auth')->name('maestro.consultar');
-
 Route::get('gestores/maestros/{operacion}', [Operaciones::class, 'opMaestro'])->middleware('auth');
 
-Route::get('gestores/pagos/consultar', [Operaciones::class, 'opGestion_Pago'])->middleware('auth');
 
-Route::get('gestores/pagos/realizar_pago', [Operaciones::class, 'opTransaccion'])->middleware('auth');
-
+//          Rutas para enlazar gestores         //
+Route::get('gestores/{gestor}', [HomeController::class, 'cargarGestor'])->middleware('auth');
 Route::get('gestores/pagos/{gestor}', [Gestores::class, 'gesPago'])->middleware('auth');
-
-Route::get('gestores/pagos/reportes/{operacion}', [Operaciones::class, 'opReportes'])->middleware('auth');
-
-Route::get('gestores/alumnos/{operacion}', [Operaciones::class, 'opAlumno'])->middleware('auth');
-
-Route::get('gestores/grupos/{operacion}', [Operaciones::class, 'opGrupo'])->middleware('auth');
-
 Route::get('gestores/cal_as/{gestor}', [Gestores::class, 'gesCal_As'])->middleware('auth');
 
-Route::get('gestores/cal_as/calificaciones/{operacion}', [Operaciones::class, 'opCalificacion'])->middleware('auth');
 
-Route::get('gestores/cal_as/asistencia/{operacion}', [Operaciones::class, 'opAsistencia'])->middleware('auth');
+//          Rutas para gestor Alumnos           //
+Route::post('registrar/alumno', [AlumnoController::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
+Route::post('consultar/alumno', [AlumnoController::class, 'consultarAlumno'])->middleware('auth')->name('consultar.alumno');
+Route::get('elimnar/alumno/{id}', [AlumnoController::class, 'eliminarAlumno'])->middleware('auth')->name('eliminar.alumno');
 
-Route::get('gestores/usuarios/{operacion}', [Operaciones::class, 'opUsuarios'])->middleware('auth');
 
-Route::post('registrar/profesor', [Registrar::class, 'registrarProfesor'])->middleware('auth')->name('registrar.profesor');
+//          Rutas para gestor de Profesores     //
+Route::post('registrar/profesor', [ProfesorController::class, 'registrarProfesor'])->middleware('auth')->name('registrar.profesor');
+Route::post('consultar/profesor', [ProfesorController::class, 'consultarProfesor'])->middleware('auth')->name('consultar.profesor');
+Route::get('elimnar/profesor/{id}', [ProfesorController::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
+Route::post('editar/profesor', [ProfesorController::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
+Route::get('llenar/profesor', [ProfesorController::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
 
-Route::post('registrar/usuario', [Registrar::class, 'registrarUsuario'])->middleware('auth')->name('registrar.usuarios');
 
-Route::post('consultar/usuario', [Consultar::class, 'consultarUsuario'])->middleware('auth')->name('consultar.usuario');
+//          Rutas para gestor de Pagos          //
+Route::post('precio/concepto', [PagoController::class, 'conceptoPrecio'])->middleware('auth');
+Route::post('registrar/primer_pago', [PagoController::class, 'registrarprimerPago'])->middleware('auth')->name('registrar.pago');
+Route::post('consultar/pagos', [PagoController::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
+Route::post('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.pagos');
+Route::get('consultar/datos/{id}', [PagoController::class, 'consultarDatos'])->middleware('auth')->name('consultar.datos');
 
-Route::get('elimnar/usuario/{id}', [Eliminar::class, 'eliminarUsuario'])->middleware('auth')->name('eliminar.usuario');
 
-Route::post('registrar/grupo', [Registrar::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
+//          Rutas para gestor de Grupos         //
+Route::post('registrar/grupo', [GrupoController::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
 
-Route::post('registrar/alumno', [Registrar::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
 
-Route::post('consultar/alumno', [Consultar::class, 'consultarAlumno'])->middleware('auth')->name('consultar.alumno');
-
-Route::get('elimnar/alumno/{id}', [Eliminar::class, 'eliminarAlumno'])->middleware('auth')->name('eliminar.alumno');
-
-Route::post('consultar/profesor', [Consultar::class, 'consultarProfesor'])->middleware('auth')->name('consultar.profesor');
-
-Route::get('elimnar/profesor/{id}', [Eliminar::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
-
-Route::post('editar/profesor', [Modificar::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
-
-Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
-
-Route::post('registrar/pago', [Registrar::class, 'registrarPago'])->middleware('auth')->name('registrar.pago');
-
-Route::post('precio/concepto', [Consultar::class, 'conceptoPrecio'])->middleware('auth');
-
-Route::post('consultar/pagos', [Consultar::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
-
-Route::get('consultar/datos/{id}', [Consultar::class, 'consultarDatos'])->middleware('auth')->name('consultar.datos');
-
-Route::get('prueba', function () {
-    return view('gestores\grupos\cargar-informacion2');
-});
-Route::get('llenar/profesor', [Modificar::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
+//          Rutas para gestor de Usuarios       //
+Route::post('registrar/usuario', [UsuarioController::class, 'registrarUsuario'])->middleware('auth')->name('registrar.usuarios');
+Route::post('consultar/usuario', [UsuarioController::class, 'consultarUsuario'])->middleware('auth')->name('consultar.usuario');
+Route::get('elimnar/usuario/{id}', [UsuarioController::class, 'eliminarUsuario'])->middleware('auth')->name('eliminar.usuario');
