@@ -64,14 +64,14 @@
              </thead>
              <tbody>
                <tr>
-                 <td class="table-info" scope="row">1</td>
-                 <td class="table-info"></td>
-                 <td class="table-info"></td>
-                 <td class="table-info"></td>
-                 <td class="table-info"></td>
-                 
-                 
-               </tr>
+                  <td class="table-info" scope="row">1</td>
+                  <td class="table-info"></td>
+                  <td class="table-info"></td>
+                  <td class="table-info"></td>
+                  <td class="table-info"></td>
+
+                  
+                  </tr>
                <tr>
                  <td class="table-light" class="table-info" scope="row">2</td>
                  <td class="table-light"></td>

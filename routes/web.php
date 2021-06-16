@@ -58,7 +58,7 @@ Route::get('elimnar/alumno/{id}', [AlumnoController::class, 'eliminarAlumno'])->
 Route::post('registrar/profesor', [ProfesorController::class, 'registrarProfesor'])->middleware('auth')->name('registrar.profesor');
 Route::post('consultar/profesor', [ProfesorController::class, 'consultarProfesor'])->middleware('auth')->name('consultar.profesor');
 Route::get('elimnar/profesor/{id}', [ProfesorController::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
-Route::post('editar/profesor', [ProfesorController::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
+Route::get('editar/profesor/{id}', [ProfesorController::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
 Route::get('llenar/profesor', [ProfesorController::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
 
 
