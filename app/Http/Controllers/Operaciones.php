@@ -17,7 +17,6 @@ class Operaciones extends Controller
             break;
             case 'editar':
                 $profesor = Profesor::all();
-        
                 return view('gestores/maestros/modificar-maestro', compact('profesor'));
                 //return view('gestores/maestros/modificar-maestro');
             break;

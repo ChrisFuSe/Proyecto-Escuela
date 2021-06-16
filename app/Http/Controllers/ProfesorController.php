@@ -35,18 +35,11 @@ class ProfesorController extends Controller
     public function eliminarProfesor($id){
         $profesor = Profesor::where('id_profesor',$id)->first();
         $profesor->delete();
-        return redirect('gestores\maestros\consultar-eliminar');
+        return redirect('gestores\maestros\editar');
     }
 
-   /* public function llenarProfesor(){
-        $profesor = Profesor::all();
-        
-        return view('gestores/maestros/modificar-maestro', compact('profesor'));
-        //dd($profesor);
-        //return view('profesor', array('profesores'->$profesor));
-    }*/
-
     public function editarProfesor($id){
-
+        $profesor = Profesor::where('id_profesor',$id)->first();
+        return $profesor;
     }
 }
