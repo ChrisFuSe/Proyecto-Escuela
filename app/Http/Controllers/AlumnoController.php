@@ -41,8 +41,8 @@ class AlumnoController extends Controller
     }
 
     public function consultarAlumno(Request $request){
-        $alumno = Alumno::find($request->numero_control);
-        return view('gestores/alumnos/consultar-eliminar-alumnos', compact('alumno'));
+        $alumnos = Alumno::all();
+        return view('gestores/alumnos/editar-alumnos', compact('alumnos'));
     }
 
     public function eliminarAlumno($id){

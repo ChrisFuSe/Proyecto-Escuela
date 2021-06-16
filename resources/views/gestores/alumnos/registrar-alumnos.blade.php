@@ -102,7 +102,7 @@
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">CURP</span>
-              <input type="text" class="form-control" placeholder="CURP..." aria-label="RFC" name="curp">
+              <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" placeholder="CURP..." aria-label="RFC" name="curp">
           </div>
         </div>
         <div class="col">
@@ -176,7 +176,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
-                <input type="text" class="form-control" placeholder="RFC..." name="frfc">
+                <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" placeholder="RFC..." name="frfc">
             </div>
         </div>
         <div class="col">

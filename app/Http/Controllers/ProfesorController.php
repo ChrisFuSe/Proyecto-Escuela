@@ -37,4 +37,16 @@ class ProfesorController extends Controller
         $profesor->delete();
         return redirect('gestores\maestros\consultar-eliminar');
     }
+
+   /* public function llenarProfesor(){
+        $profesor = Profesor::all();
+        
+        return view('gestores/maestros/modificar-maestro', compact('profesor'));
+        //dd($profesor);
+        //return view('profesor', array('profesores'->$profesor));
+    }*/
+
+    public function editarProfesor($id){
+
+    }
 }
