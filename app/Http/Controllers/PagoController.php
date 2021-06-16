@@ -39,20 +39,20 @@ class PagoController extends Controller
         return redirect(route('realizar.pago'));
     }
 
-    public function consultarAdeudos(Request $request){
-        $adeudo = Adeudo::select("id_adeudo",'concepto','fecha_adeudo','monto_adeudo')
+    public function consultaradeudosAlumno(Request $request){
+        $adeudo = Adeudo::select("id_adeudo", 'monto_adeudo', 'concepto', 'fecha_adeudo')
                         ->where('numero_control', $request->numero_control)
                         ->where('pagado', 'n')->get();
         return response(json_encode($adeudo),200)->header('Content-type', 'text/plain');
     }
 
-    public function consultarPagos(Request $request){
-        $pagos = Pago::find($request->numero_control);
-        return view('gestores/pagos/consultar-pagos', compact('pagos'));
+    public function consultarPagos(){
+        $pago = Pago::all();
+        return response(json_encode($pago),200)->header('Content-type', 'text/plain');
     }
 
-    public function consultarDatos(Request $request){
-        $datos = Pago::find($request->num_referencia);
-        return view('gestores/pagos/consultar-pagos', compact('datos'));
+    public function consultarAdeudos(){
+        $adeudo = Adeudo::all();
+        return response(json_encode($adeudo),200)->header('Content-type', 'text/plain');
     }
 }

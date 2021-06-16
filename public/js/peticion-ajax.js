@@ -1,7 +1,7 @@
 function hacer_peticion(){
     var select_adeudos = $("#adeudos");
     $.ajax({
-        url: '/consultar/adeudos',
+        url: '/consultar/adeudos/alumno',
         method: 'POST',
         data:{
             _token: $('input[name="_token"]').val(),
