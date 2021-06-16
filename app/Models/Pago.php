@@ -24,4 +24,8 @@ class Pago extends Model
     public function adeudo(){
         return $this->hasMany('App\Models\Adeudo');
     }
+
+    public function alumno(){
+        return $this->belongsTo('App\Models\Alumno');
+    }
 }

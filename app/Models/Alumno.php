@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Grupo;
 
 class Alumno extends Model
 {
@@ -42,4 +41,12 @@ class Alumno extends Model
         'ftelefono',
         'factura',
     ];
+
+    public function adeudo(){
+        return $this->hasMany('App\Models\Adeudo');
+    }
+
+    public function pago(){
+        return $this->hasMany('App\Models\Pago');
+    }
 }
