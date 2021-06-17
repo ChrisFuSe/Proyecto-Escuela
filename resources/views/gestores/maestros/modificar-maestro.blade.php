@@ -7,154 +7,212 @@
 @section('operacion', 'Modificar Maestro')
 
 @section('cuerpo')
-<div class="container">
-<!--    "{{route('llenar.profesor')}}" Contenedor con todos los inputs del formulario para registrar un nuevo maestro  action="editar.php?table=profesores"-->
-<form action="" accept-charset="utf-8" name="formulario">
-@csrf
+<body> 
+     <header>
+     <h3 class='text-center'></h3>
+     </header>    
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">            
+            <button id="btnNuevo" type="button" class="btn btn-info" data-toggle="modal"><i class="material-icons">library_add</i></button>    
+            </div>    
+        </div>    
+    </div>    
+    <br>  
 
-
-
-    <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
-                así conseguimos dividir en 2 columnas a los inputs del formulario               -->
-    <div class="row">
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Busqueda</span>
-                <input type="text" class="form-control" name="id_profesor" placeholder="Buscar maestro...">
-                <button onclick="elegir1()" style="padding-inline: 2%;"><img src="{{ asset('img/lupa.png') }}" alt="Responsive image"
-                        width="50%" class="botones-navegacion"></button>
+    <div class="container caja">
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="table-responsive">        
+                <table id="tablaUsuarios" class="table table-striped table-bordered table-condensed" style="width:100%" >
+                    <thead class="text-center">
+                        <tr>
+                            <th>User_Id</th>
+                            <th>userName</th>
+                            <th>FirstName</th>                                
+                            <th>LastName</th>  
+                            <th>Gender</th>
+                            <th>Password</th>
+                            <th>Status</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>                           
+                    </tbody>        
+                </table>               
             </div>
+            </div>
+        </div>  
+    </div>   
+
+<!--Modal para CRUD-->
+<div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <form id="formUsuarios">    
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                    <div class="form-group">
+                    <label for="" class="col-form-label">User Name:</label>
+                    <input type="text" class="form-control" id="username">
+                    </div>
+                    </div>
+                    <div class="col-lg-6">
+                    <div class="form-group">
+                    <label for="" class="col-form-label">First Name</label>
+                    <input type="text" class="form-control" id="first_name">
+                    </div> 
+                    </div>    
+                </div>
+                <div class="row"> 
+                    <div class="col-lg-6">
+                    <div class="form-group">
+                    <label for="" class="col-form-label">Last Name</label>
+                    <input type="text" class="form-control" id="last_name">
+                    </div>               
+                    </div>
+                    <div class="col-lg-6">
+                    <div class="form-group">
+                    <label for="" class="col-form-label">Gender</label>
+                    <input type="text" class="form-control" id="gender">
+                    </div>
+                    </div>  
+                </div>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="form-group">
+                        <label for="" class="col-form-label">Password</label>
+                        <input type="text" class="form-control" id="password">
+                        </div>
+                    </div>    
+                    <div class="col-lg-3">    
+                        <div class="form-group">
+                        <label for="" class="col-form-label">Status</label>
+                        <input type="number" class="form-control" id="status">
+                        </div>            
+                    </div>    
+                </div>                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
+            </div>
+        </form>    
         </div>
     </div>
-    @if(empty($profesor))
-    <p></p>
-    @else
-    <div class="row row-cols-2">
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Nombres</span>
-                <input type="text" class="form-control" aria-label="Nombres" name="nombres" value='{{$profesor->nombres}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Estado</span>
-                <select type="select" class="form-control" name="estado">
-                    <option>{{$profesor->estado}}</option>
-                    <option>Aguascalientes</option>
-                    <option>Baja California</option>
-                    <option>Baja California Sur</option>
-                    <option>Campeche</option>
-                    <option>Chiapas</option>
-                    <option>Chihuahua</option>
-                    <option>Ciudad de México</option>
-                    <option>Coahuila</option>
-                    <option>Colima</option>
-                    <option>Durango</option>
-                    <option>Estado de México</option>
-                    <option>Guanajuato</option>
-                    <option>Guerrero</option>
-                    <option>Hidalgo</option>
-                    <option>Jalisco</option>
-                    <option>Michoacán</option>
-                    <option>Morelos</option>
-                    <option>Nayarit</option>
-                    <option>Nuevo León</option>
-                    <option>Oaxaca</option>
-                    <option>Puebla</option>
-                    <option>Querétaro</option>
-                    <option>Quintana Roo</option>
-                    <option>San Luis Potosí</option>
-                    <option>Sinaloa</option>
-                    <option>Sonora</option>
-                    <option>Tabasco</option>
-                    <option>Tamaulipas</option>
-                    <option>Tlaxcala</option>
-                    <option>Veracruz</option>
-                    <option>Yucatán</option>
-                    <option>Zacatecas</option>
-                </select>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Ciudad</span>
-                <input type="text" class="form-control" aria-label="Ciudad" name="ciudad" value='{{$profesor->ciudad}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Calle y numero</span>
-                <input type="text" aria-label="Calle" class="form-control" name="calle" value='{{$profesor->calle}}'>
-                <input type="text" aria-label="Numero" class="form-control" name="numero" value='{{$profesor->numero}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Apellido Paterno</span>
-                <input type="text" class="form-control" aria-label="Apellido Paterno" name="ap_paterno" value='{{$profesor->ap_paterno}}'>
-            </div>
-         </div>   
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Colonia</span>
-                <input type="text" class="form-control" aria-label="Colonia" name="colonia" value='{{$profesor->colonia}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Apellido Materno</span>
-                <input type="text" class="form-control" aria-label="Apellido Materno" name="ap_materno" value='{{$profesor->ap_materno}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">C.P</span>
-                <input type="text" class="form-control" aria-label="c.p." name="codigo_postal" value='{{$profesor->codigo_postal}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">RFC</span>
-                <input type="text" class="form-control" aria-label="rfc" name="rfc" value='{{$profesor->rfc}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Numero Telefónico</span>
-                <input type="text" class="form-control" aria-label="Numero" name="telefono" value='{{$profesor->telefono}}'>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Correo electrónico</span>
-                <input type="text" class="form-control" aria-label="Correo electronico" name="correo" value='{{$profesor->correo}}'>
-            </div>
-        </div>
-    </div>
-
-<div class="col" style="margin-top: 3%;">
-        <button onclick="elegir2()" class="btn btn-dark" style="padding-inline: 2%;" >ACTUALIZAR</button>
-    </div>
-
-</form>
-    
 </div>
-
-
-@endif
+</body>
+</html>
 @endsection
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
 
-<script>
-function elegir1(){
-    document.formulario.method="GET";
-    document.formulario.action="{{route('llenar.profesor')}}";
-    document.formulario.submit();
-}
+        tablaUsuarios = $('#tablaUsuarios').DataTable({  
+    "ajax":{            
+        "url": "bd/crud.php", 
+        "method": 'POST', //usamos el metodo POST
+        "data":{opcion:opcion}, //enviamos opcion 4 para que haga un SELECT
+        "dataSrc":""
+    },
+    "columns":[
+        {"data": "user_id"},
+        {"data": "username"},
+        {"data": "first_name"},
+        {"data": "last_name"},
+        {"data": "gender"},
+        {"data": "password"},
+        {"data": "status"},
+        {"defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btn-sm btnEditar'><i class='material-icons'>edit</i></button><button class='btn btn-danger btn-sm btnBorrar'><i class='material-icons'>delete</i></button></div></div>"}
+    ]
+});     
 
-function elegir2(){
-    document.formulario.method="POST";
-    document.formulario.action="../maestros/editar.php?table=profesores";
-    document.formulario.submit();
-}
-</script>
+var fila; //captura la fila, para editar o eliminar
+//submit para el Alta y Actualización
+$('#formUsuarios').submit(function(e){                         
+    e.preventDefault(); //evita el comportambiento normal del submit, es decir, recarga total de la página
+    username = $.trim($('#username').val());    
+    first_name = $.trim($('#first_name').val());
+    last_name = $.trim($('#last_name').val());    
+    gender = $.trim($('#gender').val());    
+    password = $.trim($('#password').val());
+    status = $.trim($('#status').val());                            
+        $.ajax({
+          url: "bd/crud.php",
+          type: "POST",
+          datatype:"json",    
+          data:  {user_id:user_id, username:username, first_name:first_name, last_name:last_name, gender:gender, password:password ,status:status ,opcion:opcion},    
+          success: function(data) {
+            tablaUsuarios.ajax.reload(null, false);
+           }
+        });			        
+    $('#modalCRUD').modal('hide');											     			
+});
+        
+ 
+
+//para limpiar los campos antes de dar de Alta una Persona
+$("#btnNuevo").click(function(){
+    opcion = 1; //alta           
+    user_id=null;
+    $("#formUsuarios").trigger("reset");
+    $(".modal-header").css( "background-color", "#17a2b8");
+    $(".modal-header").css( "color", "white" );
+    $(".modal-title").text("Alta de Usuario");
+    $('#modalCRUD').modal('show');	    
+});
+
+//Editar        
+$(document).on("click", ".btnEditar", function(){		        
+    opcion = 2;//editar
+    fila = $(this).closest("tr");	        
+    user_id = parseInt(fila.find('td:eq(0)').text()); //capturo el ID		            
+    username = fila.find('td:eq(1)').text();
+    first_name = fila.find('td:eq(2)').text();
+    last_name = fila.find('td:eq(3)').text();
+    gender = fila.find('td:eq(4)').text();
+    password = fila.find('td:eq(5)').text();
+    status = fila.find('td:eq(6)').text();
+    $("#username").val(username);
+    $("#first_name").val(first_name);
+    $("#last_name").val(last_name);
+    $("#gender").val(gender);
+    $("#password").val(password);
+    $("#status").val(status);
+    $(".modal-header").css("background-color", "#007bff");
+    $(".modal-header").css("color", "white" );
+    $(".modal-title").text("Editar Usuario");		
+    $('#modalCRUD').modal('show');		   
+});
+
+//Borrar
+$(document).on("click", ".btnBorrar", function(){
+    fila = $(this);           
+    user_id = parseInt($(this).closest('tr').find('td:eq(0)').text()) ;		
+    opcion = 3; //eliminar        
+    var respuesta = confirm("¿Está seguro de borrar el registro "+user_id+"?");                
+    if (respuesta) {            
+        $.ajax({
+          url: "bd/crud.php",
+          type: "POST",
+          datatype:"json",    
+          data:  {opcion:opcion, user_id:user_id},    
+          success: function() {
+              tablaUsuarios.row(fila.parents('tr')).remove().draw();                  
+           }
+        });	
+    }
+ });
+     
+});    
+    </script>
+@endsection
