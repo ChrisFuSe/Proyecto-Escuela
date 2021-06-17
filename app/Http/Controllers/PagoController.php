@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Connection;
+use Illuminate\Support\Facades\DB;
 use App\Models\Pago;
 use App\Models\Adeudo;
 
@@ -47,12 +49,19 @@ class PagoController extends Controller
     }
 
     public function consultarPagos(){
-        $pago = Pago::all();
-        return response(json_encode($pago),200)->header('Content-type', 'text/plain');
+        $pago = Pago::select('num_referencia', 'monto', 'fecha_pago', 'descripcion', 
+                            'concepto', 'pagos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
+                    ->join('alumnos', 'pagos.numero_control', '=', 'alumnos.numero_control')
+                    ->join('adeudos', 'pagos.id_adeudo', '=', 'adeudos.id_adeudo')
+                    ->get();
+        return datatables()->of($pago)->toJson();
     }
 
     public function consultarAdeudos(){
-        $adeudo = Adeudo::all();
-        return response(json_encode($adeudo),200)->header('Content-type', 'text/plain');
+        $adeudo = Adeudo::select('id_adeudo', 'monto_adeudo', 'concepto', 'pagado', 
+                                'fecha_adeudo', 'adeudos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
+                        ->join('alumnos', 'adeudos.numero_control', '=', 'alumnos.numero_control')
+                        ->get();
+        return datatables()->of($adeudo)->toJson();
     }
 }

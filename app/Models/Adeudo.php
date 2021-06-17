@@ -22,4 +22,8 @@ class Adeudo extends Model
     public function pagos(){
         return $this->belongsTo('App\Models\Pago');
     }
+
+    public function alumno(){
+        return $this->belongsTo('App\Models\Alumno');
+    }
 }

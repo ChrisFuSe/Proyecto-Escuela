@@ -111,7 +111,7 @@ function validar(){
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">RFC</span>
-                    <input type="text" class="form-control" placeholder="Registro federal de contribuyente..."
+                    <input onkeyup="this.value = this.value.toUpperCase();" type="text" class="form-control" placeholder="Registro federal de contribuyente..."
                         aria-label="RFC" name="rfc">
                 </div>
             </div>
