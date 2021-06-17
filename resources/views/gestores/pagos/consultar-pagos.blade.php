@@ -93,7 +93,7 @@
                     ],
                     "language": {
                         "lengthMenu": "Desplegando _MENU_ registros por página",
-                        "zeroRecords": "Nada encontrado - perdón",
+                        "zeroRecords": "No se encontraron registros",
                         "info": "Mostrando página _PAGE_ de _PAGES_",
                         "infoEmpty": "No hay registros disponibles",
                         "infoFiltered": "(filtrados desde los _MAX_ registros totales)",

@@ -59,7 +59,7 @@ Route::post('registrar/profesor', [ProfesorController::class, 'registrarProfesor
 Route::post('consultar/profesor', [ProfesorController::class, 'consultarProfesor'])->middleware('auth')->name('consultar.profesor');
 Route::get('elimnar/profesor/{id}', [ProfesorController::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
 Route::get('editar/profesor/{id}', [ProfesorController::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
-Route::get('llenar/profesor', [ProfesorController::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
+Route::get('llenar/profesor/{id}', [ProfesorController::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
 
 
 //          Rutas para gestor de Pagos          //

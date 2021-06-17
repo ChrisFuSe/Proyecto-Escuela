@@ -27,19 +27,14 @@ class ProfesorController extends Controller
         return view('gestores\maestros\registrar-maestro');
     }
 
-    public function consultarProfesor(Request $request){
-        $profesor = Profesor::find($request->id_profesor);
-        return view('gestores/maestros/consultar-eliminar-maestro', compact('profesor'));
-    }
-
     public function eliminarProfesor($id){
         $profesor = Profesor::where('id_profesor',$id)->first();
         $profesor->delete();
         return redirect('gestores\maestros\editar');
     }
 
-    public function editarProfesor($id){
+    public function llenarProfesor($id){
         $profesor = Profesor::where('id_profesor',$id)->first();
-        return $profesor;
+        return view('gestores\maestros\editar-maestro', compact('profesor'));
     }
 }
