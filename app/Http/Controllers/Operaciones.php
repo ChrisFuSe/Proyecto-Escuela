@@ -61,7 +61,8 @@ class Operaciones extends Controller
             case 'cargar':
                 $grupos = Grupo::all();
                 $profesores = Profesor::all();
-                return view('gestores/grupos/cargar-informacion', compact('grupos', 'profesores'));
+                $alumnos = Alumno::all();
+                return view('gestores/grupos/cargar-informacion', compact('grupos', 'profesores','alumnos'));
             break;
             case 'consultar':
                 return view('gestores/grupos/consultar-grupo');

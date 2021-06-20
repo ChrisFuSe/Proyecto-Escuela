@@ -74,6 +74,7 @@ Route::get('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->mi
 
 //          Rutas para gestor de Grupos         //
 Route::post('registrar/grupo', [GrupoController::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
+Route::get('agregar_alumno/grupo/{id}', [GrupoController::class, 'agregar_alumnoGrupo'])->middleware('auth')->name('agregar_alumno.grupo');
 
 
 //          Rutas para gestor de Usuarios       //

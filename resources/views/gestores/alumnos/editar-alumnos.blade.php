@@ -112,8 +112,6 @@
           </tbody>
         </table>
     </div>
-</div>
-</form>
 @endsection
 
 @section('scripts')

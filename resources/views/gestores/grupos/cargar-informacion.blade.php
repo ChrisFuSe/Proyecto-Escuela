@@ -1,19 +1,35 @@
 @extends('templates.pagina-menu-botones')
 
-@section('imagen-opc')
-{{ asset('img/Gestor_Grupos.png') }}
-@endsection
-
 @section('estilos')
 <meta name="_token" content="{{ csrf_token() }}">
 <link rel="stylesheet" href="{{asset('css/bootstrap-select.css')}}">
 <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{ asset('css\dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css\responsive.bootstrap5.min.css') }}">
 @endsection
 
 @section('header-scripts')
 <script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('js\jquery-3.5.1.js')}}"></script>
+<script src="{{asset('js\jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('js\dataTables.bootstrap5.min.js')}}"></script>
+<script src="{{asset('js\dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('js\responsive.bootstrap5.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-select.min.js')}}"></script>
+@endsection
+
+@section('fuente')
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  </style> 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+  </style> 
+@endsection
+
+@section('imagen-opc')
+{{ asset('img/Gestor_Grupos.png') }}
 @endsection
 
 @section('operacion','Cargar Informacion')
@@ -28,9 +44,9 @@
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Grupo:</span>
                 <select type="select" class="form-control" id="grupo">
-                    <option disabled>Elije un grupo...</option>
+                    <option>Elije un grupo...</option>
                     @foreach ($grupos as $grupo)
-                        <option value="{{$grupo->nombre}}">{{$grupo->nombre}}</option>
+                        <option value="{{$grupo->id_grupo}}">{{$grupo->nombre}}</option>
                     @endforeach
                 </select>
             </div>
@@ -39,10 +55,10 @@
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Profesor:</span>
                 <select type="select" class="form-control">
-                    <option disabled>Elije un Profesor...</option>
-                    <option>Profesor 1</option>
-                    <option>Profesor 2</option>
-                    <option>Profesor 3</option>
+                    <option>Elije un Profesor...</option>
+                    @foreach ($profesores as $profesor)
+                        <option value="{{$profesor->id_profesor}}">{{$profesor->nombres}} {{$profesor->ap_paterno}} {{$profesor->ap_materno}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -61,7 +77,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Días:</span>
-                <select class="selectpicker form-control" multiple data-live-search="true" id="horario">
+                <select class="form-control" id="horario">
                     <option value="Lunes">Lunes</option>
                     <option value="Martes">Martes</option>
                     <option value="Miercoles">Miercoles</option>
@@ -72,59 +88,39 @@
                 </select>
             </div>
         </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Alumno:</span>
-                <input id="opciones" type="text" class="form-control" placeholder="Numero Control...">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">¿El alumno es oyente?</span>
-                <select type="select" class="form-control">
-                    <option disabled>Seleccionar..</option>
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-            </div>
-        </div>
-        <div class="col" id="save-alumno">
-            <div class="input-group input-group-lg mb-4">
-                <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="verdias()">Guardar
-                    alumno</button>
-            </div>
-        </div>
     </div>
     <!--    Tabla -->
-    <div class="container" style="margin-top: 3%;">
-        <table class="table table-striped " style="margin-top: 5%;" width="80%">
-            <thead>
+    <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
+          <thead>
+            <tr>
+              <th class="table-primary" scope="col"></th>
+              <th class="table-primary" scope="col">Agregar</th>
+              <th class="table-primary" scope="col">Número de control</th>
+              <th class="table-primary" scope="col">Nombre completo</th>
+              <th class="table-primary" scope="col">Id Grupo</th>
+              <th class="table-primary" scope="col">Oyente clase</th>
+          </thead>
+          <tbody>
+            @if(empty($alumnos))
+              <p></p>
+            @else
+              @foreach($alumnos as $alumno)
                 <tr>
-                    <th class="table-primary" scope="col">Número de Control</th>
-                    <th class="table-primary" scope="col">Alumno</th>
+                  <td class="table-info"></td>
+                  <td class="table-info">
+                  <form action="{{route('agregar_alumno.grupo',$alumno->numero_control)}}" method="GET">
+                  <button type="submit" class="btn btn-success"><img src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
+                  </form>
+                  </td>
+                  <td class="table-info" value="{{$alumno->numero_control}}">{{$alumno->numero_control}}</td>
+                  <td class="table-info">{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
+                  <td class="table-info">{{$alumno->id_grupo}}</td>
+                  <td class="table-info">{{$alumno->oyente_clase}}</td>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="table-info" scope="row">1</td>
-                    <td class="table-info"></td>
-
-                </tr>
-                <tr>
-                    <td class="table-light" class="table-info" scope="row">2</td>
-                    <td class="table-light"></td>
-                </tr>
-                <tr>
-                    <td class="table-info" class="table-info" scope="row">3</td>
-                    <td class="table-info"></td>
-                </tr>
-                <tr>
-                    <td class="table-light" class="table-info" scope="row">4</td>
-                    <td class="table-light"></td>
-                </tr>
-            </tbody>
+              @endforeach
+            @endif
+          </tbody>
         </table>
-    </div>
 </div>
 
 <div class="col" style="margin-top: 3%;">
@@ -134,8 +130,13 @@
 @endsection
 
 @section('scripts')
-<script>
+<!--<script>
     $('select').selectpicker();
+</script> 
+<script src="{{asset('js/consultar-grupo.js')}}"></script>-->
+<script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
 </script>
-<script src="{{asset('js/consultar-grupo.js')}}"></script>
 @endsection
