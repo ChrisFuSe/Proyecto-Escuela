@@ -52,13 +52,15 @@ Route::get('gestores/cal_as/{gestor}', [Gestores::class, 'gesCal_As'])->middlewa
 Route::post('registrar/alumno', [AlumnoController::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
 Route::post('consultar/alumno', [AlumnoController::class, 'consultarAlumno'])->middleware('auth')->name('consultar.alumno');
 Route::get('elimnar/alumno/{id}', [AlumnoController::class, 'eliminarAlumno'])->middleware('auth')->name('eliminar.alumno');
+Route::get('actualizar/alumno/{id}', [AlumnoController::class, 'actualizarAlumno'])->middleware('auth')->name('actualizar.alumno');
+Route::get('llenar/alumno/{id}', [AlumnoController::class, 'llenarAlumno'])->middleware('auth')->name('llenar.alumno');
 
 
 //          Rutas para gestor de Profesores     //
 Route::post('registrar/profesor', [ProfesorController::class, 'registrarProfesor'])->middleware('auth')->name('registrar.profesor');
 Route::post('consultar/profesor', [ProfesorController::class, 'consultarProfesor'])->middleware('auth')->name('consultar.profesor');
 Route::get('elimnar/profesor/{id}', [ProfesorController::class, 'eliminarProfesor'])->middleware('auth')->name('eliminar.profesor');
-Route::get('editar/profesor/{id}', [ProfesorController::class, 'editarProfesor'])->middleware('auth')->name('editar.profesor');
+Route::get('actualizar/profesor/{id}', [ProfesorController::class, 'actualizarProfesor'])->middleware('auth')->name('actualizar.profesor');
 Route::get('llenar/profesor/{id}', [ProfesorController::class, 'llenarProfesor'])->middleware('auth')->name('llenar.profesor');
 
 
@@ -78,3 +80,5 @@ Route::post('registrar/grupo', [GrupoController::class, 'registrarGrupo'])->midd
 Route::post('registrar/usuario', [UsuarioController::class, 'registrarUsuario'])->middleware('auth')->name('registrar.usuarios');
 Route::post('consultar/usuario', [UsuarioController::class, 'consultarUsuario'])->middleware('auth')->name('consultar.usuario');
 Route::get('elimnar/usuario/{id}', [UsuarioController::class, 'eliminarUsuario'])->middleware('auth')->name('eliminar.usuario');
+Route::get('actualizar/usuario/{id}', [UsuarioController::class, 'actualizarUsuario'])->middleware('auth')->name('actualizar.usuario');
+Route::get('llenar/usuario/{id}', [UsuarioController::class, 'llenarUsuario'])->middleware('auth')->name('llenar.usuario');

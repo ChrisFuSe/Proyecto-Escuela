@@ -28,7 +28,8 @@
              <thead>
                <tr>
                <th class="table-primary" scope="col"></th>
-                 <th class="table-primary" scope="col">Acciones</th>
+                 <th class="table-primary" scope="col">Editar</th>
+                 <th class="table-primary" scope="col">Eliminar</th>
                  <th class="table-primary" scope="col">ID</th>
                  <th class="table-primary" scope="col">RFC</th>
                  <th class="table-primary" scope="col">Nombres</th>
@@ -48,10 +49,12 @@
              @foreach($profesor as $profesores)
                <tr>
                   <td class="table-info"></td> 
-                  <td>
+                  <td class="table-info">
                   <form action="{{route('llenar.profesor',$profesores->id_profesor)}}" method="GET">
                   <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
                   </form>
+                  </td>
+                  <td class="table-info">
                   <form action="{{route('eliminar.profesor',$profesores->id_profesor)}}" method="GET">
                   <button type="submit" class="btn btn-danger"><img src="{{ asset('img\x-circle.svg') }}" alt="Bootstrap"></button>
                   </form>

@@ -4,6 +4,12 @@
 "{{ asset('img/Gestor_Usuarios.png') }}"
 @endsection
 
+<script>
+function validar(){
+    alert("Datos registrados de manera correcta");
+}
+</script>
+
 @section('operacion', 'Registrar Usuario')
 
 @section('cuerpo')
@@ -11,6 +17,7 @@
 
     @csrf
     <!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
+
     <div class="container" style="margin-top: 2%;">
         <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                     así conseguimos dividir en 2 columnas a los inputs del formulario               -->
@@ -79,7 +86,7 @@
         </div>
 
         <div class="col" style="margin-top: 3%;">
-            <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
+            <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" onclick=validar();>GUARDAR</button>
         </div>
     </div>
 </form>

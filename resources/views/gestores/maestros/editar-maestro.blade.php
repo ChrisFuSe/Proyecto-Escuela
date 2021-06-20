@@ -6,7 +6,7 @@
 
 <script>
 function validar(){
-    alert("Datos registrados de manera correcta");
+    alert("Datos actualizados de manera correcta");
 }
 </script>
 
@@ -14,7 +14,7 @@ function validar(){
 
 @section('cuerpo')
 
-<form action="{{route('consultar.profesor')}}" method="POST" accept-charset="utf-8">
+<form action="{{route('actualizar.profesor',$profesor->id_profesor)}}" method="GET" accept-charset="utf-8">
     @csrf
     <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
     <div class="container" style="margin-top: 2%;">

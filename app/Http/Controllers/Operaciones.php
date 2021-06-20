@@ -6,6 +6,8 @@ use App\Models\Concepto;
 use Illuminate\Http\Request;
 use App\Models\Nivel;
 use App\Models\Profesor;
+use App\Models\Alumno;
+use App\Models\User;
 use App\Models\Grupo;
 
 class Operaciones extends Controller
@@ -37,7 +39,8 @@ class Operaciones extends Controller
                 return view('gestores/alumnos/registrar-alumnos');
             break;
             case 'editar':
-                return view('gestores/alumnos/editar-alumnos');
+                $alumnos = Alumno::all();
+                return view('gestores/alumnos/editar-alumnos', compact('alumnos'));
             break;
             case 'consultar-eliminar':
                 return view('gestores/alumnos/consultar-eliminar-alumnos');
@@ -112,7 +115,8 @@ class Operaciones extends Controller
                 return view('gestores/usuarios/editar-usuario'); 
             break;
             case 'consultar-eliminar':
-                return view('gestores/usuarios/consultarE-usuario'); 
+                $usuarios = User::all();
+                return view('gestores/usuarios/consultarE-usuario', compact('usuarios')); 
             break;
             case 'bitacora':
                 return view('gestores/usuarios/bitacora'); 

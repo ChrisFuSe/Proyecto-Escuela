@@ -30,39 +30,38 @@
 
   
 @section('cuerpo')
-<form action="{{route('consultar.alumno')}}" method="POST" accept-charset="utf-8">
-@csrf
-<button type="submit">A</button>
-<div class="card">
-    <div class="card-body">  
+    <div class="container"> 
         <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Nombres</th>
-              <th>Apellido Pat</th>
-              <th>Apellido Mat</th>
-              <th>CURP</th>
-              <th>Fecha de Nacimiento</th>
-              <th>Email</th>
-              <th>Telefono</th>
-              <th>Estado Actual</th>
-              <th>Descuento</th>
-              <th>Deuda Total</th>
-              <th>Id Grupo</th>
-              <th>Oyente</th>
-              <th>Estado</th>
-              <th>Ciudad</th>
-              <th>Calle</th>
-              <th>Numero</th>
-              <th>Colonia</th>
-              <th>C.P.</th>
-              <th>Facturacion</th>
-              <th>Nombre Completo</th>
-              <th>RFC</th>
-              <th>Domicilio</th>
-              <th>Telefono</th>
-              <th>Correo</th>
+              <th class="table-primary" scope="col">ID</th>
+              <th class="table-primary" scope="col">Editar</th>
+              <th class="table-primary" scope="col">Eliminar</th>
+              <th class="table-primary" scope="col">ID</th>
+              <th class="table-primary" scope="col">Nombres</th>
+              <th class="table-primary" scope="col">Apellido Pat</th>
+              <th class="table-primary" scope="col">Apellido Mat</th>
+              <th class="table-primary" scope="col">CURP</th>
+              <th class="table-primary" scope="col">Fecha de Nacimiento</th>
+              <th class="table-primary" scope="col">Email</th>
+              <th class="table-primary" scope="col">Telefono</th>
+              <th class="table-primary" scope="col">Estado Actual</th>
+              <th class="table-primary" scope="col">Descuento</th>
+              <th class="table-primary" scope="col">Deuda Total</th>
+              <th class="table-primary" scope="col">Id Grupo</th>
+              <th class="table-primary" scope="col">Oyente</th>
+              <th class="table-primary" scope="col">Estado</th>
+              <th class="table-primary" scope="col">Ciudad</th>
+              <th class="table-primary" scope="col">Calle</th>
+              <th class="table-primary" scope="col">Numero</th>
+              <th class="table-primary" scope="col">Colonia</th>
+              <th class="table-primary" scope="col">C.P.</th>
+              <th class="table-primary" scope="col">Facturacion</th>
+              <th class="table-primary" scope="col">Nombre Completo</th>
+              <th class="table-primary" scope="col">RFC</th>
+              <th class="table-primary" scope="col">Domicilio</th>
+              <th class="table-primary" scope="col">Telefono</th>
+              <th class="table-primary" scope="col">Correo</th>
             </tr>
           </thead>
           <tbody>
@@ -71,31 +70,42 @@
             @else
               @foreach($alumnos as $alumno)
                 <tr>
-                  <td>{{$alumno->numero_control}}</td>
-                  <td>{{$alumno->nombres}}</td>
-                  <td>{{$alumno->ap_paterno}}</td>
-                  <td>{{$alumno->ap_materno}}</td>
-                  <td>{{$alumno->curp}}</td>
-                  <td>{{$alumno->fecha_nac}}</td>
-                  <td>{{$alumno->correo}}</td>
-                  <td>{{$alumno->telefono}}</td>
-                  <td>{{$alumno->estado_actual}}</td>
-                  <td>{{$alumno->descuento}}</td>
-                  <td>{{$alumno->deuda_total}}</td>
-                  <td>{{$alumno->id_grupo}}</td>
-                  <td>{{$alumno->oyente_clase}}</td>
-                  <td>{{$alumno->estado}}</td>
-                  <td>{{$alumno->ciudad}}</td>
-                  <td>{{$alumno->calle}}</td>
-                  <td>{{$alumno->numero}}</td>
-                  <td>{{$alumno->colonia}}</td>
-                  <td>{{$alumno->codigo_postal}}</td>
-                  <td>{{$alumno->factura}}</td>
-                  <td>{{$alumno->fnombres}}</td>
-                  <td>{{$alumno->fdomicilio}}</td>
-                  <td>{{$alumno->frfc}}</td>
-                  <td>{{$alumno->ftelefono}}</td>
-                  <td>{{$alumno->fcorreo}}</td>
+                  <td class="table-info"></td>
+                  <td class="table-info">
+                  <form action="{{route('llenar.alumno',$alumno->numero_control)}}" method="GET">
+                  <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
+                  </form>
+                  </td>
+                  <td class="table-info">
+                  <form action="{{route('eliminar.alumno',$alumno->numero_control)}}" method="GET">
+                  <button type="submit" class="btn btn-danger"><img src="{{ asset('img\x-circle.svg') }}" alt="Bootstrap"></button>
+                  </form>
+                  </td>
+                  <td class="table-info">{{$alumno->numero_control}}</td>
+                  <td class="table-info">{{$alumno->nombres}}</td>
+                  <td class="table-info">{{$alumno->ap_paterno}}</td>
+                  <td class="table-info">{{$alumno->ap_materno}}</td>
+                  <td class="table-info">{{$alumno->curp}}</td>
+                  <td class="table-info">{{$alumno->fecha_nac}}</td>
+                  <td class="table-info">{{$alumno->correo}}</td>
+                  <td class="table-info">{{$alumno->telefono}}</td>
+                  <td class="table-info">{{$alumno->estado_actual}}</td>
+                  <td class="table-info">{{$alumno->descuento}}</td>
+                  <td class="table-info">{{$alumno->deuda_total}}</td>
+                  <td class="table-info">{{$alumno->id_grupo}}</td>
+                  <td class="table-info">{{$alumno->oyente_clase}}</td>
+                  <td class="table-info">{{$alumno->estado}}</td>
+                  <td class="table-info">{{$alumno->ciudad}}</td>
+                  <td class="table-info">{{$alumno->calle}}</td>
+                  <td class="table-info">{{$alumno->numero}}</td>
+                  <td class="table-info">{{$alumno->colonia}}</td>
+                  <td class="table-info">{{$alumno->codigo_postal}}</td>
+                  <td class="table-info">{{$alumno->factura}}</td>
+                  <td class="table-info">{{$alumno->fnombres}}</td>
+                  <td class="table-info">{{$alumno->fdomicilio}}</td>
+                  <td class="table-info">{{$alumno->frfc}}</td>
+                  <td class="table-info">{{$alumno->ftelefono}}</td>
+                  <td class="table-info">{{$alumno->fcorreo}}</td>
                 </tr>
               @endforeach
             @endif

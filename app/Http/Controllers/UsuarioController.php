@@ -21,17 +21,32 @@ class UsuarioController extends Controller
 
         $usuario->save();
 
-        return view('gestores\usuarios\registrar-usuario');
-    }
-
-    public function consultarUsuario(Request $request){
-        $usuario = User::find($request->id);
-        return view('gestores/usuarios/consultarE-usuario', compact('usuario'));
+        return redirect('gestores\usuarios\alta');
     }
 
     public function eliminarUsuario($id){
-        $usuario = User::where('id',$id)->first();
-        $usuario->delete();
-        return view('gestores\usuarios\consultarE-usuario');
+        $usuarios = User::where('id',$id)->first();
+        $usuarios->delete();
+        return redirect('gestores\usuarios\consultar-eliminar');
     }
+
+    public function llenarUsuario($id){
+        $usuarios = User::where('id',$id)->first();
+        return view('gestores\usuarios\editar-usuario', compact('usuarios'));
+    }
+
+    public function actualizarUsuario(Request $request, $id){
+        $usuario = User::findOrFail($id);
+        $usuario->username = $request->username;
+        $usuario->password = Hash::make($request->password);
+        $usuario->email = $request->email;
+        $usuario->nombres = $request->nombres;
+        $usuario->ap_paterno = $request->ap_paterno;
+        $usuario->ap_materno = $request->ap_materno;
+        $usuario->tipo = $request->tipo;
+
+        $usuario->save();
+        return redirect('gestores\usuarios\consultar-eliminar');
+    }
+
 }
