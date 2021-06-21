@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Grupo;
 use App\Models\Alumno;
+use App\Models\Horario;
 use Illuminate\Http\Request;
 
 class GrupoController extends Controller
@@ -16,6 +17,14 @@ class GrupoController extends Controller
         $grupo->descripcion = $request->descripcion;
 
         $grupo->save();
+
+        $horario = new Horario();
+        $hi = $request->horai;
+        $hf = $request->horaf;
+        //$hc = $hi.$hf;
+        $horario->horarios = $hc;
+        $horario->dia = $request->dia;
+        $horario->save();
         return redirect('gestores/grupos/crear');
     }
 

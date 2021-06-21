@@ -56,13 +56,13 @@ class Operaciones extends Controller
         switch ($operacion) {
             case 'crear':
                 $niveles = Nivel::all();
-                return view('gestores/grupos/registrar-grupo', compact('niveles'));
+                $profesores = Profesor::all();
+                return view('gestores/grupos/registrar-grupo', compact('niveles','profesores'));
             break;
             case 'cargar':
                 $grupos = Grupo::all();
-                $profesores = Profesor::all();
                 $alumnos = Alumno::all();
-                return view('gestores/grupos/cargar-informacion', compact('grupos', 'profesores','alumnos'));
+                return view('gestores/grupos/cargar-informacion', compact('grupos', 'alumnos'));
             break;
             case 'consultar':
                 return view('gestores/grupos/consultar-grupo');
