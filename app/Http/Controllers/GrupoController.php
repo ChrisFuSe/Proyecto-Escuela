@@ -21,9 +21,10 @@ class GrupoController extends Controller
 
     public function agregar_alumnoGrupo(Request $request, $id){
         $alumno = Alumno::findOrFail($id);
-        $alumno->id_grupo = $request->id_grupo;
-        $alumno->save();
-        return $alumno;
+        $grupo = $request->get("grupo_s");
+        $alumno->id_grupo = $grupo;
+        //$alumno->save();
+        return  $grupo;
         //return redirect('gestores/grupos/cargar');
     }
 }

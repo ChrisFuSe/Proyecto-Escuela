@@ -43,48 +43,11 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Grupo:</span>
-                <select type="select" class="form-control" id="grupo">
+                <select type="select" class="form-control" id="grupo_s" name="grupo_s">
                     <option>Elije un grupo...</option>
                     @foreach ($grupos as $grupo)
                         <option value="{{$grupo->id_grupo}}">{{$grupo->nombre}}</option>
                     @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Profesor:</span>
-                <select type="select" class="form-control">
-                    <option>Elije un Profesor...</option>
-                    @foreach ($profesores as $profesor)
-                        <option value="{{$profesor->id_profesor}}">{{$profesor->nombres}} {{$profesor->ap_paterno}} {{$profesor->ap_materno}}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Hora de inicio:</span>
-                <input type="time" class="form-control" aria-label="Horario Inicio">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Hora de cierre:</span>
-                <input type="time" class="form-control" aria-label="Horario Cierre">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Días:</span>
-                <select class="form-control" id="horario">
-                    <option value="Lunes">Lunes</option>
-                    <option value="Martes">Martes</option>
-                    <option value="Miercoles">Miercoles</option>
-                    <option value="Jueves">Jueves</option>
-                    <option value="Viernes">Viernes</option>
-                    <option value="Sabado">Sabado</option>
-                    <option value="Domingo">Domingo</option>
                 </select>
             </div>
         </div>
@@ -122,10 +85,6 @@
           </tbody>
         </table>
 </div>
-
-<div class="col" style="margin-top: 3%;">
-    <button type="button" class="btn btn-dark" style="padding-inline: 2%;">GUARDAR</button>
-</div>
 </div>
 @endsection
 
@@ -138,5 +97,8 @@
         $(document).ready(function() {
             $('#example').DataTable();
         } );
+</script>
+<script>
+
 </script>
 @endsection
