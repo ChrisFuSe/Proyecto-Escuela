@@ -43,13 +43,13 @@
         <table id="pagos" class="table table-striped dt-responsive nowrap" style="width:100%">
             <thead>
                 <tr>
-                    <th>Numero de referencia</th>
-                    <th>Monto</th>
-                    <th>Fecha del Pago</th>
-                    <th>Descripcion</th>
-                    <th>Concepto</th>
-                    <th>Numero de control</th>
-                    <th>Nombre</th>
+                    <th class="table-primary" scope="col">Numero de referencia</th>
+                    <th class="table-primary" scope="col">Monto</th>
+                    <th class="table-primary" scope="col">Fecha del Pago</th>
+                    <th class="table-primary" scope="col">Descripcion</th>
+                    <th class="table-primary" scope="col">Concepto</th>
+                    <th class="table-primary" scope="col">Numero de control</th>
+                    <th class="table-primary" scope="col">Nombre</th>
                 </tr>
             </thead>
         </table>
@@ -61,13 +61,13 @@
         <table id="adeudos" class="table table-striped dt-responsive nowrap" style="width:100%">
             <thead>
                 <tr>
-                    <th>Numero de adeudo</th>
-                    <th>Monto</th>
-                    <th>Concepto</th>
-                    <th>Pagado</th>
-                    <th>Fecha del adeudo</th>
-                    <th>Numero de control</th>
-                    <th>Nombre</th>
+                    <th class="table-primary" scope="col">Numero de adeudo</th>
+                    <th class="table-primary" scope="col">Monto</th>
+                    <th class="table-primary" scope="col">Concepto</th>
+                    <th class="table-primary" scope="col">Pagado</th>
+                    <th class="table-primary" scope="col">Fecha del adeudo</th>
+                    <th class="table-primary" scope="col">Numero de control</th>
+                    <th class="table-primary" scope="col">Nombre</th>
                 </tr>
             </thead>
         </table>
