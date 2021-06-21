@@ -148,4 +148,8 @@ class Operaciones extends Controller
             abort(404);
         }
     }
+    public function opCambiarPrecio()
+    {
+        return view('gestores/pagos/cambiar-precios');
+    }
 }
