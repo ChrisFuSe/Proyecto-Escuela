@@ -22,6 +22,12 @@
 </style>
 @endsection
 
+<script>
+ function validar(){
+     alert('Se ha eliminado exitosamente');
+ }
+</script>
+
 @section('imagen-opc')
 {{ asset('img/Gestor_Alumnos.png') }}
 @endsection
@@ -81,7 +87,7 @@
             </td>
             <td>
               <form action="{{route('eliminar.alumno',$alumno->numero_control)}}" method="GET">
-                <button type="submit" class="btn btn-danger"><img src="{{ asset('img\x-circle.svg') }}"
+                <button type="submit" class="btn btn-danger" onclick=validar();><img src="{{ asset('img\x-circle.svg') }}"
                     alt="Bootstrap"></button>
               </form>
             </td>

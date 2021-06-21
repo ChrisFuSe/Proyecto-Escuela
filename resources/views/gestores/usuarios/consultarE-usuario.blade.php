@@ -22,6 +22,12 @@
   </style> 
 @endsection
 
+<script>
+ function validar(){
+     alert('Se ha eliminado exitosamente');
+ }
+</script>
+
 @section('imagen-opc')
 "{{ asset('img/Gestor_Usuarios.png') }}"
 @endsection
@@ -31,6 +37,8 @@
   
 @section('cuerpo')
 <div class="container"> 
+  <div class="card">
+    <div class="card-body" style="padding-inline : 4%;">
         <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
           <thead>
             <tr>
@@ -60,7 +68,7 @@
                   </td>
                   <td class="table-info">
                   <form action="{{route('eliminar.usuario',$usuario->id)}}" method="GET">
-                  <button type="submit" class="btn btn-danger"><img src="{{ asset('img\x-circle.svg') }}" alt="Bootstrap"></button>
+                  <button type="submit" class="btn btn-danger" onclick=validar();><img src="{{ asset('img\x-circle.svg') }}" alt="Bootstrap"></button>
                   </form>
                   </td>
                   <td class="table-info">{{$usuario->username}}</td>
@@ -76,14 +84,28 @@
           </tbody>
         </table>
     </div>
+  </div>
 </div>
 </form>
 @endsection
 
 @section('scripts')
     <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
+  $(document).ready(function() {
+            $('#example').DataTable({
+              "language": {
+                        "lengthMenu": "Desplegando _MENU_ registros por página",
+                        "zeroRecords": "Nada encontrado - perdón",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrados desde los _MAX_ registros totales)",
+                        "search": "Buscar...",
+                        "paginate": {
+                            'next': 'Siguiente',
+                            'previous': 'Anterior'
+                        }
+                    }
+            });
         } );
-    </script>
+</script>
 @endsection

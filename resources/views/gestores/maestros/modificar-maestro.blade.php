@@ -17,6 +17,13 @@
 @section('imagen-opc')
 "{{ asset('img/Gestor_Maestros.png') }}"
 @endsection
+
+<script>
+function validar(){
+    alert("Datos eliminados de manera correcta");
+}
+</script>
+
 @section('operacion', 'Modificar Maestro')
 
 @section('cuerpo')
@@ -59,7 +66,7 @@
             </td>
             <td>
               <form action="{{route('eliminar.profesor',$profesores->id_profesor)}}" method="GET">
-                <button type="submit" class="btn btn-danger"><img src="{{ asset('img\x-circle.svg') }}"
+                <button type="submit" class="btn btn-danger" onclick=validar();><img src="{{ asset('img\x-circle.svg') }}"
                     alt="Bootstrap"></button>
               </form>
             </td>
