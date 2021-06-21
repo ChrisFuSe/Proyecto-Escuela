@@ -21,11 +21,11 @@
 
 @section('fuente')
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-  </style> 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-  </style> 
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+</style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+</style>
 @endsection
 
 @section('imagen-opc')
@@ -35,70 +35,96 @@
 @section('operacion','Cargar Informacion')
 
 @section('cuerpo')
+@csrf
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
-<div class="container" style="margin-top: 2%;">
-    <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
+<div class="container-fluid" style="margin-top: 2%;">
+  <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                     así conseguimos dividir en 2 columnas a los inputs del formulario               -->
-    <div class="row row-cols-2">
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Grupo:</span>
-                <select type="select" class="form-control" id="grupo_s" name="grupo_s">
-                    <option>Elije un grupo...</option>
-                    @foreach ($grupos as $grupo)
-                        <option value="{{$grupo->id_grupo}}">{{$grupo->nombre}}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
+  <div class="row row-cols-2">
+    <div class="col">
+      <div class="input-group input-group-lg mb-4">
+        <span class="input-group-text">Grupo:</span>
+        <select type="select" class="form-control" id="grupo_s" name="grupo_s">
+          <option disabled>Elije un grupo...</option>
+          @foreach ($grupos as $grupo)
+          <option value="{{$grupo->id_grupo}}">{{$grupo->nombre}}</option>
+          @endforeach
+        </select>
+      </div>
     </div>
-    <!--    Tabla -->
-    <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
-          <thead>
-            <tr>
-              <th class="table-primary" scope="col"></th>
-              <th class="table-primary" scope="col">Agregar</th>
-              <th class="table-primary" scope="col">Número de control</th>
-              <th class="table-primary" scope="col">Nombre completo</th>
-              <th class="table-primary" scope="col">Id Grupo</th>
-              <th class="table-primary" scope="col">Oyente clase</th>
-          </thead>
-          <tbody>
-            @if(empty($alumnos))
-              <p></p>
-            @else
-              @foreach($alumnos as $alumno)
-                <tr>
-                  <td class="table-info"></td>
-                  <td class="table-info">
-                  <form action="{{route('agregar_alumno.grupo',$alumno->numero_control)}}" method="GET">
-                  <button type="submit" class="btn btn-success"><img src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
-                  </form>
-                  </td>
-                  <td class="table-info" value="{{$alumno->numero_control}}">{{$alumno->numero_control}}</td>
-                  <td class="table-info">{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
-                  <td class="table-info">{{$alumno->id_grupo}}</td>
-                  <td class="table-info">{{$alumno->oyente_clase}}</td>
-                </tr>
-              @endforeach
-            @endif
-          </tbody>
-        </table>
-</div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <!--    Tabla -->
+      <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
+        <thead>
+          <tr>
+            <th class="table-primary" scope="col"></th>
+            <th class="table-primary" scope="col">Agregar</th>
+            <th class="table-primary" scope="col">Número de control</th>
+            <th class="table-primary" scope="col">Nombre completo</th>
+            <th class="table-primary" scope="col">Id Grupo</th>
+            <th class="table-primary" scope="col">Oyente clase</th>
+        </thead>
+        <tbody>
+          @if(empty($alumnos))
+          <p></p>
+          @else
+          @foreach($alumnos as $alumno)
+          <tr>
+            <td></td>
+            <td>
+              <button type="button" class="btn btn-success" onclick="agregar_alumno({{$alumno}})"><img
+                  src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
+            </td>
+            <td>{{$alumno->numero_control}}</td>
+            <td>{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
+            <td>{{$alumno->id_grupo}}</td>
+            <td>{{$alumno->oyente_clase}}</td>
+          </tr>
+          @endforeach
+          @endif
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
 @endsection
 
 @section('scripts')
-<!--<script>
-    $('select').selectpicker();
-</script> 
-<script src="{{asset('js/consultar-grupo.js')}}"></script>-->
 <script>
-        $(document).ready(function() {
-            $('#example').DataTable();
+  $(document).ready(function() {
+            $('#example').DataTable({
+              "language": {
+                        "lengthMenu": "Desplegando _MENU_ registros por página",
+                        "zeroRecords": "Nada encontrado - perdón",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrados desde los _MAX_ registros totales)",
+                        "search": "Buscar...",
+                        "paginate": {
+                            'next': 'Siguiente',
+                            'previous': 'Anterior'
+                        }
+                    }
+            });
         } );
 </script>
 <script>
-
+  function agregar_alumno(alumno){
+      $.ajax({
+        url: '/agregar_alumno/grupo',
+        method: 'POST',
+        data:{
+            _token: $('input[name="_token"]').val(),
+            numero_control: alumno.numero_control,
+            grupo: $('#grupo_s').val()
+        },
+    }).done(function(res){
+      alert(res);
+      location.reload();
+    });
+    }
 </script>
 @endsection

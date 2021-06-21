@@ -32,6 +32,7 @@ Route::get('home', [HomeController::class, 'dirigirHome'])->middleware('auth')->
 //          Rutas para enlazar Operaciones       //
 Route::get('gestores/pagos/realizar_pago', [Operaciones::class, 'opTransaccion'])->middleware('auth')->name('realizar.pago');
 Route::get('gestores/pagos/consultar', [Operaciones::class, 'opGestion_Pago'])->middleware('auth')->name('consultar.pago');
+Route::get('gestores/pagos/precios', [Operaciones::class, 'opCambiarPrecio'])->middleware('auth')->name('cambiar.precios');
 Route::get('gestores/pagos/reportes/{operacion}', [Operaciones::class, 'opReportes'])->middleware('auth');
 Route::get('gestores/alumnos/{operacion}', [Operaciones::class, 'opAlumno'])->middleware('auth');
 Route::get('gestores/grupos/{operacion}', [Operaciones::class, 'opGrupo'])->middleware('auth');
@@ -74,7 +75,7 @@ Route::get('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->mi
 
 //          Rutas para gestor de Grupos         //
 Route::post('registrar/grupo', [GrupoController::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
-Route::get('agregar_alumno/grupo/{id}', [GrupoController::class, 'agregar_alumnoGrupo'])->middleware('auth')->name('agregar_alumno.grupo');
+Route::post('agregar_alumno/grupo', [GrupoController::class, 'agregar_alumnoGrupo'])->middleware('auth')->name('agregar_alumno.grupo');
 
 
 //          Rutas para gestor de Usuarios       //
