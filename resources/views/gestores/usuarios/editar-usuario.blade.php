@@ -13,6 +13,7 @@ function validar(){
 @section('operacion', 'Editar Usuario')
 
 @section('cuerpo')
+<h1>Editar usuario</h1>
 <form action="{{route('actualizar.usuario', $usuarios->id)}}" method="GET" accept-charset="utf-8">
     @csrf
 <div class="container" style="margin-top: 2%;">

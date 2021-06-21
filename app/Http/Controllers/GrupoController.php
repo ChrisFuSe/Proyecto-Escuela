@@ -21,9 +21,9 @@ class GrupoController extends Controller
         $horario = new Horario();
         $hi = $request->horai;
         $hf = $request->horaf;
-        //$hc = $hi.$hf;
+        $hc = $hi.$hf;
         $horario->horarios = $hc;
-        $horario->dia = $request->dia;
+        $horario->dia = $request->dias;
         $horario->save();
         return redirect('gestores/grupos/crear');
     }

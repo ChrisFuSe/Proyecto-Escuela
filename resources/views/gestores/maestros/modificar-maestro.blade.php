@@ -27,6 +27,7 @@ function validar(){
 @section('operacion', 'Modificar Maestro')
 
 @section('cuerpo')
+<h1>Consultar/Eliminar/Editar maestro</h1>
 @if(empty($profesor))
 <p></p>
 @else

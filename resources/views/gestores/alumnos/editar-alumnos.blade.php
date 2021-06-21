@@ -36,6 +36,7 @@
 
 
 @section('cuerpo')
+<h1>Consultar/Eliminar/Editar alumno</h1>
 <div class="container-fluid">
   <div class="card">
     <div class="card-body" style="padding-inline : 4%;">
