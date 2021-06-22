@@ -71,6 +71,7 @@ Route::post('registrar/pago', [PagoController::class, 'registrarpagoAdeudo'])->m
 Route::post('consultar/adeudos/alumno', [PagoController::class, 'consultaradeudosAlumno'])->middleware('auth')->name('consultar.adeudos.alumno');
 Route::post('consultar/concepto', [PagoController::class, 'consultarConceptos'])->middleware('auth')->name('consultar.conceptos');
 Route::get('consultar/pagos', [PagoController::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
+Route::get('reporte/pagos', [PagoController::class, 'reportePagos'])->middleware('auth')->name('reporte.pagos');
 Route::get('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.adeudos');
 Route::post('cambiar/precio', [PagoController::class, 'cambiarPrecios'])->middleware('auth')->name('cambiar.precios');
 
@@ -80,6 +81,7 @@ Route::post('cambiar/precio', [PagoController::class, 'cambiarPrecios'])->middle
 //          Rutas para gestor de Grupos         //
 Route::post('registrar/grupo', [GrupoController::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
 Route::post('agregar_alumno/grupo', [GrupoController::class, 'agregar_alumnoGrupo'])->middleware('auth')->name('agregar_alumno.grupo');
+Route::get('llenar/grupo/{id}', [ProfesorController::class, 'llenarGrupo'])->middleware('auth')->name('llenar.grupo');
 
 
 //          Rutas para gestor de Usuarios       //
