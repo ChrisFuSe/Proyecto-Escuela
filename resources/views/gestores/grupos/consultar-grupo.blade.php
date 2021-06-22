@@ -1,5 +1,33 @@
 @extends('templates.pagina-menu-botones')
 
+@section('estilos')
+    <link rel="stylesheet" href="{{ asset('css\dataTables.bootstrap5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css\responsive.bootstrap5.min.css') }}">
+@endsection
+
+@section('header-scripts')
+    <script src="{{asset('js\jquery-3.5.1.js')}}"></script>
+    <script src="{{asset('js\jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js\dataTables.bootstrap5.min.js')}}"></script>
+    <script src="{{asset('js\dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('js\responsive.bootstrap5.min.js')}}"></script>
+@endsection
+
+@section('fuente')
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  </style> 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+  </style> 
+@endsection
+
+<script>
+ function validar(){
+     alert('Se ha eliminado exitosamente');
+ }
+</script>
+
 @section('imagen-opc')
 {{ asset('img/Gestor_Grupos.png') }}
 @endsection
@@ -7,96 +35,77 @@
 @section('operacion','Consultar grupo')
 
 @section('cuerpo')
-<!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
-<div class="container" style="margin-top: 2%;">
-    <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
-                así conseguimos dividir en 2 columnas a los inputs del formulario               -->
-    <div class="row row-cols-2">
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Grupo:</span>
-                <select type="select" class="form-control">
-                    <option>Elije un grupo</option>
-                    <option>op 1</option>
-                    <option>op 2</option>
-                    <option>op 3</option>
-                </select>
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">ID Grupo:</span>
-                <label type="text" class="form-control">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Nombre de grupo:</span>
-                <label type="text" class="form-control">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Nivel:</span>
-                <label type="text" class="form-control">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Profesor:</span>
-                <label type="text" class="form-control">
-            </div>
-        </div>
-        <div class="col">
-            <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Horario:</span>
-                <label type="text" class="form-control">
-            </div>
-        </div>
-
+<h1>Consultar/Eliminar/Editar grupo</h1>
+<div class="container"> 
+  <div class="card">
+    <div class="card-body" style="padding-inline : 4%;">
+        <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
+          <thead>
+            <tr>
+              <th class="table-primary" scope="col"></th>
+              <th class="table-primary" scope="col">Editar</th>
+              <th class="table-primary" scope="col">Eliminar</th>
+              <th class="table-primary" scope="col">Nombre del grupo</th>
+              <th class="table-primary" scope="col">Nivel</th>
+              <th class="table-primary" scope="col">Profesor</th>
+              <th class="table-primary" scope="col">Días</th>
+              <th class="table-primary" scope="col">Hora de inicio</th>
+              <th class="table-primary" scope="col">Hora de cierre</th>
+              <th class="table-primary" scope="col">Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            @if(empty($usuarios))
+              <p></p>
+            @else
+              @foreach($grupos as $grupo)
+                <tr>
+                  <td class="table-info"></td>
+                  <td class="table-info">
+                  <form action="{{route('llenar.usuario',$usuario->id)}}" method="GET">
+                  <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
+                  </form>
+                  </td>
+                  <td class="table-info">
+                  <form action="{{route('eliminar.usuario',$usuario->id)}}" method="GET">
+                  <button type="submit" class="btn btn-danger" onclick=validar();><img src="{{ asset('img\x-circle.svg') }}" alt="Bootstrap"></button>
+                  </form>
+                  </td>
+                  <td class="table-info">{{$grupo->nombre}}</td>
+                  <td class="table-info">{{$grupo->nombres}}</td>
+                  <td class="table-info">{{$grupo->ap_paterno}}</td>
+                  <td class="table-info">{{$grupo->ap_materno}}</td>
+                  <td class="table-info">{{$grupo->email}}</td>
+                  <td class="table-info">{{$grupo->tipo}}</td>
+                  <td class="table-info">{{$grupo->descripcion}}</td>
+                </tr>
+              @endforeach
+            @endif
+          </tbody>
+        </table>
     </div>
-    <div class="col" id="save-alumno">
-        <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">Descripcion:</span>
-            <textarea class="form-control" id="floatingTextarea"></textarea>
-        </div>
-    </div>
-    <div>
-        <!--    Tabla -->
-        <div class="container" style="margin-top: 3%;">
-            <table class="table table-striped " style="margin-top: 5%;" width="80%">
-                <thead>
-                    <tr>
-                        <th class="table-primary" scope="col">Número de control</th>
-                        <th class="table-primary" scope="col">Alumno</th>
-                        <th class="table-primary" scope="col">¿Es Oyente?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="table-info" scope="row">1</td>
-                        <td class="table-info"></td>
-                        <td class="table-info"></td>
+  </div>
+</div>
+</form>
+@endsection
 
-                    </tr>
-                    <tr>
-                        <td class="table-light" class="table-info" scope="row">2</td>
-                        <td class="table-light"></td>
-                        <td class="table-light"></td>
-                    </tr>
-                    <tr>
-                        <td class="table-info" class="table-info" scope="row">3</td>
-                        <td class="table-info"></td>
-                        <td class="table-info"></td>
-                    </tr>
-                    <tr>
-                        <td class="table-light" class="table-info" scope="row">4</td>
-                        <td class="table-light"></td>
-                        <td class="table-light"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-    @endsection
+@section('scripts')
+    <script>
+  $(document).ready(function() {
+            $('#example').DataTable({
+              "language": {
+                        "lengthMenu": "Desplegando _MENU_ registros por página",
+                        "zeroRecords": "Nada encontrado - perdón",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrados desde los _MAX_ registros totales)",
+                        "search": "Buscar...",
+                        "paginate": {
+                            'next': 'Siguiente',
+                            'previous': 'Anterior'
+                        }
+                    }
+            });
+        } );
+</script>
+@endsection

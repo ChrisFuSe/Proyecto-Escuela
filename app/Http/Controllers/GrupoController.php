@@ -35,4 +35,9 @@ class GrupoController extends Controller
         $grupo = Grupo::findOrFail($request->grupo);
         return "Se a agregado al alumno con el numero de control ".$alumno->numero_control." al grupo de ".$grupo->nombre;
     }
+
+    public function llenarGrupo($id){
+        $grupos = Grupo::where('id_grupo',$id)->first();
+        return view('gestores\grupos\consultar-grupo', compact('grupos'));
+    }
 }

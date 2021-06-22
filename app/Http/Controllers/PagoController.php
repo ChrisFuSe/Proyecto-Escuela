@@ -57,6 +57,15 @@ class PagoController extends Controller
         return datatables()->of($pago)->toJson();
     }
 
+    public function reportePagos(){
+        $pago = Pago::select('num_referencia', 'monto', 'fecha_pago', 'descripcion', 
+                            'concepto', 'pagos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
+                    ->join('alumnos', 'pagos.numero_control', '=', 'alumnos.numero_control')
+                    ->join('adeudos', 'pagos.id_adeudo', '=', 'adeudos.id_adeudo')
+                    ->get();
+        return datatables()->of($pago)->toJson();
+    }
+
     public function consultarAdeudos(){
         $adeudo = Adeudo::select('id_adeudo', 'monto_adeudo', 'concepto', 'pagado', 
                                 'fecha_adeudo', 'adeudos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
