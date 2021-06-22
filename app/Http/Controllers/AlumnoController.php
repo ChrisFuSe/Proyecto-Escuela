@@ -10,8 +10,7 @@ class AlumnoController extends Controller
     public function registrarAlumno(Request $request){
         $alumno = new Alumno();
 
-        $alumno->numero_control = "PE-".$request->curp;
-        $alumno->deuda_total = $request->deuda_total;
+        $alumno->numero_control = "PES-".$request->curp;
         $alumno->curp = $request->curp;
         $alumno->nombres = $request->nombres;
         $alumno->ap_paterno = $request->ap_paterno;
