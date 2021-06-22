@@ -17,6 +17,5 @@ class Concepto extends Model
 
     protected $fillable = [
         'monto',
-        'descripcion'
     ];
 }

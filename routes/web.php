@@ -32,7 +32,7 @@ Route::get('home', [HomeController::class, 'dirigirHome'])->middleware('auth')->
 //          Rutas para enlazar Operaciones       //
 Route::get('gestores/pagos/realizar_pago', [Operaciones::class, 'opTransaccion'])->middleware('auth')->name('realizar.pago');
 Route::get('gestores/pagos/consultar', [Operaciones::class, 'opGestion_Pago'])->middleware('auth')->name('consultar.pago');
-Route::get('gestores/pagos/precios', [Operaciones::class, 'opCambiarPrecio'])->middleware('auth')->name('cambiar.precios');
+Route::get('gestores/pagos/precios', [Operaciones::class, 'opCambiarPrecio'])->middleware('auth')->name('consultar.precios');
 Route::get('gestores/pagos/reportes/{operacion}', [Operaciones::class, 'opReportes'])->middleware('auth');
 Route::get('gestores/alumnos/{operacion}', [Operaciones::class, 'opAlumno'])->middleware('auth');
 Route::get('gestores/grupos/{operacion}', [Operaciones::class, 'opGrupo'])->middleware('auth');
@@ -72,6 +72,8 @@ Route::post('consultar/adeudos/alumno', [PagoController::class, 'consultaradeudo
 Route::get('consultar/pagos', [PagoController::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
 Route::get('reporte/pagos', [PagoController::class, 'reportePagos'])->middleware('auth')->name('reporte.pagos');
 Route::get('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.adeudos');
+Route::post('cambiar/precio', [PagoController::class, 'cambiarPrecios'])->middleware('auth')->name('cambiar.precios');
+
 
 
 //          Rutas para gestor de Grupos         //

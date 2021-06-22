@@ -150,6 +150,7 @@ class Operaciones extends Controller
     }
     public function opCambiarPrecio()
     {
-        return view('gestores/pagos/cambiar-precios');
+        $conceptos = Concepto::all();
+        return view('gestores/pagos/cambiar-precios', compact('conceptos'));
     }
 }
