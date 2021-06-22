@@ -22,6 +22,7 @@
 @section('operacion', 'Modificar alumno')
 
 @section('cuerpo')
+<h1>Editar alumno</h1>
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo aluno  -->
 <form action="{{route('actualizar.alumno', $alumno->numero_control)}}" method="GET" accept-charset="utf-8">
     @csrf

@@ -13,7 +13,7 @@ function validar(){
 @section('operacion', 'Modificar Maestro')
 
 @section('cuerpo')
-
+<h1>Editar maestro</h1>
 <form action="{{route('actualizar.profesor',$profesor->id_profesor)}}" method="GET" accept-charset="utf-8">
     @csrf
     <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->

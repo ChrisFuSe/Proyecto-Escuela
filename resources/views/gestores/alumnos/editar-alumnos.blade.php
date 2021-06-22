@@ -22,6 +22,12 @@
 </style>
 @endsection
 
+<script>
+ function validar(){
+     alert('Se ha eliminado exitosamente');
+ }
+</script>
+
 @section('imagen-opc')
 {{ asset('img/Gestor_Alumnos.png') }}
 @endsection
@@ -30,6 +36,7 @@
 
 
 @section('cuerpo')
+<h1>Consultar/Eliminar/Editar alumno</h1>
 <div class="container-fluid">
   <div class="card">
     <div class="card-body" style="padding-inline : 4%;">
@@ -81,7 +88,7 @@
             </td>
             <td>
               <form action="{{route('eliminar.alumno',$alumno->numero_control)}}" method="GET">
-                <button type="submit" class="btn btn-danger"><img src="{{ asset('img\x-circle.svg') }}"
+                <button type="submit" class="btn btn-danger" onclick=validar();><img src="{{ asset('img\x-circle.svg') }}"
                     alt="Bootstrap"></button>
               </form>
             </td>

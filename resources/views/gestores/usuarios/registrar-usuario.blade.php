@@ -13,6 +13,7 @@ function validar(){
 @section('operacion', 'Registrar Usuario')
 
 @section('cuerpo')
+<h1>Registrar usuario</h1>
 <form action="{{route('registrar.usuarios')}}" method="POST">
 
     @csrf

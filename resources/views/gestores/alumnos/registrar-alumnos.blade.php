@@ -22,6 +22,7 @@
 @section('operacion', 'Ingresar nuevo alumno')
 
 @section('cuerpo')
+<h1>Registrar alumno</h1>
 <form action="{{route('registrar.alumnos')}}" method="POST" accept-charset="utf-8">
 @csrf
  <!--    Contenedor con todos los inputs del formulario para registrar un nuevo alumno  -->
