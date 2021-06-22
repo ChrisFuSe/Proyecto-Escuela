@@ -21,7 +21,7 @@
             <p>Generar reporte mensual</p>
         </div>
         <div class="col">
-            <a href={{route('cambiar.precios')}}><img src="../img/Iconos Gestor Pagos/Costo.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <a href={{route('consultar.precios')}}><img src="../img/Iconos Gestor Pagos/Costo.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
             <p>Cambiar precios</p>
         </div>
     </div>

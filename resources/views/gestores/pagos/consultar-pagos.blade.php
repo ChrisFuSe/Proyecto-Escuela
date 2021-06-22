@@ -20,7 +20,6 @@
 @section('operacion', 'Consultar pago')
 
 @section('cuerpo')
-
 <div class="card" style="margin-top: 1%">
     <div class="card-body">
         <div class="form-check form-check-inline">
@@ -73,7 +72,6 @@
         </table>
     </div>
 </div>
-
 @endsection
 
 @section('scripts')

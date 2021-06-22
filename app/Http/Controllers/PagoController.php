@@ -7,6 +7,7 @@ use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pago;
 use App\Models\Adeudo;
+use App\Models\Concepto;
 
 class PagoController extends Controller
 {
@@ -63,5 +64,14 @@ class PagoController extends Controller
                         ->join('alumnos', 'adeudos.numero_control', '=', 'alumnos.numero_control')
                         ->get();
         return datatables()->of($adeudo)->toJson();
+    }
+
+    public function cambiarPrecios(Request $request){
+        $concepto = Concepto::select('id_concepto','monto')
+                            ->where('id_concepto', $request->concepto)
+                            ->first();
+        $concepto->monto = $request->precio;
+        $concepto->save();
+        return redirect(route('consultar.precios'));
     }
 }
