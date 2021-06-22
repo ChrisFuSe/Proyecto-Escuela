@@ -69,9 +69,11 @@ Route::get('llenar/profesor/{id}', [ProfesorController::class, 'llenarProfesor']
 Route::post('registrar/primer_pago', [PagoController::class, 'registrarprimerPago'])->middleware('auth')->name('registrar.pago');
 Route::post('registrar/pago', [PagoController::class, 'registrarpagoAdeudo'])->middleware('auth')->name('registrar.pago.adeudo');
 Route::post('consultar/adeudos/alumno', [PagoController::class, 'consultaradeudosAlumno'])->middleware('auth')->name('consultar.adeudos.alumno');
+Route::post('consultar/concepto', [PagoController::class, 'consultarConceptos'])->middleware('auth')->name('consultar.conceptos');
 Route::get('consultar/pagos', [PagoController::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
 Route::get('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.adeudos');
 Route::post('cambiar/precio', [PagoController::class, 'cambiarPrecios'])->middleware('auth')->name('cambiar.precios');
+
 
 
 

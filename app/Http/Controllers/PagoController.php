@@ -42,6 +42,13 @@ class PagoController extends Controller
         return redirect(route('realizar.pago'));
     }
 
+    public function consultarConceptos(Request $request){
+        $concepto = Concepto::select('monto')
+                            ->where('id_concepto', $request->concepto)
+                            ->first();
+        return $concepto;
+    }
+
     public function consultaradeudosAlumno(Request $request){
         $adeudo = Adeudo::select("id_adeudo", 'monto_adeudo', 'concepto', 'fecha_adeudo')
                         ->where('numero_control', $request->numero_control)
