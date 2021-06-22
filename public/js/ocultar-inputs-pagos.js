@@ -14,31 +14,15 @@ select.addEventListener('change',() =>{
 
 concepto.addEventListener('change',() =>{
   let precio = document.getElementById('concepto_precio');
-  switch(concepto.value){
-      case 'constancia':
-        precio.value = "100";
-      break;
-      case 'diploma F2F':
-        precio.value = "1200";
-      break;
-      case 'diploma TTC':
-        precio.value = "1500";
-      break;
-      case 'inscripcion':
-        precio.value = "500";
-      break;
-      case 'inscripcion bachellor':
-        precio.value = "750";
-      break;
-      case 'libros':
-        precio.value = "285";
-      break;
-      case 'mensualidad':
-        precio.value = "760";
-      break;
-      case 'mensualidad bachellor':
-        precio.value = "1860";
-      break;
-  }
+  $.ajax({
+    url: '/consultar/concepto',
+    method: 'POST',
+    data:{
+        _token: $('input[name="_token"]').val(),
+        concepto: concepto.value
+    },
+  }).done(function(res){
+    precio.value = res.monto;
+  });
 });
   

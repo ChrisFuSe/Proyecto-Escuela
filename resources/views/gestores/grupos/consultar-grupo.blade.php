@@ -55,28 +55,28 @@
             </tr>
           </thead>
           <tbody>
-            @if(empty($usuarios))
+            @if(empty($grupos))
               <p></p>
             @else
               @foreach($grupos as $grupo)
                 <tr>
                   <td class="table-info"></td>
                   <td class="table-info">
-                  <form action="{{route('llenar.usuario',$usuario->id)}}" method="GET">
+                  <form action="{{route('llenar.grupo',$grupo->id_grupo)}}" method="GET">
                   <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
                   </form>
                   </td>
                   <td class="table-info">
-                  <form action="{{route('eliminar.usuario',$usuario->id)}}" method="GET">
+                  <form action="{{route('eliminar.grupo',$grupo->id_grupo)}}" method="GET">
                   <button type="submit" class="btn btn-danger" onclick=validar();><img src="{{ asset('img\x-circle.svg') }}" alt="Bootstrap"></button>
                   </form>
                   </td>
                   <td class="table-info">{{$grupo->nombre}}</td>
-                  <td class="table-info">{{$grupo->nombres}}</td>
-                  <td class="table-info">{{$grupo->ap_paterno}}</td>
-                  <td class="table-info">{{$grupo->ap_materno}}</td>
-                  <td class="table-info">{{$grupo->email}}</td>
-                  <td class="table-info">{{$grupo->tipo}}</td>
+                  <td class="table-info">{{$grupo->id_nivel}}</td>
+                  <td class="table-info">profe</td>
+                  <td class="table-info">dia</td>
+                  <td class="table-info">horai</td>
+                  <td class="table-info">horaf</td>
                   <td class="table-info">{{$grupo->descripcion}}</td>
                 </tr>
               @endforeach

@@ -42,6 +42,13 @@ class PagoController extends Controller
         return redirect(route('realizar.pago'));
     }
 
+    public function consultarConceptos(Request $request){
+        $concepto = Concepto::select('monto')
+                            ->where('id_concepto', $request->concepto)
+                            ->first();
+        return $concepto;
+    }
+
     public function consultaradeudosAlumno(Request $request){
         $adeudo = Adeudo::select("id_adeudo", 'monto_adeudo', 'concepto', 'fecha_adeudo')
                         ->where('numero_control', $request->numero_control)
@@ -73,6 +80,16 @@ class PagoController extends Controller
                         ->join('alumnos', 'adeudos.numero_control', '=', 'alumnos.numero_control')
                         ->get();
         return datatables()->of($adeudo)->toJson();
+    }
+
+    public function pagosMensuales(Request $request){
+        $pago = Pago::select('num_referencia', 'monto', 'fecha_pago', 'descripcion', 
+                            'concepto', 'pagos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
+                    ->join('alumnos', 'pagos.numero_control', '=', 'alumnos.numero_control')
+                    ->join('adeudos', 'pagos.id_adeudo', '=', 'adeudos.id_adeudo')
+                    ->whereMonth('fecha_pago', '=', $request->mes)
+                    ->get();
+        return datatables()->of($pago)->toJson();
     }
 
     public function cambiarPrecios(Request $request){

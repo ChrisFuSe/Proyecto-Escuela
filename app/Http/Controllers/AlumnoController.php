@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alumno;
+use Exception;
 
 class AlumnoController extends Controller
 {
     public function registrarAlumno(Request $request){
         $alumno = new Alumno();
 
-        $alumno->numero_control = "PE-".$request->curp;
-        $alumno->deuda_total = $request->deuda_total;
+        $alumno->numero_control = "PES-".$request->curp;
         $alumno->curp = $request->curp;
         $alumno->nombres = $request->nombres;
         $alumno->ap_paterno = $request->ap_paterno;
@@ -35,9 +35,12 @@ class AlumnoController extends Controller
         $alumno->fcorreo = $request->fcorreo;
         $alumno->ftelefono = $request->ftelefono;
         $alumno->factura = $request->factura;
-
-        $alumno->save();
-        return redirect('gestores\alumnos\alta');
+        try{
+            $alumno->save();
+            return redirect('gestores\alumnos\alta');
+        }catch(Exception $e){
+            return "Error no se ha podido registrar el alumno en la base de datos";
+        }
     }
 
     public function eliminarAlumno($id){
@@ -79,7 +82,11 @@ class AlumnoController extends Controller
         $alumno->ftelefono = $request->ftelefono;
         $alumno->factura = $request->factura;
 
-        $alumno->save();
-        return redirect('gestores\alumnos\editar');
+        try{
+            $alumno->save();
+            return redirect('gestores\alumnos\editar');
+        }catch(Exception $e){
+            return "Error no se han podido actualizar los datos del alumno en la base de datos";
+        }
     }
 }
