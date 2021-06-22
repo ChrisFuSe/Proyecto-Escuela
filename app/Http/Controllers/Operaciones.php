@@ -8,6 +8,7 @@ use App\Models\Nivel;
 use App\Models\Profesor;
 use App\Models\Alumno;
 use App\Models\User;
+use App\Models\Horario;
 use App\Models\Grupo;
 
 class Operaciones extends Controller
@@ -57,7 +58,8 @@ class Operaciones extends Controller
             case 'crear':
                 $niveles = Nivel::all();
                 $profesores = Profesor::all();
-                return view('gestores/grupos/registrar-grupo', compact('niveles','profesores'));
+                $horarios = Horario::all();
+                return view('gestores/grupos/registrar-grupo', compact('niveles','profesores', 'horarios'));
             break;
             case 'cargar':
                 $grupos = Grupo::all();
@@ -65,13 +67,11 @@ class Operaciones extends Controller
                 return view('gestores/grupos/cargar-informacion', compact('grupos', 'alumnos'));
             break;
             case 'consultar':
-                return view('gestores/grupos/consultar-grupo');
+                $grupos = Grupo::all();
+                return view('gestores/grupos/consultar-grupo', compact('grupos'));
             break;
-            case 'eliminar':
-                return view('gestores/grupos/eliminar-grupo'); 
-            break;
-            case 'modificar':
-                return view('gestores/grupos/modificar-grupo');
+            case 'crearh':
+                return view('gestores/grupos/crearh-grupo'); 
             break;
             default:
             abort(404);
@@ -153,4 +153,5 @@ class Operaciones extends Controller
         $conceptos = Concepto::all();
         return view('gestores/pagos/cambiar-precios', compact('conceptos'));
     }
+
 }

@@ -19,19 +19,14 @@
             <p>Cargar informacion a Grupo</p>
         </div>
         <div class="col">
-            <a href="grupos/modificar"><img src="../img/Iconos Gestor Grupos/Grupos-Modificar.png"
-                    class="botones-navegacion" alt="Responsive image" width="38%"></a>
-            <p>Modificar Grupo</p>
-        </div>
-        <div class="col">
             <a href="grupos/consultar"><img src="../img/Iconos Gestor Grupos/Grupos-Consultar.png"
                     class="botones-navegacion" alt="Responsive image" width="38%"></a>
             <p>Consultar grupo</p>
         </div>
         <div class="col">
-            <a href="grupos/eliminar"><img src="../img/Iconos Gestor Grupos/Grupos-Eliminar.png"
+            <a href="grupos/crearh"><img src="../img/Iconos Gestor Grupos/Grupos-Eliminar.png"
                     class="botones-navegacion" alt="Responsive image" width="38%"></a>
-            <p>Eliminar grupo</p>
+            <p>Crear horario</p>
         </div>
     </div>
     @endsection

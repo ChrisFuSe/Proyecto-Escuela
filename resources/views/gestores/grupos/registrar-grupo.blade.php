@@ -21,7 +21,7 @@
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nivel:</span>
                     <select type="select" class="form-control" name="id_nivel">
-                        <option value="NULL" disabled>Nivel</option>
+                        <option>Nivel...</option>
                         @foreach ($niveles as $nivel)
                         <option value="{{$nivel->id_nivel}}">{{$nivel->descripcion}}</option>
                         @endforeach
@@ -41,28 +41,13 @@
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
-                    <span class="input-group-text">Días:</span>
-                    <select class="form-control" id="horario" name="dias">
-                            <option value="Lunes">Lunes</option>
-                            <option value="Martes">Martes</option>
-                            <option value="Miercoles">Miercoles</option>
-                            <option value="Jueves">Jueves</option>
-                            <option value="Viernes">Viernes</option>
-                            <option value="Sabado">Sabado</option>
-                            <option value="Domingo">Domingo</option>
+                    <span class="input-group-text">Seleccione horario:</span>
+                    <select type="select" class="form-control" name="id_profesor">
+                        <option>Elije un horario...</option>
+                        @foreach ($horarios as $horario)
+                        <option value="{{$horario->id_horario}}">{{$horario->horarios}} {{$horario->dia}}</option>
+                        @endforeach
                     </select>
-                </div>
-            </div>
-            <div class="col">
-                <div class="input-group input-group-lg mb-4">
-                    <span class="input-group-text">Hora de inicio:</span>
-                    <input type="time" class="form-control" aria-label="Horario Inicio" name="horai">
-                </div>
-            </div>
-            <div class="col">
-                <div class="input-group input-group-lg mb-4">
-                    <span class="input-group-text">Hora de cierre:</span>
-                    <input type="time" class="form-control" aria-label="Horario Cierre" name="horaf">
                 </div>
             </div>
         </div>
