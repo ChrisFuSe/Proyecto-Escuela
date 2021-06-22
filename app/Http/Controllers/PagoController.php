@@ -82,6 +82,16 @@ class PagoController extends Controller
         return datatables()->of($adeudo)->toJson();
     }
 
+    public function pagosMensuales(Request $request){
+        $pago = Pago::select('num_referencia', 'monto', 'fecha_pago', 'descripcion', 
+                            'concepto', 'pagos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
+                    ->join('alumnos', 'pagos.numero_control', '=', 'alumnos.numero_control')
+                    ->join('adeudos', 'pagos.id_adeudo', '=', 'adeudos.id_adeudo')
+                    ->whereMonth('fecha_pago', '=', $request->mes)
+                    ->get();
+        return datatables()->of($pago)->toJson();
+    }
+
     public function cambiarPrecios(Request $request){
         $concepto = Concepto::select('id_concepto','monto')
                             ->where('id_concepto', $request->concepto)

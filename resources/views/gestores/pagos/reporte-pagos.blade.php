@@ -20,80 +20,82 @@
 @section('operacion','Reporte de Pago')
 
 @section('cuerpo')
- <!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
- <div class="container">
-  <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
+<!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
+<div class="container-fluid">
+    <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                  así conseguimos dividir en 2 columnas a los inputs del formulario               -->
-     <div class="row row-cols-2">
-         <div class="col">
-             <div class="input-group input-group-lg mb-4">
-                 <span class="input-group-text" for="inputGroupSelect01">Seleccionar un mes</span>
-                 
-                 <select class="form-select" id="inputGroupSelect01">
-                   <option selected>Seleccione...</option>
-                   <option value="1">Enero</option>
-                   <option value="2">Febrero</option>
-                   <option value="3">Marzo</option>
-                   <option value="4">Abril</option>
-                   <option value="5">Mayo</option>
-                   <option value="6">Junio</option>
-                   <option value="7">Julio</option>
-                   <option value="8">Agosto</option>
-                   <option value="9">Septiembre</option>
-                   <option value="10">Octubre</option>
-                   <option value="11">Noviembre</option>
-                   <option value="12">Diciembre</option>
-                 </select>
-               </div>
-         </div>
-         <div class="col">
+    <div class="row">
+        <div class="col-6">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text" for="mes">Seleccionar un mes</span>
+                <select class="form-select" id="mes">
+                    <option selected disabled>Seleccione...</option>
+                    <option value="01">Enero</option>
+                    <option value="02">Febrero</option>
+                    <option value="03">Marzo</option>
+                    <option value="04">Abril</option>
+                    <option value="05">Mayo</option>
+                    <option value="06">Junio</option>
+                    <option value="07">Julio</option>
+                    <option value="08">Agosto</option>
+                    <option value="09">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
 
-         </div>
-         
-         <div class="col">
-             <div class="input-group input-group-lg mb-4">
-                 <span class="input-group-text">Pagos totales</span>
-                 <input type="text" class="form-control" placeholder="Pagos realizados..." aria-label="Pagos realizados">
-             </div>
-         </div>
-
-
-     </div>      
- </div>
-
- <!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
- <div class="container" id="imp1">
-  <div class="card" id="carta_pagos">
-      <div class="card-body">
-          <table id="pagos" class="table table-striped dt-responsive nowrap" style="width:100%">
-              <thead>
-                  <tr>
-                      <th class="table-primary" scope="col">Numero de referencia</th>
-                      <th class="table-primary" scope="col">Monto</th>
-                      <th class="table-primary" scope="col">Fecha del Pago</th>
-                      <th class="table-primary" scope="col">Descripcion</th>
-                      <th class="table-primary" scope="col">Concepto</th>
-                      <th class="table-primary" scope="col">Numero de control</th>
-                      <th class="table-primary" scope="col">Nombre</th>
-                  </tr>
-              </thead>
-          </table>
-      </div>
-  </div>      
- </div>
- <div class="container"> 
-      <div class="col" style="margin-top: 1%;">
-         <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="javascript:imprim1();">IMPRIMIR</button>
-     </div>
-  </div>
+<!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
+<div class="container-fluid" id="imp1">
+    <div class="card" id="carta_pagos">
+        <div class="card-body">
+            <table id="pagos" class="table table-striped dt-responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="table-primary" scope="col">Numero de referencia</th>
+                        <th class="table-primary" scope="col">Monto</th>
+                        <th class="table-primary" scope="col">Fecha del Pago</th>
+                        <th class="table-primary" scope="col">Descripcion</th>
+                        <th class="table-primary" scope="col">Concepto</th>
+                        <th class="table-primary" scope="col">Numero de control</th>
+                        <th class="table-primary" scope="col">Nombre</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('scripts')
 <script>
     $(document).ready(function() {
-            let pagos = $('#pagos').DataTable( {
+        let pagos = $('#pagos').DataTable({
+            "language": {
+                        "lengthMenu": "Desplegando _MENU_ registros por página",
+                        "zeroRecords": "No se encontraron registros",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrados desde los _MAX_ registros totales)",
+                        "search": "Buscar...",
+                        "paginate": {
+                            'next': 'Siguiente',
+                            'previous': 'Anterior'
+                        }
+                    }
+        });
+            $('#mes').change(function (){
+                let pagos = $('#pagos').DataTable( {
                     "destroy":true,
-                    "ajax": '/reporte/pagos',
+                    "ajax": {
+                        "url":"/reporte/pagos/mensuales",
+                        "data": {
+                            "mes":$('select#mes').val()
+                        }
+                    },
                     "columns": [
                         {data: 'num_referencia'},
                         {data: 'monto'},
@@ -116,20 +118,7 @@
                         }
                     }
                 } );
+            });
         } );
-</script>
-<script>
-function imprim1(){
-    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-    mywindow.document.write('<html><head>');
-  	mywindow.document.write('<style>#pagos{width:100%;border-collapse:collapse;margin:16px 0 16px 0;}#pagos th{border:1px solid #ddd;padding:4px;background-color:#d4eefd;text-align:left;font-size:15px;}#pagos td{border:1px solid #ddd;text-align:left;padding:6px;}</style>');
-    mywindow.document.write('</head><body >');
-    mywindow.document.write(document.getElementById('imp1').innerHTML);
-    mywindow.document.write('</body></html>');
-    mywindow.document.close(); // necesario para IE >= 10
-    mywindow.focus(); // necesario para IE >= 10
-    mywindow.print();
-    mywindow.close();
-    return true;}
 </script>
 @endsection

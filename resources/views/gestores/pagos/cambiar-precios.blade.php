@@ -38,7 +38,7 @@
             </div>
             <div class="col input-group">
                 <label class="input-group-text">Precio</label>
-                <input type="number" class="form-control" name="precio" placeholder="$" min="0">
+                <input type="number" class="form-control" name="precio" placeholder="$" min="0" required>
             </div>
             <div class="col-2" style="margin-top:1%;">
                 <button type="submit" class="btn btn-dark">Cambiar</button>
