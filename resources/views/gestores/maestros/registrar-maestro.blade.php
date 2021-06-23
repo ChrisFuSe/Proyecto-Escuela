@@ -1,14 +1,12 @@
 @extends('templates.pagina-menu-botones')
 
+@section('header-scripts')
+<script src="../js/validacion.js"></script>
+@endsection
+
 @section('imagen-opc')
 "{{ asset('img/Gestor_Maestros.png') }}"
 @endsection
-
-<script>
-function validar(){
-    alert("Datos registrados de manera correcta");
-}
-</script>
 
 @section('operacion', 'Registrar Maestro')
 
@@ -25,28 +23,28 @@ function validar(){
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nombres</span>
                     <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres"
-                        name="nombres">
+                        name="nombres" maxlength="45" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Paterno</span>
                     <input type="text" class="form-control" placeholder="Primer Apellido..."
-                        aria-label="Apellido Paterno" name="ap_paterno">
+                        aria-label="Apellido Paterno" maxlength="45" name="ap_paterno" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Materno</span>
                     <input type="text" class="form-control" placeholder="Segundo Apellido..."
-                        aria-label="Apellido Materno" name="ap_materno">
+                        aria-label="Apellido Materno" maxlength="45" name="ap_materno" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Estado</span>
                     <select type="select" class="form-control" name="estado">
-                        <option>--Elije un estado--</option>
+                        <selected option>--Elije un estado--</option>
                         <option>Aguascalientes</option>
                         <option>Baja California</option>
                         <option>Baja California Sur</option>
@@ -85,47 +83,47 @@ function validar(){
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Ciudad</span>
-                    <input type="text" class="form-control" placeholder="Ciudad..." aria-label="Ciudad" name="ciudad">
+                    <input type="text" maxlength="45" class="form-control" placeholder="Ciudad..." aria-label="Ciudad" name="ciudad" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Calle y numero</span>
-                    <input type="text" placeholder="Calle" aria-label="Calle" class="form-control" name="calle">
-                    <input type="text" placeholder="#Numero" aria-label="Numero" class="form-control" name="numero">
+                    <input type="text" maxlength="45" placeholder="Calle" aria-label="Calle" class="form-control" name="calle" required>
+                    <input type="text" maxlength="10" placeholder="#Numero" aria-label="Numero" class="form-control" name="numero" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Colonia</span>
-                    <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia"
-                        name="colonia">
+                    <input type="text" maxlength="45" class="form-control" placeholder="Colonia..." aria-label="Colonia"
+                        name="colonia" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">C.P</span>
-                    <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal">
+                    <input type="text" maxlength="5" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">RFC</span>
                     <input onkeyup="this.value = this.value.toUpperCase();" type="text" class="form-control" placeholder="Registro federal de contribuyente..."
-                        aria-label="RFC" name="rfc">
+                        aria-label="rfc" maxlength="13" id="rfc" name="rfc" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Numero Telefónico</span>
-                    <input type="text" class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono">
+                    <input type="text" maxlength="16" class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Correo electrónico</span>
-                    <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico"
-                        name="correo">
+                    <input type="text" maxlength="45" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico"
+                        name="correo" required>
                 </div>
             </div>
         </div>
