@@ -24,7 +24,7 @@
 @if(empty($profesor))
     <p></p>
 @else
-<div class="container">
+<div class="container-fluid">
 <div class="card">
     <div class="card-body" style="padding-inline : 4%;">
          <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
@@ -76,7 +76,20 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable({
+              "language": {
+                        "lengthMenu": "Desplegando _MENU_ registros por página",
+                        "zeroRecords": "Nada encontrado - perdón",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrados desde los _MAX_ registros totales)",
+                        "search": "Buscar...",
+                        "paginate": {
+                            'next': 'Siguiente',
+                            'previous': 'Anterior'
+                        }
+                    }
+            });
         } );
     </script>
 @endsection

@@ -32,7 +32,7 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Días:</span>
-                    <select class="selectpicker" multiple data-live-search="true" name="dias[]" id="horario">
+                    <select class="selectpicker" multiple data-live-search="true" name="dias[]" id="horario" required>
                             <option value="Lunes">Lunes</option>
                             <option value="Martes">Martes</option>
                             <option value="Miercoles">Miercoles</option>
@@ -48,13 +48,13 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Hora de inicio:</span>
-                    <input type="time" class="form-control" aria-label="Horario Inicio" name="horai">
+                    <input type="time" class="form-control" aria-label="Horario Inicio" name="horai" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Hora de cierre:</span>
-                    <input type="time" class="form-control" aria-label="Horario Cierre" name="horaf">
+                    <input type="time" class="form-control" aria-label="Horario Cierre" name="horaf" required>
                 </div>
             </div>
         </div>

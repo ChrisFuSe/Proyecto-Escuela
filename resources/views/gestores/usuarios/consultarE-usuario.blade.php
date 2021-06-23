@@ -52,7 +52,6 @@
               <th class="table-primary" scope="col">Apellido Mat</th>
               <th class="table-primary" scope="col">Correo electrónico</th>
               <th class="table-primary" scope="col">Tipo de usuario</th>
-              <th class="table-primary" scope="col">Contraseña</th>
             </tr>
           </thead>
           <tbody>
@@ -78,7 +77,6 @@
                   <td class="table-info">{{$usuario->ap_materno}}</td>
                   <td class="table-info">{{$usuario->email}}</td>
                   <td class="table-info">{{$usuario->tipo}}</td>
-                  <td class="table-info">{{$usuario->password}}</td>
                 </tr>
               @endforeach
             @endif

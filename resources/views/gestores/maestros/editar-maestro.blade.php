@@ -25,27 +25,27 @@ function validar(){
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nombres</span>
                     <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres"
-                        name="nombres" value='{{$profesor->nombres}}'>
+                        name="nombres" maxlength="45" value='{{$profesor->nombres}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Paterno</span>
                     <input type="text" class="form-control" placeholder="Primer Apellido..."
-                        aria-label="Apellido Paterno" name="ap_paterno" value='{{$profesor->ap_paterno}}'>
+                        aria-label="Apellido Paterno" maxlength="45" name="ap_paterno" value='{{$profesor->ap_paterno}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Materno</span>
-                    <input type="text" class="form-control" placeholder="Segundo Apellido..."
-                        aria-label="Apellido Materno" name="ap_materno" value='{{$profesor->ap_materno}}'>
+                    <input type="text" class="form-control" maxlength="45" placeholder="Segundo Apellido..."
+                        aria-label="Apellido Materno" name="ap_materno" value='{{$profesor->ap_materno}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Estado</span>
-                    <select type="select" class="form-control" name="estado">
+                    <select type="select" class="form-control" name="estado" required>
                         <option>{{$profesor->estado}}</option>
                         <option>Aguascalientes</option>
                         <option>Baja California</option>
@@ -85,47 +85,47 @@ function validar(){
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Ciudad</span>
-                    <input type="text" class="form-control" placeholder="Ciudad..." aria-label="Ciudad" name="ciudad" value='{{$profesor->ciudad}}'>
+                    <input type="text" class="form-control" maxlength="45" placeholder="Ciudad..." aria-label="Ciudad" name="ciudad" value='{{$profesor->ciudad}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Calle y numero</span>
-                    <input type="text" placeholder="Calle" aria-label="Calle" class="form-control" name="calle" value='{{$profesor->calle}}'>
-                    <input type="text" placeholder="#Numero" aria-label="Numero" class="form-control" name="numero" value='{{$profesor->numero}}'>
+                    <input type="text" placeholder="Calle" maxlength="45" aria-label="Calle" class="form-control" name="calle" value='{{$profesor->calle}}' required>
+                    <input type="text" placeholder="#Numero" maxlength="10" aria-label="Numero" class="form-control" name="numero" value='{{$profesor->numero}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Colonia</span>
                     <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia"
-                        name="colonia" value='{{$profesor->colonia}}'>
+                        name="colonia" maxlength="45" value='{{$profesor->colonia}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">C.P</span>
-                    <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal" value='{{$profesor->codigo_postal}}'>
+                    <input type="text" maxlength="5" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal" value='{{$profesor->codigo_postal}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">RFC</span>
                     <input onkeyup="this.value = this.value.toUpperCase();" type="text" class="form-control" placeholder="Registro federal de contribuyente..."
-                        aria-label="RFC" name="rfc" value='{{$profesor->rfc}}'>
+                        aria-label="RFC" maxlength="13" name="rfc" value='{{$profesor->rfc}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Numero Telefónico</span>
-                    <input type="text" value='{{$profesor->numero}}' class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono">
+                    <input type="text" maxlength="16" value='{{$profesor->numero}}' class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Correo electrónico</span>
                     <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico"
-                        name="correo" value='{{$profesor->correo}}'>
+                        name="correo" maxlength="45" value='{{$profesor->correo}}' required>
                 </div>
             </div>
         </div>

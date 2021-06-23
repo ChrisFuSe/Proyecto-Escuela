@@ -33,13 +33,13 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombres</span>
-                <input id="nombres" type="text" class="form-control" placeholder="Nombres..." name="nombres" value='{{$alumno->nombres}}'>
+                <input id="nombres" type="text" class="form-control" maxlength="45" placeholder="Nombres..." name="nombres" value='{{$alumno->nombres}}' required>
             </div>
         </div>
         <div class="col">
                 <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Estado</span>
-                <select type="select" class="form-control" name="estado">
+                <select type="select" class="form-control" name="estado" required>
                     <option>{{$alumno->estado}}</option>
                     <option>Aguascalientes</option>
                     <option>Baja California</option>
@@ -79,79 +79,79 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Apellido Paterno</span>
-                <input type="text" class="form-control" placeholder="Primer Apellido..." name="ap_paterno" value='{{$alumno->ap_paterno}}'>
+                <input type="text" class="form-control" maxlength="45" placeholder="Primer Apellido..." name="ap_paterno" value='{{$alumno->ap_paterno}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Ciudad</span>
-                <input type="text" placeholder="Ciudad..." aria-label="Ciudad" class="form-control" name="ciudad" value='{{$alumno->ciudad}}'>
+                <input type="text" placeholder="Ciudad..." maxlength="45" aria-label="Ciudad" class="form-control" name="ciudad" value='{{$alumno->ciudad}}' required>
               </div>
         </div>
         <div class="col">
         <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Apellido Materno</span>
-            <input type="text" class="form-control" placeholder="Segundo Apellido..." name="ap_materno" value='{{$alumno->ap_materno}}'>
+            <input type="text" class="form-control" maxlength="45" placeholder="Segundo Apellido..." name="ap_materno" value='{{$alumno->ap_materno}}' required>
         </div>
       </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Calle</span>
-                <input type="text" placeholder="Calle" aria-label="Calle" class="form-control" name="calle" value='{{$alumno->calle}}'>
+                <input type="text" placeholder="Calle" aria-label="Calle" class="form-control" maxlength="45" name="calle" value='{{$alumno->calle}}' required>
               </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">CURP</span>
-              <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" placeholder="CURP..." aria-label="RFC" name="curp" value='{{$alumno->curp}}'>
+              <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" maxlength="18" placeholder="CURP..." aria-label="RFC" name="curp" value='{{$alumno->curp}}' required>
           </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Número</span>
-              <input type="text" placeholder="#Número" aria-label="Número" class="form-control" name="numero" value='{{$alumno->numero}}'>
+              <input type="text" placeholder="#Número" aria-label="Número" class="form-control" maxlength="5" name="numero" value='{{$alumno->numero}}' required>
             </div>
        </div>
        <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Fecha de nacimiento</span>
-              <input type="date" class="form-control" aria-label="RFC" name="fecha_nac" value='{{$alumno->fecha_nac}}'>
+              <input type="date" class="form-control" aria-label="RFC" name="fecha_nac" value='{{$alumno->fecha_nac}}' required>
           </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Colonia</span>
-                <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia" name="colonia" value='{{$alumno->colonia}}'>
+                <input type="text" class="form-control" maxlength="45" placeholder="Colonia..." aria-label="Colonia" name="colonia" value='{{$alumno->colonia}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
-                <input type="tel" class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono" value='{{$alumno->telefono}}'>
+                <input type="tel" class="form-control" maxlength="18" placeholder="#Tel" aria-label="Numero" name="telefono" value='{{$alumno->telefono}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">C.P</span>
-                <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal" value='{{$alumno->codigo_postal}}'>
+                <input type="text" class="form-control" maxlength="5" placeholder="#C.P" aria-label="Numero" name="codigo_postal" value='{{$alumno->codigo_postal}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="email" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico" name="correo" value='{{$alumno->correo}}'>
+                <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" aria-label="Correo electronico" name="correo" value='{{$alumno->correo}}' required>
             </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Descuento</span>
-              <input type="number" min="0" max="100" class="form-control" placeholder="%" aria-label="Numero" name="descuento" value='{{$alumno->descuento}}'>
+              <input type="number" min="0" max="100" class="form-control" placeholder="%" aria-label="Numero" name="descuento" value='{{$alumno->descuento}}' required>
           </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <label class="input-group-text" for="inputGroupSelect01">Oyente clase</label>
-              <select class="form-select" id="inputGroupSelect01" name="oyente_clase">
+              <select class="form-select" id="inputGroupSelect01" name="oyente_clase" required>
                 <option selected>{{$alumno->oyente_clase}}</option>
                 <option>Si</option>
                 <option>No</option>
@@ -161,7 +161,7 @@
         <div class="col">
         <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">¿Desea factura?</span>
-              <select class="form-select" id="inputGroupSelect01" name="factura">
+              <select class="form-select" id="inputGroupSelect01" name="factura" required>
                 <option selected>{{$alumno->factura}}</option>
                 <option>Si</option>
                 <option>No</option>
@@ -171,41 +171,41 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre completo</span>
-                <input type="text" class="form-control" placeholder="Nombre..." name="fnombres" value='{{$alumno->fnombres}}'>
+                <input type="text" class="form-control" maxlength="200" placeholder="Nombre..." name="fnombres" value='{{$alumno->fnombres}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
-                <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" placeholder="RFC..." name="frfc" value='{{$alumno->frfc}}'>
+                <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" placeholder="RFC..." name="frfc" value='{{$alumno->frfc}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Domicilio</span>
-                <input type="text" class="form-control" placeholder="Domicilio..." name="fdomicilio" value='{{$alumno->fdomicilio}}'>
+                <input type="text" class="form-control" maxlength="300" placeholder="Domicilio..." name="fdomicilio" value='{{$alumno->fdomicilio}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
-                <input type="tel" class="form-control" placeholder="#Tel" name="ftelefono" value='{{$alumno->ftelefono}}'>
+                <input type="tel" class="form-control" maxlength="18" placeholder="#Tel" name="ftelefono" value='{{$alumno->ftelefono}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="email" class="form-control" placeholder="@ejemplo.com" name="fcorreo" value='{{$alumno->fcorreo}}'>
+                <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" name="fcorreo" value='{{$alumno->fcorreo}}' required>
             </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
-              <input class="form-control" value="Alta" name="estado_actual" type="hidden">
+              <input class="form-control" value="Alta" name="estado_actual" type="hidden" required>
           </div>
       </div>
       <div class="col">
           <div class="input-group input-group-lg mb-4">
-              <input class="form-control" value="0" name="deuda_total" type="hidden">
+              <input class="form-control" value="0" name="deuda_total" type="hidden" required>
           </div>
       </div>
     </div> 
