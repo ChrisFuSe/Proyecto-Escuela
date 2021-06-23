@@ -11,6 +11,7 @@
 @endsection
 
 @section('cuerpo')
+<h1>Realizar Pagos</h1>
 @csrf
 <div class="container">
   <div class="input-group input-group-lg mb-4">
@@ -30,8 +31,8 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <label class="input-group-text">Concepto</label>
-          <select class="form-select" id="concepto" name="concepto">
-            <option selected disabled>Seleccione...</option>
+          <select class="form-select" id="concepto" name="concepto" required>
+            <option disabled>Seleccione...</option>
             @if(empty($conceptos))
             @else
             @foreach ($conceptos as $concepto)
@@ -54,19 +55,19 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text" id="labelNcontrol" disabled>Número de control</span>
-          <input type="text" class="form-control" placeholder="Número de control..." name="numero_control">
+          <input type="text" class="form-control" placeholder="Número de control..." name="numero_control" required>
         </div>
       </div>
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Fecha de pago</span>
-          <input type="date" class="form-control" name="fecha">
+          <input type="date" class="form-control" name="fecha" required>
         </div>
       </div>
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Monto</span>
-          <input type="number" class="form-control" placeholder="$" name="monto">
+          <input type="number" class="form-control" placeholder="$" name="monto" required min="1">
         </div>
       </div>
     </div>
@@ -92,7 +93,7 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text" id="labelNcontrol" disabled>Número de control</span>
-          <input type="text" class="form-control" placeholder="Número de control..." name="pago_adeudo_numero_control">
+          <input type="text" class="form-control" placeholder="Número de control..." name="pago_adeudo_numero_control" required>
         </div>
       </div>
       <div class="col-1">
@@ -105,7 +106,7 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <label class="input-group-text">Adeudos</label>
-          <select class="form-select" id="adeudos" name="adeudos">
+          <select class="form-select" id="adeudos" name="adeudos" required>
             <option selected disabled></option>
           </select>
         </div>
@@ -121,14 +122,14 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Fecha de pago</span>
-          <input type="date" class="form-control" name="pago_adeudo_fecha">
+          <input type="date" class="form-control" name="pago_adeudo_fecha" required>
         </div>
       </div>
 
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Monto</span>
-          <input type="number" class="form-control" placeholder="$" name="pago_adeudo_monto">
+          <input type="number" class="form-control" placeholder="$" name="pago_adeudo_monto" required>
         </div>
       </div>
     </div>
