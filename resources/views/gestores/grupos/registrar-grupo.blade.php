@@ -42,7 +42,7 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Seleccione horario:</span>
-                    <select type="select" class="form-control" name="id_profesor">
+                    <select type="select" class="form-control" name="id_horario">
                         <option>Elije un horario...</option>
                         @foreach ($horarios as $horario)
                         <option value="{{$horario->id_horario}}">{{$horario->horarios}} {{$horario->dia}}</option>

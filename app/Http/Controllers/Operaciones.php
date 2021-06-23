@@ -68,10 +68,14 @@ class Operaciones extends Controller
             break;
             case 'consultar':
                 $grupos = Grupo::all();
-                return view('gestores/grupos/consultar-grupo', compact('grupos'));
+                $profesores = Profesor::all();
+                $horarios = Horario::all();
+                $niveles = Nivel::all();
+                return view('gestores/grupos/consultar-grupo', compact('grupos', 'profesores', 'horarios','niveles'));
             break;
             case 'crearh':
-                return view('gestores/grupos/crearh-grupo'); 
+                $horarios = Horario::all();
+                return view('gestores/grupos/crearh-grupo', compact('horarios')); 
             break;
             default:
             abort(404);

@@ -35,7 +35,7 @@
 @section('operacion','Consultar grupo')
 
 @section('cuerpo')
-<h1>Consultar/Eliminar/Editar grupo</h1>
+<h1>Consultar/Eliminar/Editar grupos</h1>
 <div class="container"> 
   <div class="card">
     <div class="card-body" style="padding-inline : 4%;">
@@ -48,9 +48,7 @@
               <th class="table-primary" scope="col">Nombre del grupo</th>
               <th class="table-primary" scope="col">Nivel</th>
               <th class="table-primary" scope="col">Profesor</th>
-              <th class="table-primary" scope="col">Días</th>
-              <th class="table-primary" scope="col">Hora de inicio</th>
-              <th class="table-primary" scope="col">Hora de cierre</th>
+              <th class="table-primary" scope="col">Horario</th>
               <th class="table-primary" scope="col">Descripción</th>
             </tr>
           </thead>
@@ -72,11 +70,21 @@
                   </form>
                   </td>
                   <td class="table-info">{{$grupo->nombre}}</td>
-                  <td class="table-info">{{$grupo->id_nivel}}</td>
-                  <td class="table-info">profe</td>
-                  <td class="table-info">dia</td>
-                  <td class="table-info">horai</td>
-                  <td class="table-info">horaf</td>
+                  @foreach($niveles as $nivel)
+                  @if($nivel->id_nivel == $grupo->id_nivel)
+                  <td class="table-info" value="{{$grupo->id_nivel}}">{{$nivel->descripcion}}</td>
+                  @endif
+                  @endforeach
+                  @foreach($profesores as $profesor)
+                  @if($profesor->id_profesor == $grupo->id_profesor)
+                  <td class="table-info" value="$grupo->id_profesor">{{$profesor->nombres}} {{$profesor->ap_paterno}} {{$profesor->ap_materno}}</td>
+                  @endif
+                  @endforeach
+                  @foreach($horarios as $horario)
+                  @if($grupo->id_horario == $horario->id_horario)
+                  <td class="table-info" value="$horario->id_horario">{{$horario->horarios}} {{$horario->dia}}</td>
+                  @endif
+                  @endforeach
                   <td class="table-info">{{$grupo->descripcion}}</td>
                 </tr>
               @endforeach
