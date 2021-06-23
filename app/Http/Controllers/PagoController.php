@@ -65,15 +65,6 @@ class PagoController extends Controller
         return datatables()->of($pago)->toJson();
     }
 
-    public function reportePagos(){
-        $pago = Pago::select('num_referencia', 'monto', 'fecha_pago', 'descripcion', 
-                            'concepto', 'pagos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
-                    ->join('alumnos', 'pagos.numero_control', '=', 'alumnos.numero_control')
-                    ->join('adeudos', 'pagos.id_adeudo', '=', 'adeudos.id_adeudo')
-                    ->get();
-        return datatables()->of($pago)->toJson();
-    }
-
     public function consultarAdeudos(){
         $adeudo = Adeudo::select('id_adeudo', 'monto_adeudo', 'concepto', 'pagado', 
                                 'fecha_adeudo', 'adeudos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
@@ -98,8 +89,7 @@ class PagoController extends Controller
                                 'fecha_adeudo', 'adeudos.numero_control', DB::raw("CONCAT(nombres,ap_paterno,ap_materno) AS nombre"))
                         ->join('alumnos', 'adeudos.numero_control', '=', 'alumnos.numero_control')
                         ->where('pagado', 'n')
-                        ->whereMonth('fecha_adeudo', '<', date("m"))
-                        ->whereDay('fecha_adeudo', '<', date("d"))
+                        ->whereRaw('TIMESTAMPDIFF(MONTH, fecha_adeudo, "2021-06-23") >= 1', [date('Y-m-d')])
                         ->get();
         return datatables()->of($adeudo)->toJson();
     }
