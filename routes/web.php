@@ -73,7 +73,8 @@ Route::post('consultar/concepto', [PagoController::class, 'consultarConceptos'])
 Route::get('consultar/pagos', [PagoController::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
 Route::get('reporte/pagos', [PagoController::class, 'reportePagos'])->middleware('auth')->name('reporte.pagos');
 Route::get('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.adeudos');
-Route::get('reporte/pagos/mensuales', [PagoController::class, 'pagosMensuales'])->middleware('auth')->name('reporte.pagos');
+Route::get('reporte/pagos', [PagoController::class, 'pagosMensuales'])->middleware('auth')->name('reporte.pagos');
+Route::get('reporte/adeudos', [PagoController::class, 'adeudosMensuales'])->middleware('auth')->name('reporte.adeudos');
 Route::post('cambiar/precio', [PagoController::class, 'cambiarPrecios'])->middleware('auth')->name('cambiar.precios');
 
 

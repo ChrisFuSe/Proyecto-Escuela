@@ -45,6 +45,22 @@
                 </select>
             </div>
         </div>
+        <div class="col-3">
+            <div class="input-group input-group-lg mb-4">
+                <span class="input-group-text" for="anio">Seleccionar un año</span>
+                <select class="form-select" id="anio">
+                    <option disabled>Seleccione...</option>
+                    <?php
+                    $anio = date("Y");
+                    for(;$anio>=2007;$anio--){
+                        ?>
+                    <option value="{{$anio}}">{{$anio}}</option>
+                    <?php
+                    }
+                ?>
+                </select>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -88,12 +104,20 @@
                     }
         });
             $('#mes').change(function (){
-                let pagos = $('#pagos').DataTable( {
+                traerTabla();
+            });
+            $('#anio').change(function (){
+                traerTabla();
+            });
+
+        function traerTabla(){
+            let pagos = $('#pagos').DataTable( {
                     "destroy":true,
                     "ajax": {
-                        "url":"/reporte/pagos/mensuales",
+                        "url":"/reporte/pagos",
                         "data": {
-                            "mes":$('select#mes').val()
+                            "mes":$('select#mes').val(),
+                            "anio":$('select#anio').val()
                         }
                     },
                     "columns": [
@@ -118,7 +142,7 @@
                         }
                     }
                 } );
-            });
+        }
         } );
 </script>
 @endsection
