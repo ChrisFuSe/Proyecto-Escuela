@@ -14,7 +14,7 @@
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nombre del grupo:</span>
-                    <input type="text" class="form-control" placeholder="Nombre Clave..." aria-label="Nombres"name="nombre">
+                    <input type="text" class="form-control" maxlength="45" placeholder="Nombre Clave..." aria-label="Nombres"name="nombre" required>
                 </div>
             </div>
             <div class="col">
@@ -55,7 +55,7 @@
             <div class="col">    
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Descripcion:</span>
-                    <textarea class="form-control" placeholder="Ingrese descripción..." id="floatingTextarea" name="descripcion"></textarea>
+                    <textarea class="form-control" maxlength="300" placeholder="Ingrese descripción..." id="floatingTextarea" name="descripcion" required></textarea>
                 </div>
             </div>
         </div>

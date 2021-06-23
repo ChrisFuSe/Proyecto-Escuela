@@ -39,13 +39,13 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre de grupo:</span>
-                <input type="text" class="form-control" name="nombre" id="nombre" value='{{$grupos->nombre}}'>
+                <input type="text" class="form-control" maxlength="45" name="nombre" id="nombre" value='{{$grupos->nombre}}' required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nivel:</span>
-                <select type="select" class="form-control" name="id_nivel" id="id_nivel">
+                <select type="select" class="form-control" name="id_nivel" id="id_nivel" required>
                     <option value='{{$grupos->id_nivel}}'>{{$nivel}}</option>
                     $array = array()
                     @foreach($nivelt as $t)
@@ -57,7 +57,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Profesor:</span>
-                <select type="select" class="form-control" name="id_profesor" id="id_profesor">
+                <select type="select" class="form-control" name="id_profesor" id="id_profesor" required>
                     <option value='{{$grupos->id_profesor}}'>{{$profesor}}</option>
                     $array = array()
                     @foreach($profesort as $p)
@@ -69,7 +69,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Horario:</span>
-                <select type="select" class="form-control" name="id_horario" id="id_horario">
+                <select type="select" class="form-control" name="id_horario" id="id_horario" required>
                     <option value='{{$grupos->id_horario}}'>{{$horario}}</option>
                     $array = array()
                     @foreach($horariot as $h)
@@ -84,7 +84,7 @@
         <div class="col" id="save-alumno">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Descripcion:</span>
-                <textarea class="form-control" name="descripcion" id="descripcion" value='{{$grupos->descripcion}}'>{{$grupos->descripcion}}</textarea>
+                <textarea class="form-control" name="descripcion" id="descripcion" value='{{$grupos->descripcion}}' required>{{$grupos->descripcion}}</textarea>
             </div>
         </div>
     </div>

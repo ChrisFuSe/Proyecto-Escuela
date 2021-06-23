@@ -33,13 +33,13 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombres</span>
-                <input id="nombres" type="text" class="form-control" placeholder="Nombres..." name="nombres">
+                <input id="nombres" type="text" class="form-control" maxlength="45" placeholder="Nombres..." name="nombres" required>
             </div>
         </div>
         <div class="col">
                 <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Estado</span>
-                <select type="select" class="form-control" name="estado">
+                <select type="select" class="form-control" name="estado" required>
                     <option>--Elije un estado--</option>
                     <option>Aguascalientes</option>
                     <option>Baja California</option>
@@ -79,79 +79,79 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Apellido Paterno</span>
-                <input type="text" class="form-control" placeholder="Primer Apellido..." name="ap_paterno">
+                <input type="text" class="form-control" maxlength="45" placeholder="Primer Apellido..." name="ap_paterno" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Ciudad</span>
-                <input type="text" placeholder="Ciudad..." aria-label="Ciudad" class="form-control" name="ciudad">
+                <input type="text" placeholder="Ciudad..." aria-label="Ciudad" class="form-control" maxlength="45" name="ciudad" required>
               </div>
         </div>
         <div class="col">
         <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Apellido Materno</span>
-            <input type="text" class="form-control" placeholder="Segundo Apellido..." name="ap_materno">
+            <input type="text" class="form-control" maxlength="45" placeholder="Segundo Apellido..." name="ap_materno" required>
         </div>
       </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Calle</span>
-                <input type="text" placeholder="Calle" aria-label="Calle" class="form-control" name="calle">
+                <input type="text" placeholder="Calle" aria-label="Calle" class="form-control" maxlength="45" name="calle" required>
               </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">CURP</span>
-              <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" placeholder="CURP..." aria-label="RFC" name="curp">
+              <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" maxlength="18" placeholder="CURP..." aria-label="RFC" name="curp" required>
           </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Número</span>
-              <input type="text" placeholder="#Número" aria-label="Número" class="form-control" name="numero">
+              <input type="text" placeholder="#Número" aria-label="Número" class="form-control" maxlength="5" name="numero" required>
             </div>
        </div>
        <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Fecha de nacimiento</span>
-              <input type="date" class="form-control" aria-label="RFC" name="fecha_nac">
+              <input type="date" class="form-control" aria-label="RFC" name="fecha_nac" required>
           </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Colonia</span>
-                <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia" name="colonia">
+                <input type="text" class="form-control" maxlength="45" placeholder="Colonia..." aria-label="Colonia" name="colonia" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
-                <input type="tel" class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono">
+                <input type="tel" class="form-control" maxlength="18" placeholder="#Tel" aria-label="Numero" name="telefono" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">C.P</span>
-                <input type="text" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal">
+                <input type="text" class="form-control" maxlength="5" placeholder="#C.P" aria-label="Numero" name="codigo_postal" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="email" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico" name="correo">
+                <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" aria-label="Correo electronico" name="correo" required>
             </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">Descuento</span>
-              <input type="number" min="0" max="100" class="form-control" placeholder="%" aria-label="Numero" name="descuento">
+              <input type="number" min="0" max="100" class="form-control" placeholder="%" aria-label="Numero" name="descuento" required>
           </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <label class="input-group-text" for="inputGroupSelect01">Oyente clase</label>
-              <select class="form-select" id="inputGroupSelect01" name="oyente_clase">
+              <select class="form-select" id="inputGroupSelect01" name="oyente_clase" required>
                 <option selected>Seleccione...</option>
                 <option>Si</option>
                 <option>No</option>
@@ -161,7 +161,7 @@
         <div class="col">
         <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">¿Desea factura?</span>
-              <select class="form-select" id="inputGroupSelect01" name="factura">
+              <select class="form-select" id="inputGroupSelect01" name="factura" required>
                 <option selected>Seleccione...</option>
                 <option>Si</option>
                 <option>No</option>
@@ -171,41 +171,41 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre completo</span>
-                <input type="text" class="form-control" placeholder="Nombre..." name="fnombres">
+                <input type="text" class="form-control" maxlength="200" placeholder="Nombre..." name="fnombres" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
-                <input type="text" onkeyup="this.value = this.value.toUpperCase();" class="form-control" placeholder="RFC..." name="frfc">
+                <input type="text" onkeyup="this.value = this.value.toUpperCase();" maxlength="13" class="form-control" placeholder="RFC..." name="frfc" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Domicilio</span>
-                <input type="text" class="form-control" placeholder="Domicilio..." name="fdomicilio">
+                <input type="text" class="form-control" maxlength="300" placeholder="Domicilio..." name="fdomicilio" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
-                <input type="tel" class="form-control" placeholder="#Tel" name="ftelefono">
+                <input type="tel" class="form-control" maxlength="18" placeholder="#Tel" name="ftelefono" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="email" class="form-control" placeholder="@ejemplo.com" name="fcorreo">
+                <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" name="fcorreo" required>
             </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
-              <input class="form-control" value="Alta" name="estado_actual" type="hidden" >
+              <input class="form-control" value="Alta" name="estado_actual" type="hidden" required>
           </div>
       </div>
       <div class="col">
           <div class="input-group input-group-lg mb-4">
-              <input class="form-control" value="0" name="deuda_total" type="hidden" >
+              <input class="form-control" value="0" name="deuda_total" type="hidden" required>
           </div>
       </div>
     </div> 
