@@ -1,74 +1,77 @@
 @extends('templates.pagina-menu-botones')
 
+@section('estilos')
+<link rel="stylesheet" href="{{ asset('css\dataTables.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css\responsive.bootstrap5.min.css') }}">
+@endsection
+
+@section('header-scripts')
+<script src="{{asset('js\jquery-3.5.1.js')}}"></script>
+<script src="{{asset('js\jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('js\dataTables.bootstrap5.min.js')}}"></script>
+<script src="{{asset('js\dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('js\responsive.bootstrap5.min.js')}}"></script>
+@endsection
+
 @section('imagen-opc')
 {{ asset('img/Gestor_Pagos.png') }}
 @endsection
 
-@section('operacion','Reporte de deudas')
+@section('operacion','Reporte de Pago')
 
 @section('cuerpo')
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
-<div class="container" style="margin-top: 1%;">
-  <center>
-      <table class="table table-striped " style="margin-top: 3%;" width="80%">
-          <thead>
-            <tr >
-              <th class="table-primary" scope="col">Número de control</th>
-              <th class="table-primary" scope="col">Alumno</th>
-              <th class="table-primary" scope="col">Meses de atraso</th>
-              <th class="table-primary" scope="col">Monto por pagar</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="table-info" scope="row">1</td>
-              <td class="table-info"></td>
-              <td class="table-info"></td>
-              <td class="table-info"></td>
-              
-              
-            </tr>
-            <tr>
-              <td class="table-light" class="table-info" scope="row">2</td>
-              <td class="table-light"></td>
-              <td class="table-light"></td>
-              <td class="table-light"></td>
-              
-            </tr>
-            <tr>
-              <td class="table-info" class="table-info" scope="row">3</td>
-                  <td class="table-info"></td>
-                  <td class="table-info"></td>
-                  <td class="table-info"></td>
-                  
-            </tr>
-            <tr>
-              <td class="table-light" class="table-info" scope="row">4</td>
-              <td class="table-light"></td>
-              <td class="table-light"></td>
-              <td class="table-light"></td>
-              
-            </tr>
-          </tbody>
-        </table>
-  
-      </center>
+<div class="container-fluid">
+    <div class="card" id="carta_pagos">
+        <div class="card-body">
+            <table id="adeudos" class="table table-striped dt-responsive nowrap" style="width:100%">
+                <thead>
+                    <tr>
+                        <th class="table-primary" scope="col">Numero de adeudo</th>
+                        <th class="table-primary" scope="col">Monto</th>
+                        <th class="table-primary" scope="col">Concepto</th>
+                        <th class="table-primary" scope="col">Fecha del adeudo</th>
+                        <th class="table-primary" scope="col">Numero de control</th>
+                        <th class="table-primary" scope="col">Nombre</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
 </div>
+@endsection
 
-<div class="container">
-  <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
-                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
-     <div class="row row-cols-2">
-         <div class="col">
-             <div class="input-group input-group-lg mb-4">
-                 <span class="input-group-text">Cantidad de alumnos con deudas</span>
-                 <input type="number" class="form-control" placeholder="" aria-label="$$" >
-               </div>
-          </div>
-          <div class="col">
-          </div>
+@section('scripts')
+<script>
+    $(document).ready(function() {
+        traerTabla();
 
-     </div>      
- </div>
+        function traerTabla(){
+            let pagos = $('#adeudos').DataTable( {
+                    "destroy":true,
+                    "ajax": '/reporte/adeudos',
+                    "columns": [
+                        {data: 'id_adeudo'},
+                        {data: 'monto_adeudo'},
+                        {data: 'concepto'},
+                        {data: 'fecha_adeudo'},
+                        {data: 'numero_control'},
+                        {data: 'nombre'},
+                    ],
+                    "language": {
+                        "lengthMenu": "Desplegando _MENU_ registros por página",
+                        "zeroRecords": "No se encontraron registros",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrados desde los _MAX_ registros totales)",
+                        "search": "Buscar...",
+                        "paginate": {
+                            'next': 'Siguiente',
+                            'previous': 'Anterior'
+                        }
+                    }
+                });
+        }
+    });
+</script>
 @endsection
