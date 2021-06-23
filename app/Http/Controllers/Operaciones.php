@@ -31,7 +31,8 @@ class Operaciones extends Controller
     }
 
     public function opConsultarMaestro(){
-        return view('gestores/maestros/consultar-maestro');
+        $profesor = Profesor::all();
+        return view('gestores/maestros/consultar-maestro', compact('profesor'));
     }
 
     public function opAlumno($operacion){
@@ -47,7 +48,8 @@ class Operaciones extends Controller
                 return view('gestores/alumnos/consultar-eliminar-alumnos');
             break;
             case 'consultar':
-                return view('gestores/alumnos/consultar-alumnos');
+                $alumnos = Alumno::all();
+                return view('gestores/alumnos/consultar-alumnos', compact('alumnos'));
             break;
             default:
             abort(404);
@@ -68,10 +70,14 @@ class Operaciones extends Controller
             break;
             case 'consultar':
                 $grupos = Grupo::all();
-                return view('gestores/grupos/consultar-grupo', compact('grupos'));
+                $profesores = Profesor::all();
+                $horarios = Horario::all();
+                $niveles = Nivel::all();
+                return view('gestores/grupos/consultar-grupo', compact('grupos', 'profesores', 'horarios','niveles'));
             break;
             case 'crearh':
-                return view('gestores/grupos/crearh-grupo'); 
+                $horarios = Horario::all();
+                return view('gestores/grupos/crearh-grupo', compact('horarios')); 
             break;
             default:
             abort(404);

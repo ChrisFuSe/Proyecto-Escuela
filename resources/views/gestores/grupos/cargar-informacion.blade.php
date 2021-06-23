@@ -59,8 +59,8 @@
       <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
         <thead>
           <tr>
-            <th class="table-primary" scope="col"></th>
             <th class="table-primary" scope="col">Agregar</th>
+            <th class="table-primary" scope="col">Quitar</th>
             <th class="table-primary" scope="col">Número de control</th>
             <th class="table-primary" scope="col">Nombre completo</th>
             <th class="table-primary" scope="col">Id Grupo</th>
@@ -72,10 +72,13 @@
           @else
           @foreach($alumnos as $alumno)
           <tr>
-            <td></td>
             <td>
               <button type="button" class="btn btn-success" onclick="agregar_alumno({{$alumno}})"><img
                   src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" onclick="quitar_alumno({{$alumno}})"><img
+                  src="{{ asset('img\person-x-fill.svg') }}" alt="Bootstrap"></button>
             </td>
             <td>{{$alumno->numero_control}}</td>
             <td>{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
@@ -115,6 +118,22 @@
   function agregar_alumno(alumno){
       $.ajax({
         url: '/agregar_alumno/grupo',
+        method: 'POST',
+        data:{
+            _token: $('input[name="_token"]').val(),
+            numero_control: alumno.numero_control,
+            grupo: $('#grupo_s').val()
+        },
+    }).done(function(res){
+      alert(res);
+      location.reload();
+    });
+    }
+</script>
+<script>
+  function quitar_alumno(alumno){
+      $.ajax({
+        url: '/quitar_alumno/grupo',
         method: 'POST',
         data:{
             _token: $('input[name="_token"]').val(),

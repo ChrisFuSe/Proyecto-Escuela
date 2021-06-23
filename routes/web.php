@@ -73,20 +73,23 @@ Route::post('consultar/concepto', [PagoController::class, 'consultarConceptos'])
 Route::get('consultar/pagos', [PagoController::class, 'consultarPagos'])->middleware('auth')->name('consultar.pagos');
 Route::get('reporte/pagos', [PagoController::class, 'reportePagos'])->middleware('auth')->name('reporte.pagos');
 Route::get('consultar/adeudos', [PagoController::class, 'consultarAdeudos'])->middleware('auth')->name('consultar.adeudos');
+Route::get('reporte/pagos', [PagoController::class, 'pagosMensuales'])->middleware('auth')->name('reporte.pagos');
+Route::get('reporte/adeudos', [PagoController::class, 'adeudosMensuales'])->middleware('auth')->name('reporte.adeudos');
 Route::post('cambiar/precio', [PagoController::class, 'cambiarPrecios'])->middleware('auth')->name('cambiar.precios');
-
-
 
 
 //          Rutas para gestor de Grupos         //
 Route::post('registrar/grupo', [GrupoController::class, 'registrarGrupo'])->middleware('auth')->name('registrar.grupo');
 Route::post('agregar_alumno/grupo', [GrupoController::class, 'agregar_alumnoGrupo'])->middleware('auth')->name('agregar_alumno.grupo');
+Route::post('quitar_alumno/grupo', [GrupoController::class, 'quitar_alumnoGrupo'])->middleware('auth')->name('quitar_alumno.grupo');
 Route::post('consultar/grupo', [GrupoController::class, 'consultarGrupo'])->middleware('auth')->name('consultar.grupo');
 Route::get('eliminar/grupo/{id}', [GrupoController::class, 'eliminarGrupo'])->middleware('auth')->name('eliminar.grupo');
 Route::get('actualizar/grupo/{id}', [GrupoController::class, 'actualizarGrupo'])->middleware('auth')->name('actualizar.grupo');
 Route::get('llenar/grupo/{id}', [GrupoController::class, 'llenarGrupo'])->middleware('auth')->name('llenar.grupo');
 Route::post('crear_horario/grupo', [GrupoController::class, 'crearHorario'])->middleware('auth')->name('crear_horario.grupo');
+Route::get('eliminar_horario/grupo/{id}', [GrupoController::class, 'eliminarHorario'])->middleware('auth')->name('eliminar_horario.grupo');
 //se llama crear grupo pero hace referencia a horario
+
 
 //          Rutas para gestor de Usuarios       //
 Route::post('registrar/usuario', [UsuarioController::class, 'registrarUsuario'])->middleware('auth')->name('registrar.usuarios');
