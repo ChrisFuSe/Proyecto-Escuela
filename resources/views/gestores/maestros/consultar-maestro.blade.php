@@ -25,6 +25,8 @@
     <p></p>
 @else
 <div class="container">
+<div class="card">
+    <div class="card-body" style="padding-inline : 4%;">
          <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
              <thead>
                <tr>
@@ -66,7 +68,8 @@
              </tbody>
            </table> 
         </div>
-
+      </div>
+    </div>
 @endif
 @endsection
 

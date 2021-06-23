@@ -29,7 +29,7 @@
         </div>
         <div class="col">
             <a href="../gestores/cal-as"><img src="../img/Gestor_Calificaciones_Asistencia.png" class="botones-navegacion" width="50%" alt="Responsive image"></a>
-            <p>Gestor de Alumnos</p>
+            <p>Gestor de Calificaciones y Asistencias</p>
         </div>
     </div>
 </div>
