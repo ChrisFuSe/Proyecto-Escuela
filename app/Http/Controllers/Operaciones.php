@@ -31,7 +31,8 @@ class Operaciones extends Controller
     }
 
     public function opConsultarMaestro(){
-        return view('gestores/maestros/consultar-maestro');
+        $profesor = Profesor::all();
+        return view('gestores/maestros/consultar-maestro', compact('profesor'));
     }
 
     public function opAlumno($operacion){
@@ -47,7 +48,8 @@ class Operaciones extends Controller
                 return view('gestores/alumnos/consultar-eliminar-alumnos');
             break;
             case 'consultar':
-                return view('gestores/alumnos/consultar-alumnos');
+                $alumnos = Alumno::all();
+                return view('gestores/alumnos/consultar-alumnos', compact('alumnos'));
             break;
             default:
             abort(404);
