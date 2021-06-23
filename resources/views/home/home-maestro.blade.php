@@ -14,14 +14,18 @@
     <div class="row align-items-start">
         <p id="bienvenida">Te damos la bienvenida {{auth()->user()->username}}</p>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" style="margin-top: 3%;">
         <div class="col">
             <a href="{{route('maestro.consultar')}}"><img src="../img/Gestor_Maestros.png" class="botones-navegacion" width="50%" alt="Responsive image"></a>
             <p>Consultar información de maestros</p>
         </div>
         <div class="col">
-            <a href="../gestores/cal-as"><img src="../img/Gestor_Calificaciones_Asistencia.png" class="botones-navegacion" width="50%" alt="Responsive image"></a>
-            <p>Gestor de Alumnos</p>
+            <a href="/gestores/alumnos/consultar"><img src="../img/Iconos Gestor Calificaciones Asistencias/Consultar_Estudiante.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <p>Consultar información de alumnos</p>
+        </div>
+        <div class="col">
+            <a href="/gestores/cal-as"><img src="../img/Gestor_Calificaciones_Asistencia.png" class="botones-navegacion" width="50%" alt="Responsive image"></a>
+            <p>Gestor Calificaciones y Asistencia</p>
         </div>
     </div>
 </div>
