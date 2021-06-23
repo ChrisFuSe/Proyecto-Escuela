@@ -20,6 +20,7 @@
 @section('operacion','Reporte de Pago')
 
 @section('cuerpo')
+<h1>Reporte de Atrasos</h1>
 <!--    Contenedor con todos los inputs del formulario para registrar un nuevo usuario  -->
 <div class="container-fluid" id="imp1">
     <div class="card" id="carta_pagos">
