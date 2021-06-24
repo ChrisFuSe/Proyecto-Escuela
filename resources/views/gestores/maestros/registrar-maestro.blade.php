@@ -15,7 +15,7 @@
 <form action="{{route('registrar.profesor')}}" method="POST" accept-charset="utf-8">
     @csrf
     <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
-    <div class="container" style="margin-top: 2%;">
+    <div class="container-fluid" style="margin-top: 2%;">
         <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                     así conseguimos dividir en 2 columnas a los inputs del formulario               -->
         <div class="row row-cols-2">

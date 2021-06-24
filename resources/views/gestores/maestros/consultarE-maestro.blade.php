@@ -24,7 +24,7 @@ function validar(){
 }
 </script>
 
-@section('operacion', 'Modificar Maestro')
+@section('operacion', 'Consultar Maestro')
 
 @section('cuerpo')
 <h1>Consultar/Eliminar/Editar maestro</h1>

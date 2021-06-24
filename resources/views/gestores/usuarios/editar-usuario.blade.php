@@ -16,7 +16,7 @@ function validar(){
 <h1>Editar usuario</h1>
 <form action="{{route('actualizar.usuario', $usuarios->id)}}" method="GET" accept-charset="utf-8">
     @csrf
-<div class="container" style="margin-top: 2%;">
+<div class="container-fluid" style="margin-top: 2%;">
         <div class="row row-cols-2">
             <div class="col">
                 <div class="input-group input-group-lg mb-4">

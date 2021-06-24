@@ -30,7 +30,6 @@ class Alumno extends Model
         'telefono',
         'correo',
         'estado_actual',
-        'oyente_clase',
         'descuento',
         'fecha_nac',
         'id_grupo',

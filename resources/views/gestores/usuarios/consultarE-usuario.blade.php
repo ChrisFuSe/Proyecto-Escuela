@@ -37,7 +37,7 @@
   
 @section('cuerpo')
 <h1>Consultar/Eliminar/Editar usuario</h1>
-<div class="container"> 
+<div class="container-fluid"> 
   <div class="card">
     <div class="card-body" style="padding-inline : 4%;">
         <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">

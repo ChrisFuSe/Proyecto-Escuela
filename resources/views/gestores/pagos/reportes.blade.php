@@ -6,7 +6,7 @@
 
 @section('cuerpo')
 <!--    Contenedor con las opciones que tenemos en el gestor de pago     -->
-<div class="container" style="margin-top: 5%;">
+<div class="container-fluid" style="margin-top: 5%;">
     <div class="row justify-content-center">
         <div class="col">
             <a  href="reportes/reporte-pagos"><img src="{{ asset('img/Iconos Gestor Pagos/Reportes de pagos.png') }}" class="botones-navegacion" alt="Responsive image" width="40%"></a>

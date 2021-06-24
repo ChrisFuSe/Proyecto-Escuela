@@ -8,7 +8,7 @@
 
 @section('cuerpo')
 <!--    Tabla -->
-<div class="container" style="margin-top: 3%;">
+<div class="container-fluid" style="margin-top: 3%;">
 
   <table class="table table-striped " style="margin-top: 5%;" width="80%">
     <thead>
