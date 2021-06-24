@@ -10,6 +10,7 @@ use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\PagoController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,7 +89,6 @@ Route::get('actualizar/grupo/{id}', [GrupoController::class, 'actualizarGrupo'])
 Route::get('llenar/grupo/{id}', [GrupoController::class, 'llenarGrupo'])->middleware('auth')->name('llenar.grupo');
 Route::post('crear_horario/grupo', [GrupoController::class, 'crearHorario'])->middleware('auth')->name('crear_horario.grupo');
 Route::get('eliminar_horario/grupo/{id}', [GrupoController::class, 'eliminarHorario'])->middleware('auth')->name('eliminar_horario.grupo');
-//se llama crear grupo pero hace referencia a horario
 
 
 //          Rutas para gestor de Usuarios       //
@@ -97,3 +97,7 @@ Route::post('consultar/usuario', [UsuarioController::class, 'consultarUsuario'])
 Route::get('elimnar/usuario/{id}', [UsuarioController::class, 'eliminarUsuario'])->middleware('auth')->name('eliminar.usuario');
 Route::get('actualizar/usuario/{id}', [UsuarioController::class, 'actualizarUsuario'])->middleware('auth')->name('actualizar.usuario');
 Route::get('llenar/usuario/{id}', [UsuarioController::class, 'llenarUsuario'])->middleware('auth')->name('llenar.usuario');
+
+
+//          Rutas para enviar correos           //
+Route::get('enviar-correos', [MailController::class, 'EnviarEmail'])->name('enviar.mail');
