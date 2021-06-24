@@ -18,7 +18,7 @@ class GrupoController extends Controller
         $grupo->descripcion = $request->descripcion;
         $grupo->id_nivel = $request->id_nivel;
         $grupo->id_horario = $request->id_horario;
-        $grupo->id_profesor = $request->id_profesor;
+        $grupo->id_profesor = $request->id_profesor;   
         $grupo->save();
         return redirect('gestores\grupos\crear');
     }
