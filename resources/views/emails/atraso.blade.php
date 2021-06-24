@@ -4,7 +4,7 @@
 <table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
     <tr>
         <td style="padding: 0">
-            <img style="padding: 0; display: block; border-radius: 3%;" src="{{asset('img/Cabecera-Prestige.png')}}" width="100%">
+            <!--<img style="padding: 0; display: block; border-radius: 3%;" src="{{asset('img/Cabecera-Prestige.png')}}" width="100%">-->
         </td>
     </tr>
     
