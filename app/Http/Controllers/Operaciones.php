@@ -41,14 +41,16 @@ class Operaciones extends Controller
                 return view('gestores/alumnos/registrar-alumnos');
             break;
             case 'consultarE':
-                $alumnos = Alumno::all();
+                $alumnos = Alumno::all()
+                        ->where('estado_actual', 'Alta');
                 return view('gestores/alumnos/consultarE-alumnos', compact('alumnos'));
             break;
             case 'modificar':
                 return view('gestores/alumnos/modificar-alumnos');
             break;
             case 'consultar':
-                $alumnos = Alumno::all();
+                $alumnos = Alumno::all()
+                        ->where('estado_actual', 'Alta');
                 return view('gestores/alumnos/consultar-alumnos', compact('alumnos'));
             break;
             default:
