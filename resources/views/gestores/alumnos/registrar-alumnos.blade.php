@@ -26,7 +26,7 @@
 <form action="{{route('registrar.alumnos')}}" method="POST" accept-charset="utf-8">
 @csrf
  <!--    Contenedor con todos los inputs del formulario para registrar un nuevo alumno  -->
- <div class="container" style="margin-top: 2%;">
+ <div class="container-fluid" style="margin-top: 2%;">
     <!--    Utilizamos las clases row y col de boostrap para hacer pocisionamiento tipo grid    
                 así conseguimos dividir en 2 columnas a los inputs del formulario               -->
     <div class="row row-cols-2">
@@ -149,16 +149,6 @@
           </div>
         </div>
         <div class="col">
-          <div class="input-group input-group-lg mb-4">
-              <label class="input-group-text" for="inputGroupSelect01">Oyente clase</label>
-              <select class="form-select" id="inputGroupSelect01" name="oyente_clase" required>
-                <option selected>Seleccione...</option>
-                <option>Si</option>
-                <option>No</option>
-              </select>
-            </div>
-        </div>
-        <div class="col">
         <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">¿Desea factura?</span>
               <select class="form-select" id="inputGroupSelect01" name="factura" required>
@@ -171,43 +161,33 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre completo</span>
-                <input type="text" class="form-control" maxlength="200" placeholder="Nombre..." name="fnombres" required>
+                <input type="text" class="form-control" maxlength="200" placeholder="Nombre..." name="fnombres">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
-                <input type="text" onkeyup="this.value = this.value.toUpperCase();" maxlength="13" class="form-control" placeholder="RFC..." name="frfc" required>
+                <input type="text" onkeyup="this.value = this.value.toUpperCase();" maxlength="13" class="form-control" placeholder="RFC..." name="frfc">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Domicilio</span>
-                <input type="text" class="form-control" maxlength="300" placeholder="Domicilio..." name="fdomicilio" required>
+                <input type="text" class="form-control" maxlength="300" placeholder="Domicilio..." name="fdomicilio">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
-                <input type="tel" class="form-control" maxlength="18" placeholder="#Tel" name="ftelefono" required>
+                <input type="tel" class="form-control" maxlength="18" placeholder="#Tel" name="ftelefono">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
-                <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" name="fcorreo" required>
+                <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" name="fcorreo">
             </div>
         </div>
-        <div class="col">
-          <div class="input-group input-group-lg mb-4">
-              <input class="form-control" value="Alta" name="estado_actual" type="hidden" required>
-          </div>
-      </div>
-      <div class="col">
-          <div class="input-group input-group-lg mb-4">
-              <input class="form-control" value="0" name="deuda_total" type="hidden" required>
-          </div>
-      </div>
     </div> 
     
 

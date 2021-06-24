@@ -39,7 +39,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre de grupo:</span>
-                <input type="text" class="form-control" maxlength="45" name="nombre" id="nombre" value='{{$grupos->nombre}}' required>
+                <input type="text" class="form-control" onchange="validarTR(event)" maxlength="45" name="nombre" id="nombre" value='{{$grupos->nombre}}' required>
             </div>
         </div>
         <div class="col">
@@ -84,13 +84,35 @@
         <div class="col" id="save-alumno">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Descripcion:</span>
-                <textarea class="form-control" name="descripcion" id="descripcion" value='{{$grupos->descripcion}}' required>{{$grupos->descripcion}}</textarea>
+                <textarea class="form-control" onchange="validarTR(event)" name="descripcion" id="floatingTextarea" value='{{$grupos->descripcion}}' required>{{$grupos->descripcion}}</textarea>
             </div>
         </div>
     </div>
 
     <div class="col" style="margin-top: 3%;">
-        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">ACTUALIZAR</button>
+        <button type="submit" class="btn btn-dark" onclick="validarF()" style="padding-inline: 2%;">ACTUALIZAR</button>
     </div>
     </form>
     @endsection
+
+@section('scripts')
+<script>
+function validarTR(e) {
+ if (e.target.value.trim() == "")
+  alert("Debe ingresar un valor en el campo");
+}
+</script>
+
+<script>
+function validarF(){
+    var nombre = document.getElementById("nombre").value.trim();
+    var desc = document.getElementById("floatingTextarea").value.trim();
+    if(nombre == "" || desc == ""){
+        alert("Debe ingresar un valor en el campo");
+    }else{
+        alert("Datos actualizados exitosamente");
+        document.form1.submit();
+    }
+}
+</script>
+@endsection

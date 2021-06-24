@@ -30,7 +30,7 @@ class ProfesorController extends Controller
     public function eliminarProfesor($id){
         $profesor = Profesor::where('id_profesor',$id)->first();
         $profesor->delete();
-        return redirect('gestores\maestros\editar');
+        return redirect('gestores\maestros\consultarE');
     }
 
     public function llenarProfesor($id){
@@ -53,6 +53,6 @@ class ProfesorController extends Controller
         $profesor->correo = $request->correo;
         $profesor->telefono = $request->telefono;
         $profesor->save();
-        return redirect('gestores\maestros\editar');
+        return redirect('gestores\maestros\consultarE');
     }
 }

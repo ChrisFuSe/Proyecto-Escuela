@@ -18,12 +18,12 @@ class Operaciones extends Controller
             case 'alta': 
                 return view('gestores/maestros/registrar-maestro');
             break;
-            case 'editar':
+            case 'consultarE':
                 $profesor = Profesor::all();
-                return view('gestores/maestros/modificar-maestro', compact('profesor'));
+                return view('gestores/maestros/consultarE-maestro', compact('profesor'));
             break;
-            case 'consultar-eliminar':
-                return view('gestores/maestros/consultar-eliminar-maestro');
+            case 'editar':
+                return view('gestores/maestros/editar-maestro');
             break;
             default:
             abort(404);
@@ -40,12 +40,12 @@ class Operaciones extends Controller
             case 'alta': 
                 return view('gestores/alumnos/registrar-alumnos');
             break;
-            case 'editar':
+            case 'consultarE':
                 $alumnos = Alumno::all();
-                return view('gestores/alumnos/editar-alumnos', compact('alumnos'));
+                return view('gestores/alumnos/consultarE-alumnos', compact('alumnos'));
             break;
-            case 'consultar-eliminar':
-                return view('gestores/alumnos/consultar-eliminar-alumnos');
+            case 'modificar':
+                return view('gestores/alumnos/modificar-alumnos');
             break;
             case 'consultar':
                 $alumnos = Alumno::all();

@@ -14,7 +14,7 @@
             <p>Dar de alta a maestro</p>
         </div>
         <div class="col">
-            <a href="maestros/editar"><img src="{{ asset('img/Iconos Gestor Maestros/Maestro-Modificar.png') }}"
+            <a href="maestros/consultarE"><img src="{{ asset('img/Iconos Gestor Maestros/Maestro-Modificar.png') }}"
                     class="botones-navegacion" alt="Responsive image" width="50%"></a>
             <p>Consultar/Eliminar/Editar información</p>
         </div>

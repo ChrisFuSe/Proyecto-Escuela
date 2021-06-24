@@ -24,8 +24,6 @@ class AlumnoController extends Controller
         $alumno->codigo_postal = $request->codigo_postal;
         $alumno->telefono = $request->telefono;
         $alumno->correo = $request->correo;
-        $alumno->estado_actual = $request->estado_actual;
-        $alumno->oyente_clase = $request->oyente_clase;
         $alumno->descuento = $request->descuento;
         $alumno->fecha_nac = $request->fecha_nac;
         $alumno->id_grupo = $request->id_grupo;
@@ -39,25 +37,24 @@ class AlumnoController extends Controller
             $alumno->save();
             return redirect('gestores\alumnos\alta');
         }catch(Exception $e){
-            return "Error no se ha podido registrar el alumno en la base de datos";
+            return "Error no se ha podido registrar el alumno en la base de datos".$e;
         }
     }
 
     public function eliminarAlumno($id){
         $alumno = Alumno::where('numero_control',$id)->first();
         $alumno->delete();
-        return redirect('gestores\alumnos\editar');
+        return redirect('gestores\alumnos\consultarE');
     }
 
     public function llenarAlumno($id){
         $alumno = Alumno::where('numero_control',$id)->first();
-        return view('gestores\alumnos\consultar-eliminar-alumnos', compact('alumno'));
+        return view('gestores\alumnos\modificar-alumnos', compact('alumno'));
     }
 
     public function actualizarAlumno(Request $request, $id){
         $alumno = Alumno::findOrFail($id);
         
-        $alumno->deuda_total = $request->deuda_total;
         $alumno->curp = $request->curp;
         $alumno->nombres = $request->nombres;
         $alumno->ap_paterno = $request->ap_paterno;
@@ -84,7 +81,7 @@ class AlumnoController extends Controller
 
         try{
             $alumno->save();
-            return redirect('gestores\alumnos\editar');
+            return redirect('gestores\alumnos\consultarE');
         }catch(Exception $e){
             return "Error no se han podido actualizar los datos del alumno en la base de datos";
         }

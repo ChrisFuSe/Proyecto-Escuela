@@ -13,7 +13,7 @@
             <p>Dar de alta a alumno</p>
         </div>
         <div class="col">
-            <a href="alumnos/editar"> <img src="../img/Iconos Gestor Alumnos/Estudiante-Modificar.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <a href="alumnos/consultarE"> <img src="../img/Iconos Gestor Alumnos/Estudiante-Modificar.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
             <p>Consultar/Eliminar/Editar información</p>
         </div>
     </div>

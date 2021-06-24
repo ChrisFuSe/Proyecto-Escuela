@@ -32,7 +32,7 @@
 {{ asset('img/Gestor_Alumnos.png') }}
 @endsection
 
-@section('operacion', 'Modificar alumno')
+@section('operacion', 'Consultar alumno')
 
 
 @section('cuerpo')
@@ -56,9 +56,7 @@
             <th class="table-primary" scope="col">Telefono</th>
             <th class="table-primary" scope="col">Estado Actual</th>
             <th class="table-primary" scope="col">Descuento</th>
-            <th class="table-primary" scope="col">Deuda Total</th>
             <th class="table-primary" scope="col">Id Grupo</th>
-            <th class="table-primary" scope="col">Oyente</th>
             <th class="table-primary" scope="col">Estado</th>
             <th class="table-primary" scope="col">Ciudad</th>
             <th class="table-primary" scope="col">Calle</th>
@@ -102,9 +100,7 @@
             <td>{{$alumno->telefono}}</td>
             <td>{{$alumno->estado_actual}}</td>
             <td>{{$alumno->descuento}}</td>
-            <td>{{$alumno->deuda_total}}</td>
             <td>{{$alumno->id_grupo}}</td>
-            <td>{{$alumno->oyente_clase}}</td>
             <td>{{$alumno->estado}}</td>
             <td>{{$alumno->ciudad}}</td>
             <td>{{$alumno->calle}}</td>
