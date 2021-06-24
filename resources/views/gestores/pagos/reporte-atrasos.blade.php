@@ -40,11 +40,21 @@
         </div>
     </div>
 </div>
-<div class="container"> 
-    <div class="col" style="margin-top: 1%;">
-        <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="javascript:imprim1();">IMPRIMIR</button>
+<div class="container">
+    <div class="row"> 
+        <div class="col" style="margin-top: 1%;">
+            <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="javascript:imprim1();">IMPRIMIR</button>
+        </div>
+        @if(auth()->user()->tipo == '1')
+        <div class="col" style="margin-top: 1%;">
+            <form action="{{route('enviar.mail')}}" method="GET">
+                <button type="submit" class="btn btn-dark" style="padding-inline: 2%;">MANDAR ALERTA</button>
+            </form>
+        </div>
+        @endif
     </div>
 </div>
+
 @endsection
 
 @section('scripts')
