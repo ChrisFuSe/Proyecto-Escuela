@@ -20,6 +20,7 @@
 @section('operacion','Cambiar Precios')
 
 @section('cuerpo')
+<h1>Cambiar Precios</h1>
 <div class="card" style="margin-top: 1%">
     <div class="card-body">
         <form action="{{route('cambiar.precios')}}" method="POST" class="row">
