@@ -24,7 +24,7 @@
 @section('operacion','Creaciones grupo')
 
 @section('cuerpo')
-<form action="{{route('crear_horario.grupo')}}" method="POST" accept-charset="UTF-8">
+<form action="{{route('crear_horario.grupo')}}" method="POST" accept-charset="UTF-8" name="form1">
     @csrf
     <h1>Registrar horario</h1>
     <div class="container-fluid">
@@ -125,5 +125,12 @@
                     }
             });
         } );
+</script>
+
+<script>
+function validarTR(e) {
+ if (e.target.value.trim() == "")
+  alert("Debe ingresar un valor en el campo");
+}
 </script>
 @endsection
