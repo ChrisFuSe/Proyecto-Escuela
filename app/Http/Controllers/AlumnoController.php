@@ -11,7 +11,7 @@ class AlumnoController extends Controller
     public function registrarAlumno(Request $request){
         $alumno = new Alumno();
 
-        $alumno->numero_control = "PES-".$request->curp;
+        $alumno->numero_control = "PE-".$request->curp;
         $alumno->curp = $request->curp;
         $alumno->nombres = $request->nombres;
         $alumno->ap_paterno = $request->ap_paterno;
@@ -33,12 +33,8 @@ class AlumnoController extends Controller
         $alumno->fcorreo = $request->fcorreo;
         $alumno->ftelefono = $request->ftelefono;
         $alumno->factura = $request->factura;
-        try{
-            $alumno->save();
-            return redirect('gestores\alumnos\alta');
-        }catch(Exception $e){
-            return "Error no se ha podido registrar el alumno en la base de datos".$e;
-        }
+        $alumno->save();
+        return redirect('gestores\alumnos\alta');
     }
 
     public function eliminarAlumno($id){
@@ -68,7 +64,6 @@ class AlumnoController extends Controller
         $alumno->telefono = $request->telefono;
         $alumno->correo = $request->correo;
         $alumno->estado_actual = $request->estado_actual;
-        $alumno->oyente_clase = $request->oyente_clase;
         $alumno->descuento = $request->descuento;
         $alumno->fecha_nac = $request->fecha_nac;
         $alumno->id_grupo = $request->id_grupo;

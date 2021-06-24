@@ -64,7 +64,6 @@
             <th class="table-primary" scope="col">Número de control</th>
             <th class="table-primary" scope="col">Nombre completo</th>
             <th class="table-primary" scope="col">Id Grupo</th>
-            <th class="table-primary" scope="col">Oyente clase</th>
         </thead>
         <tbody>
           @if(empty($alumnos))
@@ -83,7 +82,6 @@
             <td>{{$alumno->numero_control}}</td>
             <td>{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
             <td>{{$alumno->id_grupo}}</td>
-            <td>{{$alumno->oyente_clase}}</td>
           </tr>
           @endforeach
           @endif

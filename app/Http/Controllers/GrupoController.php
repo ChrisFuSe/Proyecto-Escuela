@@ -68,6 +68,25 @@ class GrupoController extends Controller
         return view('gestores\grupos\modificar-grupo', compact('grupos','profesor','horario','nivel','profesort','horariot','nivelt'));
     }
 
+    public function listarGrupo($id){
+        //numero_control,nombres
+        //grupo
+        $grupos = Grupo::where('id_grupo',$id)->first();
+        $prof = Profesor::where('id_profesor',$grupos->id_profesor)->first();
+        $name = $prof->nombres;
+        $app = $prof->ap_paterno;
+        $apm = $prof->ap_materno;
+        $profesor = $name." ".$app." ".$apm;
+        $hor = Horario::where('id_horario',$grupos->id_horario)->first();
+        $h = $hor->horarios;
+        $d = $hor->dia;
+        $horario = $h." ".$d;
+        $niv = Nivel::where('id_nivel',$grupos->id_nivel)->first();
+        $nivel = $niv->descripcion;
+        $alum = Alumno::where('id_grupo',$id)->get();
+        return view('gestores\grupos\listar-grupo', compact('grupos','profesor','horario','nivel','alum'));
+    }
+
     public function actualizarGrupo(Request $request, $id){
         $grupo = Grupo::findOrFail($id);
         $grupo->nombre = $request->nombre;
