@@ -13,7 +13,7 @@
 @section('cuerpo')
 <h1>Realizar Pagos</h1>
 @csrf
-<div class="container-fluid">
+<div class="container">
   <div class="input-group input-group-lg mb-4">
     <label class="input-group-text" for="inputGroupSelect01">Tipo de pago</label>
     <select class="form-select" id="inputGroupSelect01" name="tipo">
