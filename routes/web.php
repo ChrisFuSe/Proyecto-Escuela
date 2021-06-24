@@ -87,6 +87,7 @@ Route::post('consultar/grupo', [GrupoController::class, 'consultarGrupo'])->midd
 Route::get('eliminar/grupo/{id}', [GrupoController::class, 'eliminarGrupo'])->middleware('auth')->name('eliminar.grupo');
 Route::get('actualizar/grupo/{id}', [GrupoController::class, 'actualizarGrupo'])->middleware('auth')->name('actualizar.grupo');
 Route::get('llenar/grupo/{id}', [GrupoController::class, 'llenarGrupo'])->middleware('auth')->name('llenar.grupo');
+Route::get('listar/grupo/{id}', [GrupoController::class, 'listarGrupo'])->middleware('auth')->name('listar.grupo');
 Route::post('crear_horario/grupo', [GrupoController::class, 'crearHorario'])->middleware('auth')->name('crear_horario.grupo');
 Route::get('eliminar_horario/grupo/{id}', [GrupoController::class, 'eliminarHorario'])->middleware('auth')->name('eliminar_horario.grupo');
 

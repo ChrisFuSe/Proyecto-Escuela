@@ -43,6 +43,7 @@
           <thead>
             <tr>
               <th class="table-primary" scope="col"></th>
+              <th class="table-primary" scope="col">Lista</th>
               <th class="table-primary" scope="col">Editar</th>
               <th class="table-primary" scope="col">Eliminar</th>
               <th class="table-primary" scope="col">Nombre del grupo</th>
@@ -59,6 +60,11 @@
               @foreach($grupos as $grupo)
                 <tr>
                   <td class="table-info"></td>
+                  <td class="table-info">
+                  <form action="{{route('listar.grupo',$grupo->id_grupo)}}" method="GET">
+                  <button type="submit" class="btn btn-warning"><img src="{{ asset('img\file-person-fill.svg') }}" alt="Bootstrap"></button>
+                  </form>
+                  </td>
                   <td class="table-info">
                   <form action="{{route('llenar.grupo',$grupo->id_grupo)}}" method="GET">
                   <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
