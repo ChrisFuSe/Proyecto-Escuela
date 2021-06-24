@@ -20,7 +20,7 @@
 @section('operacion', 'Consultar pago')
 
 @section('cuerpo')
-<h1>Consultar Pagos</h1>
+<h1>Consultar</h1>
 <div class="card" style="margin-top: 1%">
     <div class="card-body">
         <div class="form-check form-check-inline">

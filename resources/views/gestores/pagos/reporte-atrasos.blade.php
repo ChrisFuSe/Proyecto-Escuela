@@ -3,6 +3,7 @@
 @section('estilos')
 <link rel="stylesheet" href="{{ asset('css\dataTables.bootstrap5.min.css') }}">
 <link rel="stylesheet" href="{{ asset('css\responsive.bootstrap5.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css\buttons.dataTables.min.css') }}">
 @endsection
 
 @section('header-scripts')
@@ -10,7 +11,12 @@
 <script src="{{asset('js\jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('js\dataTables.bootstrap5.min.js')}}"></script>
 <script src="{{asset('js\dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('js\responsive.bootstrap5.min.js')}}"></script>
+<script src="{{asset('js\imprimir-reportes\dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('js\imprimir-reportes\jszip.min.js')}}"></script>
+<script src="{{asset('js\imprimir-reportes\pdfmake.min.js')}}"></script>
+<script src="{{asset('js\imprimir-reportes\vfs_fonts.js')}}"></script>
+<script src="{{asset('js\imprimir-reportes\buttons.html5.min.js')}}"></script>
+<script src="{{asset('js\imprimir-reportes\buttons.print.min.js')}}"></script>
 @endsection
 
 @section('imagen-opc')
@@ -41,10 +47,7 @@
     </div>
 </div>
 <div class="container">
-    <div class="row"> 
-        <div class="col" style="margin-top: 1%;">
-            <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="javascript:imprim1();">IMPRIMIR</button>
-        </div>
+    <div class="row">
         @if(auth()->user()->tipo == '1')
         <div class="col" style="margin-top: 1%;">
             <form action="{{route('enviar.mail')}}" method="GET">
@@ -64,6 +67,10 @@
 
         function traerTabla(){
             let pagos = $('#adeudos').DataTable( {
+                    "dom": 'Bfrtip',
+                    "buttons": [
+                        'excel', 'pdf', 'print'
+                    ],
                     "destroy":true,
                     "ajax": '/reporte/adeudos',
                     "columns": [
@@ -89,19 +96,5 @@
                 });
         }
     });
-</script>
-<script>
-function imprim1(){
-    var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-    mywindow.document.write('<html><head>');
-  	mywindow.document.write('<style>#pagos{width:100%;border-collapse:collapse;margin:16px 0 16px 0;}#pagos th{border:1px solid #ddd;padding:4px;background-color:#d4eefd;text-align:left;font-size:15px;}#pagos td{border:1px solid #ddd;text-align:left;padding:6px;}</style>');
-    mywindow.document.write('</head><body >');
-    mywindow.document.write(document.getElementById('imp1').innerHTML);
-    mywindow.document.write('</body></html>');
-    mywindow.document.close(); // necesario para IE >= 10
-    mywindow.focus(); // necesario para IE >= 10
-    mywindow.print();
-    mywindow.close();
-    return true;}
 </script>
 @endsection
