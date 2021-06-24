@@ -151,38 +151,38 @@
         <div class="col">
         <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">¿Desea factura?</span>
-              <select class="form-select" id="inputGroupSelect01" name="factura" required>
+              <select class="form-select" id="sFactura" onchange="facturar()" name="factura" required>
                 <option selected>Seleccione...</option>
-                <option>Si</option>
-                <option>No</option>
+                <option value="S">Si</option>
+                <option value="N">No</option>
               </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col" id="fNombre">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nombre completo</span>
                 <input type="text" class="form-control" maxlength="200" placeholder="Nombre..." name="fnombres">
             </div>
         </div>
-        <div class="col">
+        <div class="col" id="fRfc">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">RFC</span>
                 <input type="text" onkeyup="this.value = this.value.toUpperCase();" maxlength="13" class="form-control" placeholder="RFC..." name="frfc">
             </div>
         </div>
-        <div class="col">
+        <div class="col" id="fDom">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Domicilio</span>
                 <input type="text" class="form-control" maxlength="300" placeholder="Domicilio..." name="fdomicilio">
             </div>
         </div>
-        <div class="col">
+        <div class="col" if="fTel">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Telefóno</span>
                 <input type="tel" class="form-control" maxlength="18" placeholder="#Tel" name="ftelefono">
             </div>
         </div>
-        <div class="col">
+        <div class="col" id="fCorreo">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Correo electrónico</span>
                 <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" name="fcorreo">
@@ -198,4 +198,23 @@
 
 </div>
 </form>
+
+<script>
+    function facturar(){
+        var facturacion = document.getElementById("sFactura").value;
+        if(facturacion == "N"){
+            document.getElementById("fNombre").style.display = "none";
+            document.getElementById("fRfc").style.display = "none";
+            document.getElementById("fDom").style.display = "none";
+            document.getElementById("fTel").style.display = "none";
+            document.getElementById("fCorreo").style.display = "none";
+        }else if(facturacion == "S"){
+            document.getElementById("fNombre").style.display = "block";
+            document.getElementById("fRfc").style.display = "block";
+            document.getElementById("fDom").style.display = "block";
+            document.getElementById("fTel").style.display = "block";
+            document.getElementById("fCorreo").style.display = "block";
+        }
+    }
+</script>
 @endsection
