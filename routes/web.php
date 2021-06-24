@@ -100,4 +100,4 @@ Route::get('llenar/usuario/{id}', [UsuarioController::class, 'llenarUsuario'])->
 
 
 //          Rutas para enviar correos           //
-Route::get('enviar-correos', [MailController::class, 'EnviarEmail'])->name('enviar.mail');
+Route::get('enviar-correos', [MailController::class, 'EnviarEmail'])->middleware('auth','directora')->name('enviar.mail');
