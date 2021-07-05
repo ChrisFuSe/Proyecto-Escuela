@@ -19,7 +19,7 @@
             <label for="contraseña" class="form-label">Contraseña</label>
             <input type="password" class="form-control" aria-describedby="ayuda_contraseña" name="password">
         </div>
-        <div style="margin-left: 43%;" id="ayuda_contraseña" class="form-text"><a>¿Olvidaste tu contraseña?</a></div>
+        <!--<div style="margin-left: 43%;" id="ayuda_contraseña" class="form-text"><a>¿Olvidaste tu contraseña?</a></div>-->
         <button type="submit" style="margin-top:2%; margin-left: 46%;" class="btn btn-primary"
             id="ingresar">Ingresar</button>
     </form>
