@@ -88,7 +88,9 @@ class Operaciones extends Controller
     public function opCalificacion($operacion){
         switch($operacion){
             case 'registrar':
-                return view('gestores/cal_as/registrar-calificacion');
+                $grupos = Grupo::all();
+                $niveles = Nivel::all();
+                return view('gestores/cal_as/registrar-calificacion', compact('grupos', 'niveles'));
             break;
             case 'modificar':
                 return view('gestores/cal_as/modificar-calificacion');
