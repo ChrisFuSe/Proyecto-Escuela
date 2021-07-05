@@ -11,6 +11,7 @@ use App\Http\Controllers\PagoController;
 use App\Http\Controllers\ProfesorController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\CalificacionesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,3 +103,6 @@ Route::get('llenar/usuario/{id}', [UsuarioController::class, 'llenarUsuario'])->
 
 //          Rutas para enviar correos           //
 Route::get('enviar-correos', [MailController::class, 'EnviarEmail'])->middleware('auth','directora')->name('enviar.mail');
+
+//          Rutas para calificaciones           //
+Route::post('consultar/nivel', [CalificacionesController::class, 'consultarNiveles'])->middleware('auth')->name('consultar.niveles');

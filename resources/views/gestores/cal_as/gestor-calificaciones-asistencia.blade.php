@@ -9,7 +9,7 @@
 <div class="container-fluid" style="margin-top: 5%;">
     <div class="row row-cols-3 justify-content-center">
         <div class="col">
-            <a href="cal_as/calificaciones"><img src="../img/Iconos Gestor Calificaciones Asistencias/Gestionar calificaciones.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
+            <a href="cal_as/calificaciones/registrar"><img src="../img/Iconos Gestor Calificaciones Asistencias/Gestionar calificaciones.png" class="botones-navegacion" alt="Responsive image" width="50%"></a>
             <p>Gestionar calificaciones</p>
         </div>
         <div class="col">
