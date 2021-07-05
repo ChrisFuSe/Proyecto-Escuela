@@ -1,14 +1,16 @@
 @extends('templates.pagina-menu-botones')
 
 @section('estilos')
-<link rel="stylesheet" href="{{ asset('css\dataTables.bootstrap5.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css\dataTables.bootstrap5.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css\responsive.bootstrap5.min.css') }}">
 @endsection
 
 @section('header-scripts')
-<script src="{{asset('js\jquery-3.5.1.js')}}"></script>
-<script src="{{asset('js\jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('js\dataTables.bootstrap5.min.js')}}"></script>
-<script src="{{asset('js\dataTables.responsive.min.js')}}"></script>
+  <script src="{{asset('js\jquery-3.5.1.js')}}"></script>
+  <script src="{{asset('js\jquery.dataTables.min.js')}}"></script>
+  <script src="{{asset('js\dataTables.bootstrap5.min.js')}}"></script>
+  <script src="{{asset('js\dataTables.responsive.min.js')}}"></script>
+  <script src="{{asset('js\responsive.bootstrap5.min.js')}}"></script>
 @endsection
 
 @section('imagen-opc')
@@ -23,9 +25,9 @@
     <table id="bitacora" class="table table-striped dt-responsive nowrap" style="width:100%">
       <thead>
         <tr>
-          <th class="table-primary" scope="col">Numero de movimiento</th>
-          <th class="table-primary" scope="col">Usuario que realizo el movimiento</th>
-          <th class="table-primary" scope="col">Tipo</th>
+          <th class="table-primary" scope="col">ID</th>
+          <th class="table-primary" scope="col">Usuario</th>
+          <th class="table-primary" scope="col">Gestor</th>
           <th class="table-primary" scope="col">Accion ejecutada</th>
           <th class="table-primary" scope="col">Fecha y Hora</th>
         </tr>
