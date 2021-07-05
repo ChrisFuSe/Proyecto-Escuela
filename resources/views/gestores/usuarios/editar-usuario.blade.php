@@ -50,7 +50,7 @@ function validar(){
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Contraseña</span>
                     <input type="password" class="form-control" placeholder="Contraseña..." aria-label="Contrasenia"
-                        name="password" maxlength="255" value='{{$usuarios->password}}' required>
+                        name="password" maxlength="255" required>
                 </div>
             </div>
             <div class="col">
@@ -64,7 +64,7 @@ function validar(){
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Repita contraseña</span>
                     <input type="password" class="form-control" placeholder="Repita contraseña..."
-                        aria-label="Repita contraseña" maxlength="255" name="password" value='{{$usuarios->password}}' required>
+                        aria-label="Repita contraseña" maxlength="255" name="password" required>
                 </div>
             </div>
             <div class="col">
