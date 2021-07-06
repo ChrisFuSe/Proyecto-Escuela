@@ -14,13 +14,10 @@ class Bitacora extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'usuario',
         'movimiento',
-        'inf_antigua',
-        'inf_nueva',
         'descripcion',
-        'tabla',
-        'fechayhora',
-        'id'
+        'fechayhora'
     ];
 
 }

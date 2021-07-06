@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bitacora;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 
 class UsuarioController extends Controller
 {
@@ -49,4 +50,8 @@ class UsuarioController extends Controller
         return redirect('gestores\usuarios\consultar-eliminar');
     }
 
+    public function consultarBitacora(){
+        $bitacora = Bitacora::all();
+        return datatables()->of($bitacora)->toJson();
+    }
 }

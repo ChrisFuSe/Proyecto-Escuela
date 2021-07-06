@@ -15,7 +15,6 @@ class Alumno extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'numero_control',
         'deuda_total',
         'curp',
         'nombres',

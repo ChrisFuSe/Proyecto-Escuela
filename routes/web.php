@@ -99,6 +99,7 @@ Route::post('consultar/usuario', [UsuarioController::class, 'consultarUsuario'])
 Route::get('elimnar/usuario/{id}', [UsuarioController::class, 'eliminarUsuario'])->middleware('auth')->name('eliminar.usuario');
 Route::get('actualizar/usuario/{id}', [UsuarioController::class, 'actualizarUsuario'])->middleware('auth')->name('actualizar.usuario');
 Route::get('llenar/usuario/{id}', [UsuarioController::class, 'llenarUsuario'])->middleware('auth')->name('llenar.usuario');
+Route::get('/bitacora', [UsuarioController::class, 'consultarBitacora'])->middleware('auth','directora')->name('consultar.bitacora');
 
 
 //          Rutas para enviar correos           //
