@@ -85,18 +85,34 @@
       <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
         <thead>
           <tr>
+            <th class="table-primary" scope="col"></th>
+            <th class="table-primary" scope="col">Calificación/ Asistencia</th>
             <th class="table-primary" scope="col">Número de control</th>
             <th class="table-primary" scope="col">Nombre completo</th>
+            <th class="table-primary" scope="col">Calificación oral</th>
+            <th class="table-primary" scope="col">Calificación escrita</th>
+            <th class="table-primary" scope="col">Asistencia total</th>
         </thead>
         <tbody>
         @if(empty($alum))
         <p></p>
         @else
         @foreach($alum as $alumno)
+        @foreach($cal as $c)
           <tr>
-            <td>{{$alumno->numero_control}}</td>
-            <td>{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
+            <td class="table-info"></td>
+            <td class="table-info">
+                  <form action="{{route('editar.cal_as',$grupos->id_grupo)}}" method="GET">
+                  <button type="submit" class="btn btn-light"><img src="{{ asset('img\journal-bookmark.svg') }}" alt="Bootstrap"></button>
+                  </form>
+            </td>
+            <td class="table-info">{{$alumno->numero_control}}</td>
+            <td class="table-info">{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
+            <td class="table-info">{{$c->calificacion_escrita}}</td>    
+            <td class="table-info">a</td>
+            <td class="table-info">b</td>
           </tr>
+        @endforeach
         @endforeach
         @endif
         </tbody>

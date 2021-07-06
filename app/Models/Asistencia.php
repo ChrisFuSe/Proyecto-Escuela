@@ -14,8 +14,8 @@ class Asistencia extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'presencia',
-        'fecha',
+        'asistencia_total',
+        'unidad',
         'numero_control',
     ];
 }

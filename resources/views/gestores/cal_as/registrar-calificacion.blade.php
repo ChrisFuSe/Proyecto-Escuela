@@ -30,18 +30,14 @@
     <div class="row row-cols-3">
         <div class="col">
             <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Grupo:</span>
-                <select id="grupo" name="grupo" type="select" class="form-control">
-                @foreach($grupos as $grupo)
-                    <option value="{{$grupo->id_grupo}}">{{$grupo->nombre}}</option>
-                @endforeach>
-                </select>
+                <span class="input-group-text">Número control:</span>
+                <input readonly type="text" class="form-control" id="nivel" name="nivel" value="{{$alumnos->nombre}} {{$alumnos->ap_paterno}} {{$alumnos->ap_materno}}">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
-            <span class="input-group-text">Nivel:</span>
-                <input readonly type="text" class="form-control" id="nivel" name="nivel">
+                <span class="input-group-text">Nivel:</span>
+                <input readonly type="text" class="form-control" id="nivel" name="nivel" value="{{$grupos->id_nivel}}">
             </div>
         </div>
         <div class="col">
@@ -57,62 +53,56 @@
                     <option value="6">Unidad 6</option>
                 </select>
             </div>
-        </div>    
-    </div>
-    <div class="row">
-      <div class="col">
+        </div> 
+        <div class="col">
             <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Grupo:</span>
-                <select id="grupo" name="grupo" type="select" class="form-control">
-                @foreach($grupos as $grupo)
-                    <option value="{{$grupo->id_grupo}}">{{$grupo->nombre}}</option>
-                @endforeach>
-                </select>
+            <span class="input-group-text">Calificación oral:</span>
+                <input type="text" class="form-control" id="calor" name="calor">
             </div>
         </div>
+        <div class="col">
+            <div class="input-group input-group-lg mb-4">
+            <span class="input-group-text">Calificación escrita:</span>
+                <input type="text" class="form-control" id="cales" name="cales">
+            </div>
+        </div>
+        <div class="col">
+            <div class="input-group input-group-lg mb-4">
+            <span class="input-group-text">Asistencia total:</span>
+                <input type="text" class="form-control" id="ast" name="ast">
+            </div>
+        </div>
+
+
+
+
+
     </div>
     @endif
 </div>
 
-<div class="container-fluid"> 
-  <div class="card">
-    <div class="card-body" style="padding-inline : 4%;">
-        <table id="example" class="table table-striped dt-responsive nowrap" style="width:100%">
-          <thead>
-            <tr>
-              <th class="table-primary" scope="col"></th>
-              <th class="table-primary" scope="col">Calificacion escrita</th>
-              <th class="table-primary" scope="col">Calificacion oral</th>
-              <th class="table-primary" scope="col">Numero de control</th>
-              <th class="table-primary" scope="col">Nombre alumno</th>
-            </tr>
-          </thead>
-          <tbody>
-            @if(empty($grupos))
-              <p></p>
-            @else
-              @foreach($grupos as $grupo)
-                <tr>
-                  <td class="table-info"></td>
-                  <td class="table-info"></td>
-                  <td class="table-info">{{$grupo->nombre}}</td>
-                  @foreach($niveles as $nivel)
-                  @if($nivel->id_nivel == $grupo->id_nivel)
-                  <td class="table-info" value="{{$grupo->id_nivel}}">{{$nivel->descripcion}}</td>
-                  @endif
-                  @endforeach
-                  <td class="table-info">{{$grupo->descripcion}}</td>
-                </tr>
-              @endforeach
-            @endif
-          </tbody>
-        </table>
-    </div>
-  </div>
-</div>
+
 </form>
 @endsection
 
 @section('scripts')
 <script src={{asset('js\niveles.js')}}></script>
+<script>
+  $(document).ready(function() {
+            $('#example').DataTable({
+              "language": {
+                        "lengthMenu": "Desplegando _MENU_ registros por página",
+                        "zeroRecords": "Nada encontrado - perdón",
+                        "info": "Mostrando página _PAGE_ de _PAGES_",
+                        "infoEmpty": "No hay registros disponibles",
+                        "infoFiltered": "(filtrados desde los _MAX_ registros totales)",
+                        "search": "Buscar...",
+                        "paginate": {
+                            'next': 'Siguiente',
+                            'previous': 'Anterior'
+                        }
+                    }
+            });
+        } );
+</script>
 @endsection

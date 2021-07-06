@@ -7,6 +7,8 @@ use App\Models\Alumno;
 use App\Models\Horario;
 use App\Models\Profesor;
 use App\Models\Nivel;
+use App\Models\Asistencia;
+use App\Models\Calificacion;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 
@@ -69,8 +71,6 @@ class GrupoController extends Controller
     }
 
     public function listarGrupo($id){
-        //numero_control,nombres
-        //grupo
         $grupos = Grupo::where('id_grupo',$id)->first();
         $prof = Profesor::where('id_profesor',$grupos->id_profesor)->first();
         $name = $prof->nombres;
@@ -84,7 +84,11 @@ class GrupoController extends Controller
         $niv = Nivel::where('id_nivel',$grupos->id_nivel)->first();
         $nivel = $niv->descripcion;
         $alum = Alumno::where('id_grupo',$id)->get();
-        return view('gestores\grupos\listar-grupo', compact('grupos','profesor','horario','nivel','alum'));
+        foreach($alum as $al){
+            $cal = Calificacion::where('numero_control',$al->numero_control)->get();
+            $asistencia[] = Asistencia::where('numero_control',$al->numero_control)->get();
+        }
+        return view('gestores\grupos\listar-grupo', compact('grupos','profesor','horario','nivel','alum','cal','asistencia'));
     }
 
     public function actualizarGrupo(Request $request, $id){

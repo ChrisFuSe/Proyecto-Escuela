@@ -90,7 +90,8 @@ class Operaciones extends Controller
             case 'registrar':
                 $grupos = Grupo::all();
                 $niveles = Nivel::all();
-                return view('gestores/cal_as/registrar-calificacion', compact('grupos', 'niveles'));
+                $alumnos = Alumno::all();
+                return view('gestores/cal_as/registrar-calificacion', compact('grupos', 'niveles','alumnos'));
             break;
             case 'modificar':
                 return view('gestores/cal_as/modificar-calificacion');
