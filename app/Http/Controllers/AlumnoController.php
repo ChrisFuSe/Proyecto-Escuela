@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use App\Models\Alumno;
+use App\Models\Adeudo;
 use Exception;
 
 class AlumnoController extends Controller
@@ -39,8 +42,16 @@ class AlumnoController extends Controller
 
     public function eliminarAlumno($id){
         $alumno = Alumno::where('numero_control',$id)->first();
-        $alumno->delete();
-        return redirect('gestores\alumnos\consultarE');
+        $adeudos = Adeudo::where('numero_control',$id)->first();
+        
+        
+        if(!empty($adeudos)){
+            return redirect()->back()->with('error', 'No se pueden eliminar alumnos con adeudos');   
+        }
+        else{
+            $alumno->delete();
+            return redirect()->back()->with('success', 'Se ha eliminado correctamente');   
+        } 
     }
 
     public function llenarAlumno($id){

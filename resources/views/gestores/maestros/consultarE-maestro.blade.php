@@ -18,16 +18,24 @@
 "{{ asset('img/Gestor_Maestros.png') }}"
 @endsection
 
-<script>
-function validar(){
-    alert("Datos eliminados de manera correcta");
-}
-</script>
-
 @section('operacion', 'Consultar Maestro')
 
 @section('cuerpo')
 <h1>Consultar/Eliminar/Editar maestro</h1>
+@if (\Session::has('error'))
+    <div class="alert alert-danger">
+        <ul>
+            <li>{!! \Session::get('error') !!}</li>
+        </ul>
+    </div>
+@endif
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
 @if(empty($profesor))
 <p></p>
 @else
@@ -91,7 +99,6 @@ function validar(){
     </div>
   </div>
 </div>
-
 @endif
 @endsection
 

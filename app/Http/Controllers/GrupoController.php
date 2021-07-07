@@ -11,6 +11,8 @@ use App\Models\Asistencia;
 use App\Models\Calificacion;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class GrupoController extends Controller
 {
@@ -122,8 +124,14 @@ class GrupoController extends Controller
 
     public function eliminarHorario($id){
         $horario = Horario::where('id_horario',$id)->first();
-        $horario->delete();
-        return redirect('gestores\grupos\crearh');
+        $grupo = Grupo::where('id_horario',$id)->first();
+        if(!empty($grupo)){
+            return redirect()->back()->with('error', 'No se pueden eliminar horarios con grupos asignados');   
+        }
+        else{
+            $horario->delete();
+            return redirect()->back()->with('success', 'Se ha eliminado correctamente');   
+        } 
     }
 
 }
