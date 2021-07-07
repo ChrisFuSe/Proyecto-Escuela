@@ -105,9 +105,16 @@
                     <form action="{{route('agregar.cal_as',$c->numero_control)}}" method="GET">
                          <button type="submit" class="btn btn-success"><img src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
                      </form>
-                    @if(empty($c))
+                    @if(empty($c->calificacion_escrita))
                     <button type="button" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
                     </td>
+                    @else
+                    <form action="{{route('llenar.cal_as',$c->id_calificacion)}}" method="GET">
+                        <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
+                    </form>
+                    </td>
+                    @endif
+                    @if(empty($c))
                     <td class="table-info">{{$c->numero_control}}</td>
                     <td class="table-info">{{$c->nombres}} {{$c->ap_paterno}} {{$c->ap_materno}}</td>
                     <td class="table-info"></td>
@@ -115,10 +122,6 @@
                     <td class="table-info"></td>
                     <td class="table-info"></td>
                     @else
-                    <form action="{{route('llenar.cal_as',1)}}" method="GET">
-                        <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
-                    </form>
-                    </td>
                     <td class="table-info">{{$c->numero_control}}</td>
                     <td class="table-info">{{$c->nombres}} {{$c->ap_paterno}} {{$c->ap_materno}}</td>
                     <td class="table-info">{{$c->unidad}}</td>
