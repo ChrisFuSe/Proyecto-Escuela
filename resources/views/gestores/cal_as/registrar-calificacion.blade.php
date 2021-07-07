@@ -21,30 +21,29 @@
 @endsection
 
 @section('cuerpo')
-@csrf
+
 <div class="container-fluid" style="margin-top: 2%;">
-<h1>Consultar/Editar calificaciones</h1>
-@if(empty($grupos))
-<p></p>
-@else
-    <div class="row row-cols-3">
+<h1>Registrar calificaciones</h1>
+<form action="{{route('registrar.calificaciones')}}" method="POST" accept-charset="utf-8" name=form1>
+@csrf
+    <div class="row row-cols-2">
         <div class="col">
             <div class="input-group input-group-lg mb-4">
-                <span class="input-group-text">Número control:</span>
-                <input readonly type="text" class="form-control" id="nivel" name="nivel" value="{{$alumnos->nombre}} {{$alumnos->ap_paterno}} {{$alumnos->ap_materno}}">
+                <span class="input-group-text">Numero de control:</span>
+                <input readonly type="text" class="form-control" id="numero_control" name="numero_control" value="{{$id}}">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Nivel:</span>
-                <input readonly type="text" class="form-control" id="nivel" name="nivel" value="{{$grupos->id_nivel}}">
+                <input readonly type="text" class="form-control" id="nivel" name="nivel"  value="{{$nivel}}" >
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Evaluación:</span>
-                <select type="select" class="form-control">
-                    <option>Elija una evaluación</option>
+                <select type="select" name="unidad" id="unidad" class="form-control">
+                    <option disabled>Elija una evaluación</option>
                     <option value="1">Unidad 1</option>
                     <option value="2">Unidad 2</option>
                     <option value="3">Unidad 3</option>
@@ -57,32 +56,27 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Calificación oral:</span>
-                <input type="text" class="form-control" id="calor" name="calor">
+                <input type="text" class="form-control" id="calificacion_oral" name="calificacion_oral">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Calificación escrita:</span>
-                <input type="text" class="form-control" id="cales" name="cales">
+                <input type="text" class="form-control" id="calificación_escrita" name="calificacion_escrita">
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Asistencia total:</span>
-                <input type="text" class="form-control" id="ast" name="ast">
+                <input type="text" class="form-control" id="asistencia_total" name="asistencia_total">
             </div>
-        </div>
-
-
-
-
-
-    </div>
-    @endif
+        </div>       
 </div>
-
-
+<div class="col" style="margin-top: 3%;">   
+        <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" >GUARDAR</button>
+    </div>
 </form>
+
 @endsection
 
 @section('scripts')

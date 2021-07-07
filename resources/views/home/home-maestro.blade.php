@@ -14,7 +14,7 @@
     <div class="row align-items-start">
         <p id="bienvenida">Te damos la bienvenida {{auth()->user()->username}}</p>
     </div>
-    <div class="row justify-content-center" style="margin-top: 3%;">
+    <div class="row row-cols-3 justify-content-center" style="margin-top: 3%;">
         <div class="col">
             <a href="{{route('maestro.consultar')}}"><img src="../img/Gestor_Maestros.png" class="botones-navegacion" width="50%" alt="Responsive image"></a>
             <p>Consultar información de maestros</p>
@@ -24,8 +24,8 @@
             <p>Consultar información de alumnos</p>
         </div>
         <div class="col">
-            <a href="/gestores/cal-as"><img src="../img/Gestor_Calificaciones_Asistencia.png" class="botones-navegacion" width="50%" alt="Responsive image"></a>
-            <p>Gestor Calificaciones y Asistencia</p>
+            <a href="/gestores/grupos/consultarE"><img src="../img/Gestor_Calificaciones_Asistencia.png" class="botones-navegacion" width="50%" alt="Responsive image"></a>
+            <p>Gestor Grupos</p>
         </div>
     </div>
 </div>

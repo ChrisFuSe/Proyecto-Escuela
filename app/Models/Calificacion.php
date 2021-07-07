@@ -18,7 +18,8 @@ class Calificacion extends Model
         'calificacion_escrita',
         'calificacion_oral',
         'unidad',
-        'nivel',
-        'numero_control'
+        'id_nivel',
+        'numero_control',
+        'asistencia_total'
     ];
 }

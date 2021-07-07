@@ -86,9 +86,10 @@
         <thead>
           <tr>
             <th class="table-primary" scope="col"></th>
-            <th class="table-primary" scope="col">Calificación/ Asistencia</th>
+            <th class="table-primary" scope="col">Acciones</th>
             <th class="table-primary" scope="col">Número de control</th>
             <th class="table-primary" scope="col">Nombre completo</th>
+            <th class="table-primary" scope="col">Unidad</th>
             <th class="table-primary" scope="col">Calificación oral</th>
             <th class="table-primary" scope="col">Calificación escrita</th>
             <th class="table-primary" scope="col">Asistencia total</th>
@@ -97,23 +98,36 @@
         @if(empty($alum))
         <p></p>
         @else
-        @foreach($alum as $alumno)
-        @foreach($cal as $c)
-          <tr>
-            <td class="table-info"></td>
-            <td class="table-info">
-                  <form action="{{route('editar.cal_as',$grupos->id_grupo)}}" method="GET">
-                  <button type="submit" class="btn btn-light"><img src="{{ asset('img\journal-bookmark.svg') }}" alt="Bootstrap"></button>
-                  </form>
-            </td>
-            <td class="table-info">{{$alumno->numero_control}}</td>
-            <td class="table-info">{{$alumno->nombres}} {{$alumno->ap_paterno}} {{$alumno->ap_materno}}</td>
-            <td class="table-info">{{$c->calificacion_escrita}}</td>    
-            <td class="table-info">a</td>
-            <td class="table-info">b</td>
-          </tr>
-        @endforeach
-        @endforeach
+            @foreach($cal as $c)
+            <tr>
+                <td class="table-info"></td>
+                <td class="table-info">
+                    <form action="{{route('agregar.cal_as',$c->numero_control)}}" method="GET">
+                         <button type="submit" class="btn btn-success"><img src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
+                     </form>
+                    @if(empty($c))
+                    <button type="button" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
+                    </td>
+                    <td class="table-info">{{$c->numero_control}}</td>
+                    <td class="table-info">{{$c->nombres}} {{$c->ap_paterno}} {{$c->ap_materno}}</td>
+                    <td class="table-info"></td>
+                    <td class="table-info"></td>
+                    <td class="table-info"></td>
+                    <td class="table-info"></td>
+                    @else
+                    <form action="{{route('llenar.cal_as',1)}}" method="GET">
+                        <button type="submit" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
+                    </form>
+                    </td>
+                    <td class="table-info">{{$c->numero_control}}</td>
+                    <td class="table-info">{{$c->nombres}} {{$c->ap_paterno}} {{$c->ap_materno}}</td>
+                    <td class="table-info">{{$c->unidad}}</td>
+                    <td class="table-info">{{$c->calificacion_oral}}</td>
+                    <td class="table-info">{{$c->calificacion_escrita}}</td>
+                    <td class="table-info">{{$c->asistencia_total}}</td>
+                    @endif
+             </tr>
+            @endforeach
         @endif
         </tbody>
       </table>

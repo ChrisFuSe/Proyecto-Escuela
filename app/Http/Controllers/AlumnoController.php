@@ -39,8 +39,7 @@ class AlumnoController extends Controller
 
     public function eliminarAlumno($id){
         $alumno = Alumno::where('numero_control',$id)->first();
-        $alumno->estado_actual = 'Baja';
-        $alumno->save();
+        $alumno->delete();
         return redirect('gestores\alumnos\consultarE');
     }
 

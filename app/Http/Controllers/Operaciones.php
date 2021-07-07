@@ -77,6 +77,13 @@ class Operaciones extends Controller
                 $niveles = Nivel::all();
                 return view('gestores/grupos/consultar-grupo', compact('grupos', 'profesores', 'horarios','niveles'));
             break;
+            case 'consultarE':
+                $grupos = Grupo::all();
+                $profesores = Profesor::all();
+                $horarios = Horario::all();
+                $niveles = Nivel::all();
+                return view('gestores/grupos/consultarE-grupo', compact('grupos', 'profesores', 'horarios','niveles'));
+            break;
             case 'crearh':
                 $horarios = Horario::all();
                 return view('gestores/grupos/crearh-grupo', compact('horarios')); 
@@ -98,6 +105,9 @@ class Operaciones extends Controller
             break;
             case 'consultar':
                 return view('gestores/cal_as/consultar-calificacion');
+            break;
+            case 'listar':
+                return view('gestores/grupos/listar-grupo');
             break;
             default:
             abort(404);

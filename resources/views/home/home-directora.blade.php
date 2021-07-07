@@ -35,10 +35,6 @@
             <a href="../gestores/usuarios"><img src="../img/Gestor_Usuarios.png" class="botones-navegacion" width="48%" alt="Responsive image"></a>
             <p>Gestor de Usuarios</p>
         </div>
-        <div class="col">
-            <a href="../gestores/cal-as"><img src="../img/Gestor_Calificaciones_Asistencia.png" class="botones-navegacion" width="48%" alt="Responsive image"></a>
-            <p>Gestor de Calificaciones y Asistencia</p>
-        </div>
     </div>
 </div>
 @endsection

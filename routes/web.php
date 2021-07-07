@@ -107,5 +107,7 @@ Route::get('enviar-correos', [MailController::class, 'EnviarEmail'])->middleware
 
 //          Rutas para calificaciones y asistencias          //
 Route::post('consultar/nivel', [CalificacionesController::class, 'consultarNiveles'])->middleware('auth')->name('consultar.niveles');
-Route::post('agregar/cal_as', [CalificacionesController::class, 'agregarCalAs'])->middleware('auth')->name('agregar.cal_as');
+Route::get('agregar/cal_as/{id}', [CalificacionesController::class, 'agregarCalAs'])->middleware('auth')->name('agregar.cal_as');
 Route::get('editar/cal_as/{id}', [CalificacionesController::class, 'editarCalAs'])->middleware('auth')->name('editar.cal_as');
+Route::post('registrar/cal_as', [CalificacionesController::class, 'registrarCalAs'])->middleware('auth')->name('registrar.calificaciones');
+Route::get('llenar/cal_as/{id}', [CalificacionesController::class, 'llenarCalAs'])->middleware('auth')->name('llenar.cal_as');
