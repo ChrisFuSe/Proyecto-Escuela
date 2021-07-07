@@ -57,6 +57,7 @@ Route::post('consultar/alumno', [AlumnoController::class, 'consultarAlumno'])->m
 Route::get('elimnar/alumno/{id}', [AlumnoController::class, 'eliminarAlumno'])->middleware('auth')->name('eliminar.alumno');
 Route::get('actualizar/alumno/{id}', [AlumnoController::class, 'actualizarAlumno'])->middleware('auth')->name('actualizar.alumno');
 Route::get('llenar/alumno/{id}', [AlumnoController::class, 'llenarAlumno'])->middleware('auth')->name('llenar.alumno');
+Route::get('validarCURP', [AlumnoController::class, 'validarCURP'])->middleware('auth')->name('validar.curp');
 
 
 //          Rutas para gestor de Profesores     //

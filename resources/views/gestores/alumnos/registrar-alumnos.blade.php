@@ -19,11 +19,15 @@
 {{ asset('img/Gestor_Alumnos.png') }}
 @endsection
 
+@section('header-scripts')
+    <script src="{{asset('js\jquery-3.5.1.js')}}"></script> 
+@endsection
+
 @section('operacion', 'Ingresar nuevo alumno')
 
 @section('cuerpo')
 <h1>Registrar alumno</h1>
-<form action="{{route('registrar.alumnos')}}" method="POST" accept-charset="utf-8" name=form1>
+<form action="{{route('registrar.alumnos')}}" method="POST" accept-charset="utf-8" name=form1 class="needs-validation">
 @csrf
  <!--    Contenedor con todos los inputs del formulario para registrar un nuevo alumno  -->
  <div class="container-fluid" style="margin-top: 2%;">
@@ -103,7 +107,11 @@
           <div class="input-group input-group-lg mb-4">
               <span class="input-group-text">CURP</span>
               <input type="text" onchange="validarTR(event)" id="curp" name="curp" onkeyup="this.value = this.value.toUpperCase();" class="form-control" maxlength="18" placeholder="CURP..." required>
+              <br>
           </div>
+            <div class="mensaje_error" id="err">
+                <p>El curp ya esta registrado en la base de datos.</p>
+            </div>
         </div>
         <div class="col">
           <div class="input-group input-group-lg mb-4">
@@ -253,7 +261,19 @@ function validarF(){
     var fcorreo = document.getElementById("fcorreo").value.trim();
     if(nombres !="" && appat !="" && apmat !="" && ci !="" && calle !="" && num !="" &&  col !="" && cp !="" && fnac !="" && curp !="" && tel != "" && email !="" && descu !=""){
         if((fact == "Si" && fnom !="" && frfc !="" && frfc !="" && fdom !="" && ftel !="" && fcorreo !="") || fact == "No"){
-            document.form1.submit();
+            $.ajax({
+                url: '/validarCURP',
+                method: 'GET',
+                data:{
+                    CURP: curp
+                }
+            }).done(function(res){
+                if (res){
+                    $('#err').addClass('despliega');
+                }else{
+                    document.form1.submit();
+                }
+            });
         }else{
             alert("Faltan campos");
         }

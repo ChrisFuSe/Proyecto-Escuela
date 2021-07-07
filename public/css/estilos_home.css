@@ -6,3 +6,12 @@
 p{
     font-size: xx-large;
 }
+
+.mensaje_error{
+    display: none;
+}
+.despliega{
+    display: block !important;
+    font-size: 1.2mm !important;
+    color: red;
+}
