@@ -93,4 +93,10 @@ class AlumnoController extends Controller
             return "Error no se han podido actualizar los datos del alumno en la base de datos";
         }
     }
+
+    public function validarCURP(Request $request){
+        $alumno = Alumno::where('curp', $request->CURP)->first();
+
+        return $alumno;
+    }
 }
