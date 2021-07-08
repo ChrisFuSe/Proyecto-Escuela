@@ -10,19 +10,21 @@ use Illuminate\Support\Facades\Hash;
 class UsuarioController extends Controller
 {
     public function registrarUsuario(Request $request){
-        $usuario = new User();
-
-        $usuario->username = $request->username;
-        $usuario->password = Hash::make($request->password);
-        $usuario->email = $request->email;
-        $usuario->nombres = $request->nombres;
-        $usuario->ap_paterno = $request->ap_paterno;
-        $usuario->ap_materno = $request->ap_materno;
-        $usuario->tipo = $request->tipo;
-
-        $usuario->save();
-
-        return redirect('gestores\usuarios\alta');
+        if($request->password == $request->repite){
+            $usuario = new User();
+            $usuario->username = $request->username;
+            $usuario->password = Hash::make($request->password);
+            $usuario->email = $request->email;
+            $usuario->nombres = $request->nombres;
+            $usuario->ap_paterno = $request->ap_paterno;
+            $usuario->ap_materno = $request->ap_materno;
+            $usuario->tipo = $request->tipo;
+            $usuario->save();
+            return redirect()->back()->with('success', 'Se ha registrado correctamente'); 
+        }
+        else{
+            return redirect()->back()->with('error', 'Las contraseñas no coinciden');    
+        }
     }
 
     public function eliminarUsuario($id){
@@ -39,7 +41,6 @@ class UsuarioController extends Controller
     public function actualizarUsuario(Request $request, $id){
         $usuario = User::findOrFail($id);
         $usuario->username = $request->username;
-        $usuario->password = Hash::make($request->password);
         $usuario->email = $request->email;
         $usuario->nombres = $request->nombres;
         $usuario->ap_paterno = $request->ap_paterno;

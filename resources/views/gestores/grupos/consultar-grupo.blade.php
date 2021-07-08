@@ -22,12 +22,6 @@
   </style> 
 @endsection
 
-<script>
- function validar(){
-     alert('Se ha eliminado exitosamente');
- }
-</script>
-
 @section('imagen-opc')
 {{ asset('img/Gestor_Grupos.png') }}
 @endsection
@@ -36,6 +30,20 @@
 
 @section('cuerpo')
 <h1>Consultar/Eliminar/Editar grupos</h1>
+@if (\Session::has('error'))
+    <div class="alert alert-danger">
+        <ul>
+            <li>{!! \Session::get('error') !!}</li>
+        </ul>
+    </div>
+@endif
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
 <div class="container-fluid"> 
   <div class="card">
     <div class="card-body" style="padding-inline : 4%;">

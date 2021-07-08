@@ -22,12 +22,6 @@
   </style> 
 @endsection
 
-<script>
- function validar(){
-     alert('Se ha eliminado exitosamente');
- }
-</script>
-
 @section('imagen-opc')
 {{ asset('img/Gestor_Grupos.png') }}
 @endsection

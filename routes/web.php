@@ -54,7 +54,7 @@ Route::get('gestores/cal_as/{gestor}', [Gestores::class, 'gesCal_As'])->middlewa
 //          Rutas para gestor Alumnos           //
 Route::post('registrar/alumno', [AlumnoController::class, 'registrarAlumno'])->middleware('auth')->name('registrar.alumnos');
 Route::post('consultar/alumno', [AlumnoController::class, 'consultarAlumno'])->middleware('auth')->name('consultar.alumno');
-Route::get('elimnar/alumno/{id}', [AlumnoController::class, 'eliminarAlumno'])->middleware('auth')->name('eliminar.alumno');
+Route::get('eliminar/alumno/{id}', [AlumnoController::class, 'eliminarAlumno'])->middleware('auth')->name('eliminar.alumno');
 Route::get('actualizar/alumno/{id}', [AlumnoController::class, 'actualizarAlumno'])->middleware('auth')->name('actualizar.alumno');
 Route::get('llenar/alumno/{id}', [AlumnoController::class, 'llenarAlumno'])->middleware('auth')->name('llenar.alumno');
 

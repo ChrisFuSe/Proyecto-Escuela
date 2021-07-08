@@ -12,6 +12,20 @@
 
 @section('cuerpo')
 <h1>Realizar Pagos</h1>
+@if (\Session::has('error'))
+    <div class="alert alert-danger">
+        <ul>
+            <li>{!! \Session::get('error') !!}</li>
+        </ul>
+    </div>
+@endif
+@if (\Session::has('success'))
+    <div class="alert alert-success">
+        <ul>
+            <li>{!! \Session::get('success') !!}</li>
+        </ul>
+    </div>
+@endif
 @csrf
 <div class="container">
   <div class="input-group input-group-lg mb-4">
@@ -61,13 +75,13 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Fecha de pago</span>
-          <input type="date" class="form-control" name="fecha" required>
+          <input type="date" class="form-control" name="fecha" min="2018-01-01" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")));?>" required>
         </div>
       </div>
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Monto</span>
-          <input type="number" class="form-control" placeholder="$" name="monto" required min="1">
+          <input type="number" class="form-control" placeholder="$" name="monto" min="1" required>
         </div>
       </div>
     </div>
@@ -76,7 +90,7 @@
       <div class="form-floating">
         <span class="input-group-text">Descripción</span>
         <textarea class="form-control" placeholder="Ingrese descripción..."
-          name="descripcion"></textarea>
+          name="descripcion" id="floatingTextarea"></textarea>
       </div>
     </div>
 
@@ -122,14 +136,14 @@
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Fecha de pago</span>
-          <input type="date" class="form-control" name="pago_adeudo_fecha" required>
+          <input type="date"  class="form-control" name="pago_adeudo_fecha" min="2018-01-01" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")));?>" required>
         </div>
       </div>
 
       <div class="col">
         <div class="input-group input-group-lg mb-4">
           <span class="input-group-text">Monto</span>
-          <input type="number" class="form-control" placeholder="$" name="pago_adeudo_monto" required>
+          <input type="number" class="form-control" placeholder="$" name="pago_adeudo_monto" min="1" required>
         </div>
       </div>
     </div>
@@ -138,7 +152,7 @@
       <div class="form-floating">
         <span class="input-group-text">Descripción</span>
         <textarea class="form-control" placeholder="Ingrese descripción..."
-          name="pago_adeudo_descripcion"></textarea>
+          name="pago_adeudo_descripcion" id="floatingTextarea"></textarea>
       </div>
     </div>
 

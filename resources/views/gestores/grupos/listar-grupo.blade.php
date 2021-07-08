@@ -102,9 +102,13 @@
             <tr>
                 <td class="table-info"></td>
                 <td class="table-info">
+                    @if(!empty($c->calificacion_escrita))
+                    <button type="button" class="btn btn-success"><img src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
+                    @else
                     <form action="{{route('agregar.cal_as',$c->numero_control)}}" method="GET">
                          <button type="submit" class="btn btn-success"><img src="{{ asset('img\person-plus-fill.svg') }}" alt="Bootstrap"></button>
                      </form>
+                    @endif
                     @if(empty($c->calificacion_escrita))
                     <button type="button" class="btn btn-info"><img src="{{ asset('img\pencil-square.svg') }}" alt="Bootstrap"></button>
                     </td>

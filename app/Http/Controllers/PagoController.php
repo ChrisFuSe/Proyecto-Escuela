@@ -5,30 +5,39 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use App\Models\Pago;
 use App\Models\Adeudo;
 use App\Models\Concepto;
+use App\Models\Alumno;
 
 class PagoController extends Controller
 {
     public function registrarprimerPago(Request $request){
-        $adeudo = new Adeudo();
-        $adeudo -> concepto = $request->concepto;
-        $adeudo -> fecha_adeudo = $request->fecha;
-        $adeudo -> numero_control = $request->numero_control;
-        $adeudo -> save();
-        $adeudo = Adeudo::select('id_adeudo')
-                        ->where('numero_control', $request->numero_control)
-                        ->where('concepto', $request->concepto)
-                        ->where('fecha_adeudo', $request->fecha)->first();
-        $pago = new Pago();
-        $pago -> monto = $request -> monto;
-        $pago -> fecha_pago = $request -> fecha;
-        $pago -> descripcion = $request -> descripcion;
-        $pago -> id_adeudo = $adeudo -> id_adeudo;
-        $pago -> numero_control = $request -> numero_control;
-        $pago -> save();
-        return redirect(route('realizar.pago'));
+        $alum = Alumno::where('numero_control',$request -> numero_control)->first();
+        if(empty($alum)){
+            return redirect()->back()->with('error', 'No hay alumnos con ese numero de control');              
+        }else{
+            $adeudo = new Adeudo();
+            $alumno = Alumno::all();
+            $adeudo -> concepto = $request->concepto;
+            $adeudo -> fecha_adeudo = $request->fecha;
+            $adeudo -> numero_control = $request->numero_control;
+            $adeudo -> save();
+            $adeudo = Adeudo::select('id_adeudo')
+                            ->where('numero_control', $request->numero_control)
+                            ->where('concepto', $request->concepto)
+                            ->where('fecha_adeudo', $request->fecha)->first();
+            $pago = new Pago();
+            $pago -> monto = $request -> monto;
+            $pago -> fecha_pago = $request -> fecha;
+            $pago -> descripcion = $request -> descripcion;
+            $pago -> id_adeudo = $adeudo -> id_adeudo;
+            $pago -> numero_control = $request -> numero_control;
+            $pago -> save();
+            return redirect()->back()->with('success','Se ha registrado correctamente');  
+        }
     }
 
     public function registrarpagoAdeudo(Request $request){

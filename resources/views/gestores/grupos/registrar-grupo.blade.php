@@ -21,7 +21,6 @@
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nivel:</span>
                     <select type="select" class="form-control" name="id_nivel" id="id_nivel" required>
-                        <option selected disabled>Elije un nivel...</option>
                         @foreach ($niveles as $nivel)
                         <option value="{{$nivel->id_nivel}}">{{$nivel->descripcion}}</option>
                         @endforeach
@@ -32,7 +31,6 @@
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Profesor:</span>
                     <select type="select" class="form-control" name="id_profesor" id="sProfesor" required>
-                        <option selected disabled>Elije un Profesor...</option>
                         @foreach ($profesores as $profesor)
                         <option value="{{$profesor->id_profesor}}">{{$profesor->nombres}} {{$profesor->ap_paterno}} {{$profesor->ap_materno}}</option>
                         @endforeach
@@ -43,7 +41,6 @@
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Horario:</span>
                     <select type="select" class="form-control" name="id_horario" id="sHorario" required>
-                        <option selected disabled>Elije un horario...</option>
                         @foreach ($horarios as $horario)
                         <option value="{{$horario->id_horario}}">{{$horario->horarios}} {{$horario->dia}}</option>
                         @endforeach

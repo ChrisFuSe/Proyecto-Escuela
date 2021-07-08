@@ -13,7 +13,6 @@ class AlumnoController extends Controller
 {
     public function registrarAlumno(Request $request){
         $alumno = new Alumno();
-
         $alumno->numero_control = "PE-".$request->curp;
         $alumno->curp = $request->curp;
         $alumno->nombres = $request->nombres;
@@ -42,11 +41,13 @@ class AlumnoController extends Controller
 
     public function eliminarAlumno($id){
         $alumno = Alumno::where('numero_control',$id)->first();
-        $adeudos = Adeudo::where('numero_control',$id)->first();
-        
-        
-        if(!empty($adeudos)){
-            return redirect()->back()->with('error', 'No se pueden eliminar alumnos con adeudos');   
+        $adeudos = Adeudo::where('numero_control',$id)->get();
+        if(!$adeudos){
+            foreach($adeudos as $a){
+                if($a->monto_adeudo>0){
+                    return redirect()->back()->with('error', 'No se pueden eliminar alumnos con adeudos'); 
+                }
+            }
         }
         else{
             $alumno->delete();

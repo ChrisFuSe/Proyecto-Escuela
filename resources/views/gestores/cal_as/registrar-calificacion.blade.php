@@ -42,7 +42,7 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
                 <span class="input-group-text">Evaluación:</span>
-                <select type="select" name="unidad" id="unidad" class="form-control">
+                <select type="select" name="unidad" id="unidad" class="form-control" required>
                     <option disabled>Elija una evaluación</option>
                     <option value="1">Unidad 1</option>
                     <option value="2">Unidad 2</option>
@@ -56,19 +56,19 @@
         <div class="col">
             <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Calificación oral:</span>
-                <input type="text" class="form-control" id="calificacion_oral" name="calificacion_oral">
+                <input type="number" min="0" max="100" class="form-control" id="calificacion_oral" name="calificacion_oral" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Calificación escrita:</span>
-                <input type="text" class="form-control" id="calificación_escrita" name="calificacion_escrita">
+                <input type="number" min="0" max="100" class="form-control" id="calificación_escrita" name="calificacion_escrita" required>
             </div>
         </div>
         <div class="col">
             <div class="input-group input-group-lg mb-4">
             <span class="input-group-text">Asistencia total:</span>
-                <input type="text" class="form-control" id="asistencia_total" name="asistencia_total">
+                <input type="number" min="0" max="100" class="form-control" id="asistencia_total" name="asistencia_total" required>
             </div>
         </div>       
 </div>

@@ -4,17 +4,11 @@
 "{{ asset('img/Gestor_Maestros.png') }}"
 @endsection
 
-<script>
-function validar(){
-    alert("Datos actualizados de manera correcta");
-}
-</script>
-
 @section('operacion', 'Modificar Maestro')
 
 @section('cuerpo')
 <h1>Editar maestro</h1>
-<form action="{{route('actualizar.profesor',$profesor->id_profesor)}}" method="GET" accept-charset="utf-8">
+<form action="{{route('actualizar.profesor',$profesor->id_profesor)}}" name="form1" method="GET" accept-charset="utf-8">
     @csrf
     <!--    Contenedor con todos los inputs del formulario para registrar un nuevo maestro  -->
     <div class="container-fluid" style="margin-top: 2%;">
@@ -24,28 +18,28 @@ function validar(){
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nombres</span>
-                    <input type="text" class="form-control" placeholder="Nombres..." aria-label="Nombres"
-                        name="nombres" maxlength="45" value='{{$profesor->nombres}}' required>
+                    <input type="text" onchange="validarTR(event)" class="form-control" placeholder="Nombres..." aria-label="Nombres"
+                        name="nombres" id="nombres" maxlength="45" value='{{$profesor->nombres}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Paterno</span>
-                    <input type="text" class="form-control" placeholder="Primer Apellido..."
-                        aria-label="Apellido Paterno" maxlength="45" name="ap_paterno" value='{{$profesor->ap_paterno}}' required>
+                    <input type="text" onchange="validarTR(event)" class="form-control" placeholder="Primer Apellido..."
+                        aria-label="Apellido Paterno" maxlength="45" name="ap_paterno" id="ap_paterno" value='{{$profesor->ap_paterno}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Materno</span>
-                    <input type="text" class="form-control" maxlength="45" placeholder="Segundo Apellido..."
-                        aria-label="Apellido Materno" name="ap_materno" value='{{$profesor->ap_materno}}' required>
+                    <input type="text" onchange="validarTR(event)" class="form-control" maxlength="45" placeholder="Segundo Apellido..."
+                        aria-label="Apellido Materno" name="ap_materno" id="ap_materno" value='{{$profesor->ap_materno}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Estado</span>
-                    <select type="select" class="form-control" name="estado" required>
+                    <select type="select" onchange="validarTR(event)" class="form-control" name="estado" id="estado" required>
                         <option>{{$profesor->estado}}</option>
                         <option>Aguascalientes</option>
                         <option>Baja California</option>
@@ -85,53 +79,85 @@ function validar(){
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Ciudad</span>
-                    <input type="text" class="form-control" maxlength="45" placeholder="Ciudad..." aria-label="Ciudad" name="ciudad" value='{{$profesor->ciudad}}' required>
+                    <input type="text" onchange="validarTR(event)" class="form-control" maxlength="45" placeholder="Ciudad..." aria-label="Ciudad" name="ciudad" id="ciudad" value='{{$profesor->ciudad}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Calle y numero</span>
-                    <input type="text" placeholder="Calle" maxlength="45" aria-label="Calle" class="form-control" name="calle" value='{{$profesor->calle}}' required>
-                    <input type="text" placeholder="#Numero" maxlength="10" aria-label="Numero" class="form-control" name="numero" value='{{$profesor->numero}}' required>
+                    <input type="text" onchange="validarTR(event)" placeholder="Calle" maxlength="45" aria-label="Calle" class="form-control" name="calle" id="calle" value='{{$profesor->calle}}' required>
+                    <input type="text" onchange="validarTR(event)" placeholder="#Numero" maxlength="10" aria-label="Numero" class="form-control" name="numero" id="numero" value='{{$profesor->numero}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Colonia</span>
-                    <input type="text" class="form-control" placeholder="Colonia..." aria-label="Colonia"
-                        name="colonia" maxlength="45" value='{{$profesor->colonia}}' required>
+                    <input type="text" onchange="validarTR(event)" class="form-control" placeholder="Colonia..." aria-label="Colonia"
+                        name="colonia" id="colonia" maxlength="45" value='{{$profesor->colonia}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">C.P</span>
-                    <input type="text" maxlength="5" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal" value='{{$profesor->codigo_postal}}' required>
+                    <input type="text" onchange="validarTR(event)" maxlength="5" class="form-control" placeholder="#C.P" aria-label="Numero" name="codigo_postal" id="codigo_postal" value='{{$profesor->codigo_postal}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">RFC</span>
                     <input onkeyup="this.value = this.value.toUpperCase();" type="text" class="form-control" placeholder="Registro federal de contribuyente..."
-                        aria-label="RFC" maxlength="13" name="rfc" value='{{$profesor->rfc}}' required>
+                        aria-label="RFC" onchange="validarTR(event)" maxlength="13" name="rfc" id="rfc" value='{{$profesor->rfc}}' required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Numero Telefónico</span>
-                    <input type="text" maxlength="16" value='{{$profesor->numero}}' class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono" required>
+                    <input type="text" onchange="validarTR(event)" maxlength="16" value='{{$profesor->numero}}' class="form-control" placeholder="#Tel" aria-label="Numero" name="telefono" id="telefono" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Correo electrónico</span>
-                    <input type="text" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico"
-                        name="correo" maxlength="45" value='{{$profesor->correo}}' required>
+                    <input type="text" onchange="validarTR(event)" class="form-control" placeholder="@ejemplo.com" aria-label="Correo electronico"
+                        name="correo" id="correo" maxlength="45" value='{{$profesor->correo}}' required>
                 </div>
             </div>
         </div>
         <div class="col" style="margin-top: 3%;">
-            <button type="submit" class="btn btn-dark" style="padding-inline: 2%;" onclick=validar();>ACTUALIZAR</button>
+            <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validarF()">ACTUALIZAR</button>
         </div>
     </div>
 </form>
+@endsection
+@section('scripts')
+<script>
+function validarTR(e) {
+ if (e.target.value.trim() == "")
+  alert("Debe ingresar un valor en el campo");
+}
+</script>
+
+<script>
+function validarF(){
+    var nombres = document.getElementById("nombres").value.trim();
+    var appat = document.getElementById("ap_paterno").value.trim();
+    var apmat = document.getElementById("ap_materno").value.trim();
+    var est = document.getElementById("estado").value.trim();
+    var ci = document.getElementById("ciudad").value.trim();
+    var calle = document.getElementById("calle").value.trim();
+    var num = document.getElementById("numero").value.trim();
+    var col = document.getElementById("colonia").value.trim();
+    var cp = document.getElementById("codigo_postal").value.trim();
+    var rfc = document.getElementById("rfc").value.trim();
+    var tel = document.getElementById("telefono").value.trim();
+    var email = document.getElementById("correo").value.trim();
+    if(nombres != "" && appat != "" && apmat != "" && est != "" && ci != "" && calle != "" && num != "" && col != "" && cp != "" && rfc != "" && tel != "" && email != ""){
+        alert("Datos guardados exitosamente");
+        document.form1.submit();
+
+    }else{
+        alert("Faltan campos");
+    }
+}
+</script>
 @endsection
