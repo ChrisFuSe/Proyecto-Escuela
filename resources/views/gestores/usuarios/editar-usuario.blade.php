@@ -4,46 +4,40 @@
 "{{ asset('img/Gestor_Usuarios.png') }}"
 @endsection
 
-<script>
-function validar(){
-    alert("Datos actualizados de manera correcta");
-}
-</script>
-
 @section('operacion', 'Editar Usuario')
 
 @section('cuerpo')
 <h1>Editar usuario</h1>
-<form action="{{route('actualizar.usuario', $usuarios->id)}}" method="GET" accept-charset="utf-8" name="form1">
+
+<form action="{{route('actualizar.usuario', $usuarios->id)}}" method="GET" accept-charset="utf-8" name="form1" id="form1">
     @csrf
-<div class="container-fluid" style="margin-top: 2%;">
+    <div class="container-fluid" style="margin-top: 2%;">
         <div class="row row-cols-2">
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nombre de usuario</span>
-                    <input type="text" class="form-control" maxlength="100" name="username" value='{{$usuarios->username}}' onchange="validarTR(event)" required>
+                    <input type="text" class="form-control" maxlength="100" name="username" id="username" value='{{$usuarios->username}}' onchange="validarTR(event)" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Nombre(s)</span>
                     <input type="text" class="form-control" maxlength="100" placeholder="Nombres..." aria-label="Nombres"
-                        name="nombres" value='{{$usuarios->nombres}}' onchange="validarTR(event)" required>
-
+                        name="nombres" id="nombres" value='{{$usuarios->nombres}}' onchange="validarTR(event)" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Correo electrónico</span>
                     <input type="text" class="form-control" maxlength="100" placeholder="@ejemplo.com" aria-label="Correo electronico"
-                        name="email" value='{{$usuarios->email}}' onchange="validarTR(event)" required>
+                        name="email" id="email" value='{{$usuarios->email}}' onchange="validarTR(event)" required>
                 </div>
             </div>
             <div class="col">
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Paterno</span>
                     <input type="text" class="form-control" maxlength="50" placeholder="Primer Apellido..."
-                        aria-label="Apellido Paterno" name="ap_paterno" value='{{$usuarios->ap_paterno}}' onchange="validarTR(event)" required>
+                        aria-label="Apellido Paterno" name="ap_paterno" id="ap_paterno" value='{{$usuarios->ap_paterno}}' onchange="validarTR(event)" required>
                 </div>
             </div>
             <div class="col">
@@ -60,7 +54,7 @@ function validar(){
                 <div class="input-group input-group-lg mb-4">
                     <span class="input-group-text">Apellido Materno</span>
                     <input type="text" class="form-control" placeholder="Segundo Apellido..."
-                        aria-label="Apellido Materno" maxlength="50" name="ap_materno" value='{{$usuarios->ap_materno}}' onchange="validarTR(event)" required>
+                        aria-label="Apellido Materno" maxlength="50" name="ap_materno" id="ap_materno" value='{{$usuarios->ap_materno}}' onchange="validarTR(event)" required>
                 </div>
             </div>
         </div>
@@ -68,9 +62,7 @@ function validar(){
     <div class="col" style="margin-top: 1%;">
         <button type="button" class="btn btn-dark" style="padding-inline: 2%;" onclick="validarF()">ACTUALIZAR</button>
     </div>
-</div>
-
-</div>
+    </div>
 </form>
 @endsection
 @section('scripts')
@@ -83,13 +75,13 @@ function validarTR(e) {
 
 <script>
 function validarF(){
-    var nombres = document.getElementById("username").value.trim();
-    var appat = document.getElementById("nombres").value.trim();
-    var apmat = document.getElementById("email").value.trim();
-    var est = document.getElementById("ap_paterno").value.trim();
-    var ci = document.getElementById("ap_materno").value.trim();
-    var email = document.getElementById("inputGroupSelect01").value.trim();
-    if(nombres != "" && appat != "" && apmat != "" && est != "" && ci != "" && email != ""){
+    var username = document.getElementById("username").value.trim();
+    var nombres = document.getElementById("nombres").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var appat = document.getElementById("ap_paterno").value.trim();
+    var apmat = document.getElementById("ap_materno").value.trim();
+    var tipo = document.getElementById("inputGroupSelect01").value.trim();
+    if(username != "" && nombres != "" && email != "" && appat != "" && apmat != "" && tipo != ""){
         document.form1.submit();
     }else{
         alert("Faltan campos");

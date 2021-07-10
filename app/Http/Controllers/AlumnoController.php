@@ -66,8 +66,8 @@ class AlumnoController extends Controller
         
         $alumno->curp = $request->curp;
         $alumno->nombres = $request->nombres;
-        $alumno->ap_paterno = $request->ap_paterno;
-        $alumno->ap_materno = $request->ap_materno;
+        $alumno->ap_paterno = $request->ap_materno;
+        $alumno->ap_materno = $request->ap_paterno;
         $alumno->estado = $request->estado;
         $alumno->ciudad = $request->ciudad;
         $alumno->calle = $request->calle;
@@ -86,13 +86,9 @@ class AlumnoController extends Controller
         $alumno->fcorreo = $request->fcorreo;
         $alumno->ftelefono = $request->ftelefono;
         $alumno->factura = $request->factura;
-
-        try{
-            $alumno->save();
-            return redirect('gestores\alumnos\consultarE');
-        }catch(Exception $e){
-            return "Error no se han podido actualizar los datos del alumno en la base de datos";
-        }
+        $alumno->save();
+        return redirect('gestores\alumnos\consultarE')->with('success', 'Se ha actualizado correctamente');   
+        
     }
 
     public function validarCURP(Request $request){

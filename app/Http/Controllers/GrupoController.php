@@ -49,13 +49,8 @@ class GrupoController extends Controller
 
     public function eliminarGrupo($id){
         $grupos = Grupo::where('id_grupo',$id)->first();
-        $alumnos = Alumno::where('id_grupo',$id)->get();
-        if(!empty($alumnos)){
-            return redirect()->back()->with('error', 'No se pueden eliminar grupos con alumnos');   
-        }else{
-            $grupos->delete();
-            return redirect()->back()->with('success', 'Se ha eliminado correctamente');   
-        }
+        $grupos->delete();
+        return redirect()->back()->with('success', 'Se ha eliminado correctamente'); 
     }
 
     public function llenarGrupo($id){
