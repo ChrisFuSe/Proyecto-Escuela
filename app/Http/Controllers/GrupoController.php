@@ -91,13 +91,14 @@ class GrupoController extends Controller
         $niv = Nivel::where('id_nivel',$grupos->id_nivel)->first();
         $nivel = $niv->descripcion;
         $alum = Alumno::where('id_grupo',$id)->get();
+                  //  ->where('id_grupo',$id);
         $cal = Calificacion::rightJoin("alumnos","calificaciones.numero_control","=","alumnos.numero_control")
-        ->where('alumnos.id_grupo','=',$id)
+        ->where([
+            ['alumnos.id_grupo','=',$id],['alumnos.estado_actual','=','Alta']
+        ])
         ->select('alumnos.nombres','alumnos.ap_paterno', 'alumnos.ap_materno', 'alumnos.numero_control' ,'calificaciones.calificacion_escrita', 'calificaciones.calificacion_oral','calificaciones.unidad','calificaciones.asistencia_total','calificaciones.id_calificacion','calificaciones.id_nivel')
         ->get();
-        //return $cal;
         return view('gestores\grupos\listar-grupo', compact('grupos','profesor','horario','nivel','alum','cal'));
-       // return view('gestores\grupos\listar-grupo', compact('grupos','profesor','horario','nivel','alum'));
     }
 
     public function actualizarGrupo(Request $request, $id){

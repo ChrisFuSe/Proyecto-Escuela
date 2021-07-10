@@ -151,7 +151,7 @@
         <div class="col">
           <div class="input-group input-group-lg mb-4">
               <label class="input-group-text" for="inputGroupSelect01">Estado actual</label>
-              <select class="form-select" id="inputGroupSelect01" name="oyente_clase" required>
+              <select class="form-select" id="inputGroupSelect01" name="estado_actual" required>
                 <option selected>{{$alumno->estado_actual}}</option>
                 @if($alumno->estado_actual == "Alta")
                 <option>Baja</option>
@@ -201,11 +201,6 @@
                 <input type="email" class="form-control" maxlength="45" placeholder="@ejemplo.com" name="fcorreo" value='{{$alumno->fcorreo}}'>
             </div>
         </div>
-        <div class="col">
-          <div class="input-group input-group-lg mb-4">
-              <input class="form-control" value="Alta" name="estado_actual" type="hidden">
-          </div>
-      </div>
     </div> 
 
 

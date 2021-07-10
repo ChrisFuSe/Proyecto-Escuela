@@ -19,6 +19,13 @@
         </ul>
     </div>
 @endif
+@if (\Session::has('error2'))
+    <div class="alert alert-warning">
+        <ul>
+            <li>{!! \Session::get('error2') !!}</li>
+        </ul>
+    </div>
+@endif
 @if (\Session::has('success'))
     <div class="alert alert-success">
         <ul>

@@ -18,8 +18,11 @@ class PagoController extends Controller
         $alum = Alumno::where('numero_control',$request -> numero_control)->first();
         if(empty($alum)){
             return redirect()->back()->with('error', 'No hay alumnos con ese numero de control');              
-        }else{
-            $adeudo = new Adeudo();
+        }else{        
+            if($alum->estado_actual == "Baja"){
+                return redirect()->back()->with('error2', 'El alumno esta dado de baja');      
+            }else{
+                $adeudo = new Adeudo();
             $alumno = Alumno::all();
             $adeudo -> concepto = $request->concepto;
             $adeudo -> fecha_adeudo = $request->fecha;
@@ -37,6 +40,7 @@ class PagoController extends Controller
             $pago -> numero_control = $request -> numero_control;
             $pago -> save();
             return redirect()->back()->with('success','Se ha registrado correctamente');  
+            } 
         }
     }
 

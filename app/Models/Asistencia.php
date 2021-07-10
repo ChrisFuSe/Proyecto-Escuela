@@ -9,13 +9,12 @@ class Asistencia extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id_asistencia';
-
-    public $timestamps = false;
+    protected $primaryKey = 'Id';
 
     protected $fillable = [
-        'asistencia_total',
-        'unidad',
-        'numero_control',
+        'Nombre',
+        'Password',
+        'Correo',
+        'Telefono',
     ];
 }

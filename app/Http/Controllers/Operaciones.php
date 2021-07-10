@@ -41,8 +41,7 @@ class Operaciones extends Controller
                 return view('gestores/alumnos/registrar-alumnos');
             break;
             case 'consultarE':
-                $alumnos = Alumno::all()
-                        ->where('estado_actual', 'Alta');
+                $alumnos = Alumno::all();
                 return view('gestores/alumnos/consultarE-alumnos', compact('alumnos'));
             break;
             case 'modificar':
@@ -67,7 +66,8 @@ class Operaciones extends Controller
             break;
             case 'cargar':
                 $grupos = Grupo::all();
-                $alumnos = Alumno::all();
+                $alumnos = Alumno::all()
+                            ->where('estado_actual', 'Alta');
                 return view('gestores/grupos/cargar-informacion', compact('grupos', 'alumnos'));
             break;
             case 'consultar':

@@ -50,8 +50,9 @@ class AlumnoController extends Controller
             }
         }
         else{
-            $alumno->delete();
-            return redirect()->back()->with('success', 'Se ha eliminado correctamente');   
+            $alumno->estado_actual = "Baja";
+            $alumno->save();
+            return redirect()->back()->with('success', 'Se ha dado de baja correctamente');   
         } 
     }
 

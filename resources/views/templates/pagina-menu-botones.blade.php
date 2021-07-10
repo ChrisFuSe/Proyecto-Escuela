@@ -69,7 +69,6 @@
         <a href="\gestores\grupos">Grupos</a>
         <a href="\gestores\alumnos">Alumnos</a>
         <a href="\gestores\usuarios">Usuarios</a>
-        <a href="\gestores\cal-as">Calificaciones-asistencia</a>
         <?php
                         break;
                     case '2':
@@ -77,12 +76,14 @@
         <a href="\gestores\maestros">Maestros</a>
         <a href="\gestores\pagos">Pagos</a>
         <a href="\gestores\alumnos">Alumnos</a>
-        <a href="\gestores\cal-as">Calificaciones-asistencia</a>
+        <a href="\gestores\grupos\consultar">Grupos</a>
         <?php
                         break;
                     case '3':
                     ?>
-        <a href="\gestores\cal-as">Calificaciones-asistencia</a>
+        <a href="\gestores\maestros\consultar">Maestros</a>
+        <a href="\gestores\alumnos\consultar">Alumnos</a>
+        <a href="\gestores\grupos\consultarE">Grupos</a>
         <?php
                         break;
                 }
