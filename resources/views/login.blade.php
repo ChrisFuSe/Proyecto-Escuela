@@ -1,7 +1,7 @@
 @extends('templates.pagina')
 
 @section('estilos')
-<link rel="stylesheet" href="{{ asset('css/estilos_log_in.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/estilos_log_in.css') }}">
 @endsection
 
 @section('cuerpo')

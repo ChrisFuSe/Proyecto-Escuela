@@ -13,11 +13,11 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
 
     <!--    Favicon     -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img\Prestige.ico') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ secure_asset('img\Prestige.ico') }}" />
 
     <!--    Estilos      -->
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/estilos_constantes.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/estilos_constantes.css') }}">
     @yield('estilos')
 </head>
 
@@ -25,7 +25,7 @@
 
     <!--    Cabecera      -->
     <div class="container-fluid" id="cabecera">
-        <img src="{{ asset('img\Logo_Prestige.png') }}" class="img-fluid" alt="Logo" width="140">
+        <img src="{{ secure_asset('img\Logo_Prestige.png') }}" class="img-fluid" alt="Logo" width="140">
         <p id="nombre_sistema">Prestige Management System</p>
         @yield('logout')
     </div>
@@ -33,7 +33,7 @@
     @yield('cuerpo')
 
     <!--    Scripts      -->
-    <script src="{{ asset('js\animaciones-boton.js') }}"></script>
+    <script src="{{ secure_asset('js\animaciones-boton.js') }}"></script>
     @yield('scripts')
 
     <!--    Reconocimiento a los autores de los iconos en oculto    -->

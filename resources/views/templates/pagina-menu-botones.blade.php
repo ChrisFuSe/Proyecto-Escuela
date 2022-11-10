@@ -15,15 +15,15 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 
     <!--    Favicon     -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/Prestige.ico') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ secure_asset('img/Prestige.ico') }}" />
 
     <!--    Estilos      -->
     @yield('estilos')
-    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/estilos_constantes.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/estilos-menu.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/estilos_imagen_opcion.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/estilos_home.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('vendor/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/estilos_constantes.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/estilos-menu.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/estilos_imagen_opcion.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/estilos_home.css') }}">
 
     <!--    Header scripts      -->
     @yield('header-scripts')
@@ -49,7 +49,7 @@
 
     <!--    Cabecera      -->
     <div class="container-fluid" id="cabecera">
-        <img src="{{ asset('img/Logo_Prestige.png') }}" class="img-fluid" alt="Logo" width="140">
+        <img src="{{ secure_asset('img/Logo_Prestige.png') }}" class="img-fluid" alt="Logo" width="140">
         <p id="nombre_sistema">Prestige Management System</p>
     </div>
 
@@ -107,15 +107,15 @@
         <!--    Botones Home y Regresar      -->
         <div class="col" style="margin-top: 3%;">
             <div class="btn-real" style="display: inline; padding-right: 5%;">
-                <img width="5%" src="{{ asset('img/icono-regresar.png') }}" class="botones-navegacion"
+                <img width="5%" src="{{ secure_asset('img/icono-regresar.png') }}" class="botones-navegacion"
                     onclick="window.history.back();">
-                <img width="5%" src="{{ asset('img/icono-home.png') }}" class="botones-navegacion"
+                <img width="5%" src="{{ secure_asset('img/icono-home.png') }}" class="botones-navegacion"
                     onclick="window.location.href = '{{route('home')}}'">
             </div>
         </div>
 
         <!--    Scripts      -->
-        <script src="{{ asset('js/animaciones-boton.js') }}"></script>
+        <script src="{{ secure_asset('js/animaciones-boton.js') }}"></script>
         @yield('scripts')
 
         <!--    Reconocimiento a los autores de los iconos en oculto    -->
