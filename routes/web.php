@@ -24,10 +24,6 @@ use App\Http\Controllers\CalificacionesController;
 |
 */
 
-if (App::environment('production')) {
-    URL::forceScheme('https');
-}
-
 //          Rutas para Home y Login             //
 Route::get('/', HomeController::class)->name('login');
 Route::post('login', [LoginController::class, 'authenticate'])->name('login.autenticar');
