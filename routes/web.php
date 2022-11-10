@@ -24,6 +24,10 @@ use App\Http\Controllers\CalificacionesController;
 |
 */
 
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
+
 //          Rutas para Home y Login             //
 Route::get('/', HomeController::class)->name('login');
 Route::post('login', [LoginController::class, 'authenticate'])->name('login.autenticar');
@@ -112,7 +116,3 @@ Route::get('agregar/cal_as/{id}', [CalificacionesController::class, 'agregarCalA
 Route::get('editar/cal_as/{id}', [CalificacionesController::class, 'editarCalAs'])->middleware('auth')->name('editar.cal_as');
 Route::post('registrar/cal_as', [CalificacionesController::class, 'registrarCalAs'])->middleware('auth')->name('registrar.calificaciones');
 Route::get('llenar/cal_as/{id}', [CalificacionesController::class, 'llenarCalAs'])->middleware('auth')->name('llenar.cal_as');
-
-if (App::environment('production')) {
-    URL::forceScheme('https');
-}
