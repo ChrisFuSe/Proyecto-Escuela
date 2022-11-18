@@ -7,7 +7,7 @@
 @section('cuerpo')
 <div class="container" id="log_in">
     <p id="titulo">BIENVENIDO AL SISTEMA DE GESTION DE PRESTIGE</p>
-    <form action="{{route('login.autenticar')}}" method="POST">
+    <form method="POST">
 
         @csrf
 
